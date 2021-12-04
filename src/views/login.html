@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <label for="name">name</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="password">password</label>
+        <input type="text" id="password" name="password"><br>
+        <div class="verify-identifier"></div>
+        <label for="password">Nhap code:</label>
+        <input type="text" id="verify" name="verify-code">
+        <button type="submit">submit</button>
+
+      
+    </div>
+    <script>
+        const code = Math.floor(Math.random() * 10000)
+        $('.verify-identifier').html(` Ma xac nhan: ${code}`)
+        $('button').click(() => {
+            const name = $('#name').val()
+            const password = $('#password').val()
+            const verify = $('#verify').val()
+            const verifyName = name == 'Admin'
+            const verifyPassword = name == 'Admin'
+            const verifycode = verify == code
+            console.log([name, password, verify, verifycode])
+            verifyName && verifyPassword && verifycode ? window.location.replace('http://hoangkim58.github.io/shopeefrontend/') : alert('Check again!!!')
+        })
+    </script>
+</body>
+
+</html>

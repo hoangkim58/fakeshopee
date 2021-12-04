@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee</title>
+    <link rel="icon"
+        href="https://www.freepnglogos.com/uploads/shopee-logo/shopee-bag-logo-free-transparent-icon-17.png">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script type="module" src="src/App.js"></script>
+    <script defer src="src/index.js"></script> -->
+    <script type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <header id="top" class="header">
+            <div class="grid">
+                <div class="grid__home-ml-mr">
+                    <nav class="header__navbar">
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item header__navbar-item--separate">
+                                Kênh người bán
+                            </li>
+                            <li class="header__navbar-item header__navbar-item--separate">
+                                Trở thành người bán Shopee
+                            </li>
+                            <li class="header__navbar-item header__navbar-item--separate header__navbar-item--show-qr">
+                                Tải ứng dụng
+                                <div class="header-qr">
+                                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png"
+                                        class="header-qr-img" alt="QR code">
+                                    <div class="header-qr-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png"
+                                            alt="Google play" class="header-qr-app-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png"
+                                            alt="App store" class="header-qr-app-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/1ae215920a31f2fc75b00d4ee9ae8551.png"
+                                            alt="App Gallery" class="header-qr-app-link">
+                                    </div>
+                                </div>
+                            </li>
+                            <span class="header__navbar-item-interface">
+                                Kết nối
+                            </span>
+                            <li class="header__navbar-item">
+                                <a href="#" class="header__navbar-item-link">
+                                    <i class="fab fa-facebook header__navbar-item-icon"></i>
+                                </a>
+                                <a href="#" class="header__navbar-item-link">
+                                    <i class="fab fa-instagram header__navbar-item-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item header__navbar-item-notify--show">
+                                <span class="far-icon-mt">
+                                    <a href="#" class="header__navbar-item-link">
+                                        <i class="fas fa-bell"></i>
+                                    </a>
+                                    Thông báo
+                                </span>
+                                <div class="header__navbar-item-notify">
+                                    <header class="notify-header">
+                                        Thông báo mới nhận
+                                    </header>
+                                    <div class="notify-content-cover">
+                                        <!-- ... -->
+                                    </div>
+
+                                    <div class="notify-footer-container">
+                                        Xem tất cả
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header__navbar-item header__navbar-item-notify--show">
+                                <span class="far-icon-mt">
+                                    <a href="#" class="header__navbar-item-link">
+                                        <i class="far fa-question-circle header__navbar-item-icon"></i>
+                                    </a>
+                                    Hỗ trợ
+                                </span>
+                            </li>
+                            <li class="header__navbar-item header__navbar-item--separate">
+                                <a href="./src/views/login.html"class="far-icon-mt a-precent-default ">
+                                    hoangkim58
+                                    <div href="./src/views/login.html" class="header__navbar-item-link">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                        </ul>
+
+                    </nav>
+                    <div class="header__search">
+                        <div class="header__search-brand">
+                            <img src="./assets/img/logo-shopee.png" alt="brand-logo" class="header-brand">
+                        </div>
+                        <div class="header__search-looker-container">
+                            <div class="header__search-looker">
+                                <input type="text" class="header__search-looker-input"
+                                    placeholder="P&G - Trúng vé máy bay">
+                                <div class="btn-looker">
+                                    <i class="fas fa-search btn-looker-icon"></i>
+                                </div>
+                            </div>
+                            <div class="header__search-looker-trending">
+                                <div class="header__search-looker-trending-container">
+                                    <!-- .... -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header__search-cart header__search-cart-pseudo header__search-cart--hover">
+                            <i class="fas fa-shopping-cart header-cart"></i>
+                            <div class="header__search-cart-notify">
+                                <div class="cart-notify-container">
+                                    <!-- No find anything... -->
+                                    <div class="header__search-cart-nofind">
+                                    </div>
+                                    <div class="header__search-cart-title">
+                                        Chưa có sản phẩm
+                                    </div>
+
+                                    <!-- You have ... items -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Login Mobile -->
+                        <div class="header__search-cart header__search-login">
+                            <i class="fas fa-user-circle header-cart"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main__container">
+            <div class="grid">
+                <div class="main__container-promotion">
+
+                    <!-- arrow carousel__arrow promotion  -->
+                    <div class="stardust-carousel__arrow-container--show">
+                        <div class="stardust-carousel__arrow-container">
+                            <div class="carousel__arrow-container">
+                                <div class="carousel__arrow slideshow-carousel__arrow-prev">
+                                    <i class="fas fa-chevron-left carousel__arrow-icon-prev"></i>
+                                </div>
+                                <div class="carousel__arrow slideshow-carousel__arrow-next">
+                                    <i class="fas fa-chevron-right p-l-4 carousel__arrow-icon-next"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- promotion-slideshow -->
+                    <div class="main__container-promotion-slideshow">
+                        <!-- Content Render JS DOM -->
+
+                        <!-- dot-circle carousel__arrow promotion -->
+                        <div class="carousel__dot-container">
+                            <!-- @@@@ -->
+                        </div>
+
+                    </div>
+
+                    <!-- right-promotion banner top/down -->
+                    <div class="main__container-promotion-container">
+                        <div class="main__container-promotion-top-right">
+                            <img src="https://cf.shopee.sg/file/8d6775471b5e8f1e081149d932d69a7a_xhdpi" alt=""
+                                class="promotion-top-right-item">
+                        </div>
+                        <div class="main__container-promotion-bottom-right">
+                            <img src="https://cf.shopee.sg/file/c3f1e4b87e97a0a9409c9d0657800761_xhdpi" alt=""
+                                class="promotion-top-right-item">
+                        </div>
+                    </div>
+                </div>
+                <div class="main__container-menu-list">
+                    <!-- --- -->
+                </div>
+
+                <!-- first-order-voucher -->
+                <div class="main__container-first-order-voucher">
+                    <div class="main__container-first-order-voucher-img"
+                        style="background-image: url('./assets/img/first-order-voucher.jpg');">
+                    </div>
+                </div>
+
+                <!-- Catalog all kinds of products -->
+                <div class="main__container-allproducts-list">
+                    <div class="main__container-category-list">
+                        <div class="main__container-category-title l-12">
+                            Danh Mục
+                        </div>
+
+                        <div class="main__container-category-bar">
+                            <div class="main__container-category-bar--hidden">
+                                <!-- button pull left/right -->
+                                <div class="main__container-sm-carousel-btn main__container-category-cover-btn">
+                                    <div class="button-circle catalog-carousel__arrow-prev transition-visible--hidden">
+                                        <i class="fas fa-chevron-left carousel__arrow-icon-next"></i>
+                                    </div>
+                                    <div class="button-circle catalog-carousel__arrow-next">
+                                        <i class="fas fa-chevron-right carousel__arrow-icon-next"></i>
+                                    </div>
+                                </div>
+                                <div class="main__container-category-cover">
+                                    <!-- waiting render -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- @ flashsale -->
+                <div class="main__container-flashsale">
+                    <div class="main__container-categoryForm main__container-flashsale-height">
+                        <div class="main__container-categoryForm-header">
+                            <div class="main__container-categoryForm-container">
+                                <div class="main__container-flashsale-header-item-title"
+                                    style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/flashsale/fb1088de81e42c4e538967ec12cb5caa.png')">
+                                </div>
+                                <div class="main__container-flashsale-header-clock">
+                                    <!-- Flash clock -->
+                                </div>
+                            </div>
+                            <div class="main__container-categoryForm-header-link">
+                                Xem tất cả
+                                <i class="fas fa-chevron-right p-l-4"></i>
+                            </div>
+                        </div>
+                        <!-- @ -->
+                        <div class="main__container-flashsale-item-cover">
+                            <!-- button pull left/right -->
+                            <div class="main__container-sm-carousel-btn main__container-flashsale-carousel">
+                                <div class="button-circle flashsale-carousel__arrow-prev">
+                                    <i class="fas fa-chevron-left carousel__arrow-icon-next"></i>
+                                </div>
+                                <div class="button-circle flashsale-carousel__arrow-next">
+                                    <i class="fas fa-chevron-right carousel__arrow-icon-next"></i>
+                                </div>
+                            </div>
+                            <div class="main__container-flashsale-item-cover--overflow">
+                                <!--                                 
+                                    .... Render JS ....
+                            -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home skinny VN -->
+                <div class="m-t-20">
+                    <div class="main__container-home-skinny"
+                        style="background-image: url('https://cf.shopee.vn/file/e5a283417815b2a186f2565a4cc6368d')">
+                        <ul class="main__container-home-skinny-container">
+                            <li class="main__container-home-skinny-item l-4"></li>
+                            <li class="main__container-home-skinny-item l-4"></li>
+                            <li class="main__container-home-skinny-item l-4"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- @ Shop Mall -->
+                <div class="main__container-sm">
+                    <div class="main__container-categoryForm">
+                        <div class="main__container-categoryForm-header">
+                            <div class="main__container-categoryForm-container">
+                                <div class="main__container-categoryForm-header-title  main__container-sm-label ">
+                                    shopee mall
+                                </div>
+                                <div class="main__container-sm-label-edit p-l-15">
+                                    <div class="main__container-sm-label-img"
+                                        style="background-image: url('./assets/img/sm-genuine-product.png')">
+                                    </div>
+                                    Hàng chính hãng 100%
+                                </div>
+                                <div class="main__container-sm-label-edit">
+                                    <div class="main__container-sm-label-img"
+                                        style="background-image: url('./assets/img/sm-refund.png')">
+                                    </div>
+                                    7 ngày miễn phí trả hàng
+                                </div>
+                                <div class="main__container-sm-label-edit">
+                                    <div class="main__container-sm-label-img"
+                                        style="background-image: url('./assets/img/sm-freeship.png')">
+                                    </div>
+                                    Miễn phí vận chuyển
+                                </div>
+                            </div>
+                            <div class="main__container-categoryForm-header-link">
+                                Xem tất cả
+                                <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="main__container-sm-body">
+                            <div class="main__container-sm-body-slideshow-cover l-3">
+                                <div class="main__container-sm-body-slideshow-container l-4">
+
+                                    <!-- ShopMall carousel -->
+                                    <div class="main__container-sm-carousel--show">
+                                        <div class="main__container-sm-carousel">
+                                            <div class="carousel__arrow sm-slideshow-carousel__arrow-prev">
+                                                <i class="fas fa-chevron-left sm-carousel__arrow-icon-prev"></i>
+                                            </div>
+                                            <div class="carousel__arrow sm-slideshow-carousel__arrow-next">
+                                                <i class="fas fa-chevron-right  sm-carousel__arrow-icon-next p-l-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slideshow image -->
+                                    <!-- <div class="main__container-sm-body-slideshow-overflow">
+                                        
+                                    </div> -->
+                                    <!-- @@@@ -->
+
+                                    <!--Shop Mall dot-slideshow -->
+                                    <div class="sm-carousel__dot-container carousel__dot-container">
+                                        <!-- @@@@ -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="main__container-sm-insidebody-cover">
+                                <div class="main__container-sm-insidebody-outline">
+                                    <!-- button pull left/right -->
+                                    <div class="main__container-sm-carousel-btn">
+                                        <div class="button-circle sm-carousel__arrow-prev">
+                                            <i class="fas fa-chevron-left carousel__arrow-icon-prev"></i>
+                                        </div>
+                                        <div class="button-circle sm-carousel__arrow-next">
+                                            <i class="fas fa-chevron-right carousel__arrow-icon-next"></i>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="main__container-sm-insidebody-container sm-insidebody-container--width sm-item-list row ">
+                                        <!-- 
+                                            content....
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- @ Trends search -->
+                <div class="main__container-trends-search">
+                    <div class="main__container-categoryForm">
+                        <div class="main__container-categoryForm-header">
+                            <div class="main__container-categoryForm-container">
+                                <div class="main__container-categoryForm-header-title color-trends-search">
+                                    xu hướng tìm kiếm
+                                </div>
+                            </div>
+                            <div class="main__container-categoryForm-header-link">
+                                <i class="fas fa-sync-alt" style="transform: rotate(125deg);"></i>
+                                <span class="p-l-4">Xem thêm</span>
+                            </div>
+                        </div>
+                        <div class="main__container-trends-search-bound">
+                            <!-- 
+                                Content ....
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- @ Top search -->
+                <div class="main__container-top-search">
+                    <div class="main__container-categoryForm">
+                        <div class="main__container-categoryForm-header">
+                            <div class="main__container-categoryForm-container">
+                                <div class="main__container-categoryForm-header-title color-top-search">
+                                    tìm kiếm hàng đầu
+                                </div>
+                            </div>
+                            <div class="main__container-categoryForm-header-link">
+                                Xem tất cả
+                                <i class="fas fa-chevron-right p-l-4"></i>
+                            </div>
+                        </div>
+                        <div class="main__container-top-search-bound">
+                            <!-- Content -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- main__container show products and event product -->
+                <div id="products-table" class="main__container-products-table-main">
+                    <div class="main__container-products-table">
+                        <a href="#products-table" class="no-text_decoration">
+                            <ul class="main__container-products-table-header">
+                                <li class="products-table-header today-suggestion">
+                                    <div class="header__tab header__tab--active"></div>
+                                    <div class="main__container-products-today-suggestion">
+                                        GỢI Ý HÔM NAY
+                                    </div>
+                                </li>
+                                <li class="products-table-header today-event">
+                                    <div class="header__tab"></div>
+                                    <div class="main__container-products-today-event">
+                                        <img src="https://cf.shopee.vn/file/2e780fb0871808d7368408859ad62525" alt=""
+                                            class="main__container-products-today-event-img">
+                                    </div>
+                                </li>
+                            </ul>
+                        </a>
+                        <div class="main__container-products-table-header-container">
+                            <!-- show  product table list // today-suggestion  -->
+                            <section class="products-today-suggestion-list">
+                                <!-- Render  JS -->
+                            </section>
+
+                            <!-- show  product table list // event  -->
+                            <section class="products-event-products-list" style="display: none;">
+                                <!-- Render  JS -->
+                            </section>
+                            <div class="main__container-see-more">
+                                <div class="btn-see-more">Xem thêm</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- @ footer  -->
+        <footer>
+            <div class="footer__about-background">
+                <div class="grid ">
+                    <div class="footer__about">
+                        <div class="footer__about-custumer-care-container l-2-4">
+                            <div class="footer__about-custumer-care-title">Chăm sóc khách hàng</div>
+                            <ul class="footer__about-custumer-care">
+                                <li class="footer__about-custumer-care-item">Trung tâm trợ giúp</li>
+                                <li class="footer__about-custumer-care-item">Shopee Blog</li>
+                                <li class="footer__about-custumer-care-item">Shopee Mall</li>
+                                <li class="footer__about-custumer-care-item">Hướng dẫn mua hàng</li>
+                                <li class="footer__about-custumer-care-item">Hướng dẫn bán hàng</li>
+                                <li class="footer__about-custumer-care-item">Thanh toán</li>
+                                <li class="footer__about-custumer-care-item">Shopee Xu</li>
+                                <li class="footer__about-custumer-care-item">Vận chuyển</li>
+                                <li class="footer__about-custumer-care-item">Trả hàng & Hoàn tiền</li>
+                                <li class="footer__about-custumer-care-item">Chăm sóc khách hàng</li>
+                                <li class="footer__about-custumer-care-item">Chính sách bảo hành</li>
+                            </ul>
+                        </div>
+                        <div class="footer__about-custumer-care-container l-2-4">
+                            <div class="footer__about-custumer-care-title">Về shopee</div>
+                            <ul class="footer__about-custumer-care">
+                                <li class="footer__about-custumer-care-item">Giới thiệu về Shopee Việt Nam</li>
+                                <li class="footer__about-custumer-care-item">Tuyển dụng</li>
+                                <li class="footer__about-custumer-care-item">Điều Khoản Shopee</li>
+                                <li class="footer__about-custumer-care-item">Chính sách bảo mật</li>
+                                <li class="footer__about-custumer-care-item">Chính hãng</li>
+                                <li class="footer__about-custumer-care-item">Kênh người bán</li>
+                                <li class="footer__about-custumer-care-item">Flash sales</li>
+                                <li class="footer__about-custumer-care-item">Chương trình thị liên kết shopee</li>
+                                <li class="footer__about-custumer-care-item">liên hệ với truyền thông</li>
+                            </ul>
+                        </div>
+
+                        <!-- Payment & shipping unit -->
+                        <div class="footer__about-custumer-care-container l-2-4">
+                            <div class="footer__about-custumer-care-title">
+                                <div>thanh toán</div>
+                                <div class="footer__about-payment">
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 983.3333333333334%;
+                                                    background-position: 84.6938775510204% 6.289308176100629%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 49.416909620991255% 41.891891891891895%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 769.5652173913044%;
+                                                background-position: 38.48396501457726% 38.311688311688314%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1482% 804.5454545454545%;
+                                                background-position: 1.447178002894356% 6.451612903225806%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1482% 610.3448275862069%;
+                                                background-position: 59.91316931982634% 63.513513513513516%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 19.97084548104956% 66.21621621621621%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-m" style="background-size: 741% 931.578947368421%;
+                                                background-position: 71.9188767550702% 6.329113924050633%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer__about-custumer-care-title">
+                                <div> đơn vị vận chuyển </div>
+                                <div class="footer__about-shipping-unit">
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-m" style="background-size: 667.5675675675676% 983.3333333333334%;
+                                                background-position: 65.71428571428571% 35.22012578616352%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-m" style="background-size: 1347.2727272727273% 983.3333333333334%;
+                                                background-position: 19.97084548104956% 37.735849056603776%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 9.037900874635568% 40.54054054054054%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 524.90625% 274.28125%;
+                                                background-position: 89.907015% 70%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 655.5555555555555%;
+                                                background-position: 1.4577259475218658% 72.66666666666667%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 1106.25%;
+                                                background-position: 95.6268221574344% 6.211180124223603%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 552.9850746268656% 610.3448275862069%;
+                                                background-position: 29.9835255354201% 6.756756756756757%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1235% 680.7692307692307%;
+                                                background-position: 55.947136563876654% 6.622516556291391%;">
+                                        </div>
+                                    </div>
+                                    <div class="footer__about-container">
+                                        <div class="footer__about-item-s" style="background-size: 1029.1666666666667% 590%;
+                                                background-position: 13.452914798206278% 6.802721088435374%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- About social media -->
+                        <div class="footer__about-custumer-care-container l-2-4">
+                            <div class="footer__about-custumer-care-title">theo dõi chúng tôi trên</div>
+                            <div class="footer__about-custumer-care-item">
+                                <i class="footer__about-social-media fab fa-facebook"></i>
+                                <span class="">Facebook</span>
+                            </div>
+                            <div class="footer__about-custumer-care-item">
+                                <i class="footer__about-social-media fab fa-instagram-square"></i>
+                                <span class="">Instagram</span>
+                            </div>
+                            <div class="footer__about-custumer-care-item">
+                                <i class="footer__about-social-media fab fa-linkedin"></i>
+                                <span class="">LinkedIn</span>
+                            </div>
+                        </div>
+
+                        <!-- dowload App from different background -->
+                        <div class="footer__about-custumer-care-container l-2-4">
+                            <div class="footer__about-custumer-care-title">tải ứng dụng shopee ngay thôi</div>
+                            <div class="footer__about-dowload-now">
+                                <div class="footer__about-dowload-qr"
+                                    style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png');">
+                                </div>
+                                <div class="footer__about-dowload-apps">
+                                    <div class="footer__about-dowload-app"
+                                        style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png');">
+                                    </div>
+                                    <div class="footer__about-dowload-app"
+                                        style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png');">
+                                    </div>
+                                    <div class="footer__about-dowload-app"
+                                        style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/1ae215920a31f2fc75b00d4ee9ae8551.png');">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- about copyright and nation supplier -->
+                    <div class="footer__about-copyright-nation">
+                        <div class="footer__about-copyright">
+                            © 2021 Shopee. Tất cả các quyền được bảo lưu.
+                        </div>
+                        <div class="footer__about-nation-container">
+                            <span>Quốc gia & Khu vực:</span>
+                            <div class="footer__about-nation">Singapore</div>
+                            <div class="footer__about-nation">indonesia </div>
+                            <div class="footer__about-nation">đài loan </div>
+                            <div class="footer__about-nation"> thái lan</div>
+                            <div class="footer__about-nation">malaysia </div>
+                            <div class="footer__about-nation">việt nam </div>
+                            <div class="footer__about-nation">philippines </div>
+                            <div class="footer__about-nation">brazil </div>
+                            <div class="footer__about-nation">méxico </div>
+                            <div class="footer__about-nation">colombio </div>
+                            <div class="footer__about-nation">chile </div>
+                            <div class="footer__about-nation">poland </div>
+                            <div class="footer__about-nation">spain </div>
+                            <div class="footer__about-nation">france </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="p-t-b-35">
+                    <div class="footer__policy-container">
+                        <div class="footer__policy">Chính sách bảo mật</div>
+                        <div class="footer__policy">Quy chế hoạt động</div>
+                        <div class="footer__policy">Chính sách vận chuyển</div>
+                        <div class="footer__policy">Quy trình giải quyết tranh chấp</div>
+                    </div>
+                    <div class="footer__policy-registered-items">
+                        <div class="footer__policy-registered footer__policy-registered-1"
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
+                        </div>
+                        <div class="footer__policy-registered footer__policy-registered-1"
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
+                        </div>
+                        <div class="footer__policy-registered footer__policy-registered-2"
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
+                        </div>
+                    </div>
+                    <div class="footer__company">
+                        <div class="footer__company-name footer__company-edit-font">
+                            Công ty TNHH Shopee
+                        </div>
+                        <div class="footer__company-edit-font m-t-8">
+                            Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận
+                            Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
+                        </div>
+                        <div class="footer__company-edit-font m-t-8">
+                            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext
+                            4678)
+                        </div>
+                        <div class="footer__company-edit-font m-t-8">
+                            Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
+                        </div>
+                        <div class="footer__company-edit-font m-t-8">
+                            © 2015 - Bản quyền thuộc về Công ty TNHH Shopee
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app__skinny-banner">
+                <img src="https://cf.shopee.vn/file/f630b99bef39b0226e962ba7d6750e68" alt="app__skinny-banner"
+                    class="app__skinny-banner-item">
+            </div>
+            <a href="#" class="app__skinny-gotop">
+                <i class="fas fa-chevron-up gotop"></i>
+            </a>
+
+            <div class="app__skinny-chat d-flex">
+                <div class="chat-box--status d-flex">
+                    <span>
+                        <i class="fas fa-comments chat-box-icon border-none"></i>
+                    </span>
+                    <span class="chat-box-text">
+                        Chat
+                    </span>
+                    <span class="waiting-message"></span>
+                </div>
+            </div>
+            <div class="message__box-container--status" style="display: none;">
+                <div class="message__box-area" d>
+                    <div class="message__box-container">
+                        <div class="message__box-header">
+                            <span class="chat-box-text">
+                                <span class="">Chat</span>
+                                <span class="notify-new-message"></span>
+                            </span>
+                            <span>
+                                <span class="chat-box-icon btn-minimize">
+                                    <i class="fas fa-caret-left"></i>
+                                </span>
+                                <span class="chat-box-icon btn-close">
+                                    <i class="fas fa-caret-down"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="message__box-search-container">
+
+                            <div class="message__box-search">
+                                <div class="message__box-search-header d-flex">
+                                    <div class="message__box-search" style="width: 76%;">
+                                        <i class="fas fa-search chat-box__looker-icon"></i>
+                                        <input class="message__box-search-input"
+                                            placeholder="Tìm theo tên người dùng" />
+                                    </div>
+                                    <div id="f-container">
+                                        <span class="message__box-btn-all">Tất cả</span>
+                                        <span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </div>
+                                    <div class="message__box-search-filter-container">
+                                        <div id="f-all" class="message__box-search-filter-item">Tất cả</div>
+                                        <div id="f-read" class="message__box-search-filter-item">Chưa đọc</div>
+                                        <div id="f-pin" class="message__box-search-filter-item">Đã ghim</div>
+                                    </div>
+                                    <span class="out-search " style="display: none;">
+                                        <!-- content render -->
+                                    </span>
+
+                                </div>
+                                <div class="message__box-search-content-frame">
+                                    <div class="message__box-search-content" style="display: block !important;">
+                                        <!-- <div class="message__box-search-container">
+                                            ...Render JS...
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message__box-search chat-content--show">
+                                <div class="chat-content-container--default">
+                                    <img class="message__box-img-default"
+                                        src="https://deo.shopeemobile.com/shopee/shopee-seller-live-vn/chateasy/6abdc0872a25853b36d17e7498335326.png"
+                                        alt="">
+                                    <p class="chat-content-default" style="text-align: center;">Xin chào !</p>
+                                </div>
+                                <div id="default" class="chat-content-container--active">
+                                    <div class="offfical-content-container">
+                                        <div class="offfical-content-header">
+                                            <img src="	https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn"
+                                                class="" style="width: 25px; height: 25px;" />
+                                            <p class="offfical-content-name">wr</p>
+                                            <span><i
+                                                    class="offfical-content-header-menu fas fa-chevron-down"></i></span>
+                                        </div>
+                                        <div class="offfical-content-message-boundary">
+                                            <div class="offfical-content-message-overflow">
+
+                                            </div>
+                                            <!-- render content chat -->
+                                            <!-- <div class="offfical-content-message-container">
+                                                <div class="offfical-content-message contact-chat-content">
+                                                    asdsd
+                                                </div>  
+                                                <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
+                                                    <i class="fas fa-ellipsis-h"></i></span>
+                                            </div>  -->
+                                        </div>
+                                        <div class="offfical-content-response">
+                                            <span style="flex: 1">
+                                                <input type="text" class="enter-message" placeholder="Gửi tin nhắn">
+                                            </span>
+                                            <span class="send-message btn-send">
+                                                <i class="fas fa-paper-plane send-message"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message__box-content"></div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <div class="app__skinny-commercial">
+            <div class="commercial-container">
+                <div class="commercial-item">
+                    <img src="https://cf.shopee.vn/file/dad1ab528e9145dbd261aec8e3d943f4" class="commercial-item-img"
+                        alt="commercial image">
+                    <div class="btn__close-commercial">
+                        &times;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
