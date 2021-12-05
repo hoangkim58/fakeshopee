@@ -182,8 +182,6 @@
         var inSlideShowShopMall = document.querySelector('.main__container-sm-body-slideshow-overflow')
         var quatitySlideShowShopMall = inSlideShowShopMall.querySelectorAll('.main__container-sm-body-slideshow').length
     
-        console.log(quatitySlideShowShopMall)
-
         for(let i=0; i < quatitySlideShowShopMall; i++){  
             var div= document.createElement("div")
             shopMallContainerr.appendChild(div)  
@@ -203,26 +201,32 @@
         function isClickShopMallArrowPrev() { 
 
             if(numOfSlideShopMall === 0){
+                removeShopMallDot(0)
+                addShopMallDot(quatitySlideShowShopMall-1)
                 numOfSlideShopMall = quatitySlideShowShopMall - 1
                 inSlideShowShopMall.setAttribute('style', `left: ${-( quatitySlideShowShopMall-1)}00%`) 
                 console.log(numOfSlideShopMall)
             }
             else if(numOfSlideShopMall < quatitySlideShowShopMall){
-
+                removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall--
+                addShopMallDot(numOfSlideShopMall)
                 inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
             }
         }
         function isClickShopMallArrowNext() {
 
             if( numOfSlideShopMall < quatitySlideShowShopMall-1){
-
+                removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall++
+                addShopMallDot(numOfSlideShopMall)
                 inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
             }
             else{
-
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)  
+                removeShopMallDot(quatitySlideShowShopMall -1)
+                addShopMallDot(0)
+                console.log(quatitySlideShowShopMall)
                 return numOfSlideShopMall = 0
             }
 
@@ -249,30 +253,46 @@
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)  
                 return numOfSlideShopMall = 0
             }
-        }, 1000);
+        }, 3000);
 
         // Shop Mall inside items arrow 
         var shopMallInSideContainer = document.querySelector('.main__container-sm-insidebody-container')
         var clickShopMallInsidePrev = document.querySelector('.sm-carousel__arrow-prev')
         var clickShopMallInsideNext = document.querySelector('.sm-carousel__arrow-next')
-        
+        var quatityOfColumnItems = document.querySelectorAll('.main__container-sm-body-item').length
+        var quatityOfFrameItems =  Math.ceil(quatityOfColumnItems/4)
+        let quatityOfFrameItem = 0;
+
         var clickShopMallArrowStatus = (DefineArrow,Status) => {
             DefineArrow.setAttribute('style',`visibility: ${Status};`)
         }
-
         clickShopMallArrowStatus(clickShopMallInsidePrev, 'hidden')
 
         clickShopMallInsidePrev.addEventListener('click', isClickShopMallInsidePrev)
-        function isClickShopMallInsidePrev(){
-            shopMallInSideContainer.setAttribute('style','right: 0%;')
-            clickShopMallArrowStatus(clickShopMallInsidePrev, 'hidden')
-            clickShopMallArrowStatus(clickShopMallInsideNext, 'visible')
-        }
+        function isClickShopMallInsidePrev(){ 
+            if(quatityOfFrameItem < quatityOfFrameItems){ 
+                quatityOfFrameItem-- 
+                shopMallInSideContainer.setAttribute('style',`right: ${quatityOfFrameItem*100}%;`) 
+                clickShopMallArrowStatus(clickShopMallInsideNext, 'visible')  
+                console.log(quatityOfFrameItem)
+
+                if(quatityOfFrameItem === 0){ 
+                    clickShopMallArrowStatus(clickShopMallInsidePrev, 'hidden')
+                }
+            }
+        } 
 
         clickShopMallInsideNext.addEventListener('click', isClickShopMallInsideNext)
         function isClickShopMallInsideNext(){
-            shopMallInSideContainer.setAttribute('style','right: 100%;')
-            clickShopMallArrowStatus(clickShopMallInsideNext, 'hidden')
+            if(quatityOfFrameItem < quatityOfFrameItems - 1){
+                quatityOfFrameItem++ 
+                shopMallInSideContainer.setAttribute('style',`right: ${quatityOfFrameItem*100}%;`) 
+                console.log(quatityOfFrameItem) 
+                if (quatityOfFrameItem === quatityOfFrameItems -1){
+                    shopMallInSideContainer.setAttribute('style',`right: ${quatityOfFrameItem*100}%;`)  
+                    clickShopMallArrowStatus(clickShopMallInsideNext, 'hidden')  
+                }
+            }
             clickShopMallArrowStatus(clickShopMallInsidePrev, 'visible')
         }
 

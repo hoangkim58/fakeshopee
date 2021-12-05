@@ -1103,7 +1103,7 @@
     position: relative;
     right: 0%;
     margin: 0px;
-    width: 200%;
+    width: 300%;
     height: 47.2rem;
     transition: ease-in 0.4s;
 }
@@ -1132,10 +1132,21 @@
     position: absolute;
     left: 2.7rem;
     bottom: 2rem;
+    width: 15rem;
     font-size: 1.8rem;
     line-height: 2rem; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
     color: #d0011b;
     cursor: text;
+}
+
+.sm-body-item-seemore {
+    font-size: 1.8rem;
+    height: 100%;
+    justify-content: center;
 }
 
 .main__container-sm-carousel-btn {  
