@@ -190,7 +190,7 @@
             add.classList.add('carousel__dot')
             add.classList.add('slideshow-carousel__dot')   
         }
-
+        
         // Shop mall slideshow carousel arrow
         var clickShopMallArrowPrev = document.querySelector('.sm-slideshow-carousel__arrow-prev')
         var clickShopMallArrowNext = document.querySelector('.sm-slideshow-carousel__arrow-next')
@@ -198,49 +198,12 @@
         clickShopMallArrowPrev.addEventListener('click', isClickShopMallArrowPrev)
         clickShopMallArrowNext.addEventListener('click', isClickShopMallArrowNext)
 
-        function isClickShopMallArrowPrev() { 
+        var setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+        function timeShopMallSlideShow(){
 
-            if(numOfSlideShopMall === 0){
-                removeShopMallDot(0)
-                addShopMallDot(quatitySlideShowShopMall-1)
-                numOfSlideShopMall = quatitySlideShowShopMall - 1
-                inSlideShowShopMall.setAttribute('style', `left: ${-( quatitySlideShowShopMall-1)}00%`) 
-                console.log(numOfSlideShopMall)
-            }
-            else if(numOfSlideShopMall < quatitySlideShowShopMall){
-                removeShopMallDot(numOfSlideShopMall)
-                numOfSlideShopMall--
-                addShopMallDot(numOfSlideShopMall)
-                inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
-            }
-        }
-        function isClickShopMallArrowNext() {
+            clickDotCarouselAccess(numOfSlideShopMall)
 
-            if( numOfSlideShopMall < quatitySlideShowShopMall-1){
-                removeShopMallDot(numOfSlideShopMall)
-                numOfSlideShopMall++
-                addShopMallDot(numOfSlideShopMall)
-                inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
-            }
-            else{
-                inSlideShowShopMall.setAttribute('style', `left: 0%`)  
-                removeShopMallDot(quatitySlideShowShopMall -1)
-                addShopMallDot(0)
-                console.log(quatitySlideShowShopMall)
-                return numOfSlideShopMall = 0
-            }
 
-        }
-        
-        var addShopMallDot = (s) => {
-            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.add('carousel__dot--active')
-        }
-        var removeShopMallDot = (s) => {
-            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.remove('carousel__dot--active')
-        }
-        addShopMallDot(0)
-
-        setInterval(() => { 
             if( numOfSlideShopMall < quatitySlideShowShopMall-1){
                 removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall++
@@ -253,7 +216,70 @@
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)  
                 return numOfSlideShopMall = 0
             }
-        }, 3000);
+        }
+
+        function isClickShopMallArrowPrev() { 
+           
+            //clearInterval sm slideshow
+            clearInterval(setTimeShopMallSlideShow)     
+            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+
+            if(numOfSlideShopMall === 0){
+
+                removeShopMallDot(0)
+                addShopMallDot(quatitySlideShowShopMall-1)
+                numOfSlideShopMall = quatitySlideShowShopMall - 1
+                inSlideShowShopMall.setAttribute('style', `left: ${-( quatitySlideShowShopMall-1)}00%`) 
+            }
+            else if(numOfSlideShopMall < quatitySlideShowShopMall){
+                removeShopMallDot(numOfSlideShopMall)
+                numOfSlideShopMall--
+                addShopMallDot(numOfSlideShopMall)
+                inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
+            }
+        }
+        function isClickShopMallArrowNext() {
+
+            //clearInterval sm slideshow
+            clearInterval(setTimeShopMallSlideShow)  
+            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+
+            document.querySelector('.main__container-sm-body-slideshow-container').clearInte
+            if( numOfSlideShopMall < quatitySlideShowShopMall-1){
+                removeShopMallDot(numOfSlideShopMall)
+                numOfSlideShopMall++
+                addShopMallDot(numOfSlideShopMall)
+                inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
+            }
+            else{
+                inSlideShowShopMall.setAttribute('style', `left: 0%`)  
+                removeShopMallDot(quatitySlideShowShopMall -1)
+                addShopMallDot(0)
+                return numOfSlideShopMall = 0
+            }
+
+        }
+        
+        let num = 0;
+        // click Dot carousel access clicked_dot
+        function clickDotCarouselAccess(num){
+            for(let i=0; i <quatitySlideShowShopMall;i++){ 
+                var isClickDotOfSMSlideshow = document.querySelectorAll('.sm-carousel__dot-container .carousel__dot')[i] 
+                isClickDotOfSMSlideshow.addEventListener('click', function(){
+                    addShopMallDot(i)  
+                    inSlideShowShopMall.setAttribute('style', `left: ${-i}00%`) 
+                    removeShopMallDot(num)  
+                })
+            } 
+        }
+
+        var addShopMallDot = (s) => {
+            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.add('carousel__dot--active')
+        }
+        var removeShopMallDot = (s) => {
+            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.remove('carousel__dot--active')
+        }
+        addShopMallDot(0)
 
         // Shop Mall inside items arrow 
         var shopMallInSideContainer = document.querySelector('.main__container-sm-insidebody-container')
