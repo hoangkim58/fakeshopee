@@ -1,5 +1,5 @@
  
-    document.addEventListener('DOMContentLoaded', function () {  
+    document.addEventListener('DOMContentLoaded', function () {   
 
         var isClickSlideshowPromotionPrev = document.querySelector(".slideshow-carousel__arrow-prev")
         var isClickSlideshowPromotionNext = document.querySelector(".slideshow-carousel__arrow-next")
@@ -12,6 +12,7 @@
         var isClickCatalogArrowPrev = document.querySelector(".catalog-carousel__arrow-prev")
         var isClickCatalogArrowNext = document.querySelector(".catalog-carousel__arrow-next")
         let numSlideshowPomotion= 1; 
+        let temp= 0;
         
         // slideshow-promotion
         var quatitySlideshowDot = document.querySelectorAll('.carousel__dot-container').length
@@ -198,11 +199,32 @@
         clickShopMallArrowPrev.addEventListener('click', isClickShopMallArrowPrev)
         clickShopMallArrowNext.addEventListener('click', isClickShopMallArrowNext)
 
-        var setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+         // click Dot carousel access clicked_dot
+         function clickDotCarouselAccess(num){ 
+            for( let i=0 ; i <quatitySlideShowShopMall ; i++){ 
+                var isClickDotOfSMSlideshow = document.querySelectorAll('.sm-carousel__dot-container .carousel__dot')[i] 
+                isClickDotOfSMSlideshow.addEventListener('click', function(){
+                    
+                    inSlideShowShopMall.setAttribute('style', `left: ${-i}00%`) 
+
+                    //clear Interval sm slideshow
+                    clearInterval(setTimeShopMallSlideShow)  
+
+                    removeShopMallDot(num) 
+                    addShopMallDot(i)   
+                    numOfSlideShopMall = i
+
+                     //set Interval sm slideshow
+                     setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,3000)
+                }) 
+            }
+        }  
+
+        // set time automatic carousel 
+        var setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow , 3000)
         function timeShopMallSlideShow(){
 
             clickDotCarouselAccess(numOfSlideShopMall)
-
 
             if( numOfSlideShopMall < quatitySlideShowShopMall-1){
                 removeShopMallDot(numOfSlideShopMall)
@@ -211,10 +233,10 @@
                 addShopMallDot(numOfSlideShopMall)
             }
             else{
+                numOfSlideShopMall = 0
                 removeShopMallDot(quatitySlideShowShopMall-1) 
                 addShopMallDot(0)
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)  
-                return numOfSlideShopMall = 0
             }
         }
 
@@ -222,7 +244,7 @@
            
             //clearInterval sm slideshow
             clearInterval(setTimeShopMallSlideShow)     
-            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow , 3000)
 
             if(numOfSlideShopMall === 0){
 
@@ -242,7 +264,7 @@
 
             //clearInterval sm slideshow
             clearInterval(setTimeShopMallSlideShow)  
-            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,2000)
+            setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,3000)
 
             document.querySelector('.main__container-sm-body-slideshow-container').clearInte
             if( numOfSlideShopMall < quatitySlideShowShopMall-1){
@@ -257,22 +279,8 @@
                 addShopMallDot(0)
                 return numOfSlideShopMall = 0
             }
-
         }
-        
-        let num = 0;
-        // click Dot carousel access clicked_dot
-        function clickDotCarouselAccess(num){
-            for(let i=0; i <quatitySlideShowShopMall;i++){ 
-                var isClickDotOfSMSlideshow = document.querySelectorAll('.sm-carousel__dot-container .carousel__dot')[i] 
-                isClickDotOfSMSlideshow.addEventListener('click', function(){
-                    addShopMallDot(i)  
-                    inSlideShowShopMall.setAttribute('style', `left: ${-i}00%`) 
-                    removeShopMallDot(num)  
-                })
-            } 
-        }
-
+         
         var addShopMallDot = (s) => {
             document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.add('carousel__dot--active')
         }
