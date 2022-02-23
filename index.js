@@ -1,8 +1,8 @@
  
     document.addEventListener('DOMContentLoaded', function () {   
 
-        var isClickSlideshowPromotionPrev = document.querySelector(".slideshow-carousel__arrow-prev")
-        var isClickSlideshowPromotionNext = document.querySelector(".slideshow-carousel__arrow-next")
+        var isisClickSlideshowPromotionPrev = document.querySelector(".slideshow-carousel__arrow-prev")
+        var isisClickSlideshowPromotionNext = document.querySelector(".slideshow-carousel__arrow-next")
         var clickSlideshowPromotionPosition = document.querySelector(".main__container-promotion-slideshow-container")
         var isClickTodaySuggestion = document.querySelector('.today-suggestion');
         var isClickTodayEvent = document.querySelector('.today-event');  
@@ -11,21 +11,20 @@
         var isClickCatalogArrowPosition = document.querySelector(".main__container-category-cover")  
         var isClickCatalogArrowPrev = document.querySelector(".catalog-carousel__arrow-prev")
         var isClickCatalogArrowNext = document.querySelector(".catalog-carousel__arrow-next")
-        let numSlideshowPomotion= 1; 
         let temp= 0;
         
         // slideshow-promotion
         var quatitySlideshowDot = document.querySelectorAll('.carousel__dot-container').length
         var imgSlideshowPromotion = document.querySelectorAll('.main__container-promotion-item')
         var quatitySlideShowPromotion = document.querySelectorAll('.main__container-promotion-item').length
-        isClickSlideshowPromotionPrev.addEventListener("click", clickSlideshowPromotionPrev)
-        isClickSlideshowPromotionNext.addEventListener("click", clickSlideshowPromotionNext)     
+        isisClickSlideshowPromotionPrev.addEventListener("click", isClickSlideshowPromotionPrev)
+        isisClickSlideshowPromotionNext.addEventListener("click", isClickSlideshowPromotionNext)     
         
         // add div carousel-dot
-        var ads = document.querySelector('.carousel__dot-container')
+        var carouselDotContainer = document.querySelector('.carousel__dot-container')
         for(let i=0; i < quatitySlideShowPromotion; i++){  
             var div= document.createElement("div")
-            ads.appendChild(div)  
+            carouselDotContainer.appendChild(div)  
             var add = document.querySelectorAll('.carousel__dot-container div')[i]
             add.setAttribute('data-value',[i])
             add.classList.add('carousel__dot')
@@ -35,58 +34,110 @@
         //active dot carousel slideshow promotion
         var addDotCarouselDefault = document.querySelectorAll('.carousel__dot-container div')[0].classList.add('carousel__dot--active')
         var slideshowDot = document.querySelectorAll('.slideshow-carousel__dot') 
-        
-        function clickSlideshowPromotionPrev (){
+        let numSlideshowPomotion= 0;  
 
-            if(numSlideshowPomotion <= 0){   
-                numSlideshowPomotion = quatitySlideShowPromotion - 1 
-                slideshowDot[0].classList.remove('carousel__dot--active')
-                slideshowDot[numSlideshowPomotion].classList.add('class','carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style",`right: ${numSlideshowPomotion}00%;`) 
-            }
-            else if(numSlideshowPomotion <= quatitySlideShowPromotion){     
-                numSlideshowPomotion--;
-                slideshowDot[numSlideshowPomotion+1].classList.remove('carousel__dot--active')
-                slideshowDot[numSlideshowPomotion].classList.add('class','carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style",`right: ${numSlideshowPomotion}00%;`) 
-            }
+        const addSlideshowDot = (num) => {
+            slideshowDot[num].classList.add('carousel__dot--active')
         }
+
+        const removeSlideshowDot = (num) => {
+            slideshowDot[num].classList.remove('carousel__dot--active')
+        }
+
+        var setPositionBannersTopPromotion = (num) => {
+            clickSlideshowPromotionPosition.setAttribute("style",`right: ${num}00%;`) 
+        }
+
         
-        function clickSlideshowPromotionNext (){
-            
+        // If guy wanna be change Banners Page, press on DotPosition 
+        carouselDotContainer.addEventListener('click', function(){
+            for(let i=0; i < quatitySlideShowPromotion ; i++){
+                var a = document.querySelectorAll('.carousel__dot-container .carousel__dot')[i]
+                a.addEventListener('click', function(){
+                    
+                removeSlideshowDot(numSlideshowPomotion)
+                numSlideshowPomotion = i
+
+                // reset time automation
+                clearInterval(timeAutomaticOfBanners)   
+                timeAutomaticOfBanners =  setInterval( setTimeAutomaticOfBanners, 2000);
+
+                setPositionBannersTopPromotion(i)
+                addSlideshowDot(i)
+                    
+                })
+            }
+        })
+
+
+        // setTime automation
+        
+        const setTimeAutomaticOfBanners = () => {
             if (numSlideshowPomotion < quatitySlideShowPromotion-1){     
                 numSlideshowPomotion++;
-                slideshowDot[numSlideshowPomotion-1].classList.remove('carousel__dot--active')
-                slideshowDot[numSlideshowPomotion].classList.add('class','carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style",`right: ${numSlideshowPomotion}00%;`) 
+                removeSlideshowDot(numSlideshowPomotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
+                
             }
             else{ 
                 numSlideshowPomotion = 0; 
-                slideshowDot[quatitySlideShowPromotion-1].classList.remove('carousel__dot--active')
-                slideshowDot[numSlideshowPomotion].classList.add('class','carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style",`right: 0%;`) 
+                removeSlideshowDot(quatitySlideShowPromotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
             }
-        } 
+        }
+    
+        let timeAutomaticOfBanners = setInterval( setTimeAutomaticOfBanners, 2000);
+
+
+        // button Prev arrow banners top promotion
+        function isClickSlideshowPromotionPrev (){
+
+            // reset timeBanners
+            clearInterval(timeAutomaticOfBanners)   
+            timeAutomaticOfBanners =  setInterval( setTimeAutomaticOfBanners, 2000);
+
+            if(numSlideshowPomotion <= 0){   
+                numSlideshowPomotion = quatitySlideShowPromotion - 1 
+                removeSlideshowDot(0)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
+                
+            }
+            else if(numSlideshowPomotion <= quatitySlideShowPromotion){     
+                numSlideshowPomotion--;
+                removeSlideshowDot(numSlideshowPomotion+1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
+                
+            }
+        }
         
-        setInterval(() => {
-            var slideshowDot = document.querySelectorAll('.slideshow-carousel__dot')
-            if (numSlideshowPomotion < quatitySlideShowPromotion){ 
-                // console.log(numSlideshowPomotion)
-                slideshowDot[numSlideshowPomotion-1].classList.remove('carousel__dot--active')
-                slideshowDot[numSlideshowPomotion].classList.add('class','carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style", `right: ${numSlideshowPomotion}00%;`) 
-                return numSlideshowPomotion++
+        // button Next arrow banners top promotion 
+        function isClickSlideshowPromotionNext (){
+
+            // reset timeBanners 
+            clearInterval(timeAutomaticOfBanners)   
+            timeAutomaticOfBanners =  setInterval( setTimeAutomaticOfBanners, 2000);
+
+
+            if (numSlideshowPomotion < quatitySlideShowPromotion-1){     
+                numSlideshowPomotion++;
+                removeSlideshowDot(numSlideshowPomotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
+                
             }
             else{ 
-                // console.log(numSlideshowPomotion)
-                slideshowDot[quatitySlideShowPromotion-1].classList.remove('carousel__dot--active')
-                slideshowDot[0].classList.add('carousel__dot--active')
-                clickSlideshowPromotionPosition.setAttribute("style", `right: 0%;`)
-                return numSlideshowPomotion = 1;
-            } 
-        }, 2000); 
-
-        // flashsale__clock
+                numSlideshowPomotion = 0; 
+                removeSlideshowDot(quatitySlideShowPromotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(0)
+            }
+        } 
+ 
+        // flashsale__clock-Group
         var positionOfNumSecond = document.querySelector('.flashsale__clock-container')
         let numSecond = 1
 
@@ -143,6 +194,7 @@
 
             }
         }
+
         // @ ?? ?? //
         isClickCatalogArrowPrev.addEventListener("click", ClickCatalogArrowPrev)
         function ClickCatalogArrowPrev() { 
