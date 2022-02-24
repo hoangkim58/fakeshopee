@@ -1,5 +1,5 @@
  
-    document.addEventListener('DOMContentLoaded', function () {   
+    document.addEventListener('DOMContentLoaded', function () {    
 
         var isisClickSlideshowPromotionPrev = document.querySelector(".slideshow-carousel__arrow-prev")
         var isisClickSlideshowPromotionNext = document.querySelector(".slideshow-carousel__arrow-next")
@@ -47,29 +47,27 @@
         var setPositionBannersTopPromotion = (num) => {
             clickSlideshowPromotionPosition.setAttribute("style",`right: ${num}00%;`) 
         }
+ 
+        // If guy wanna be change Banners Page, press on DotPosition  
+        carouselDotContainer.addEventListener('click', isClickDotPositionSlide)
 
-        
-        // If guy wanna be change Banners Page, press on DotPosition 
-        carouselDotContainer.addEventListener('click', function(){
+        function isClickDotPositionSlide(){
             for(let i=0; i < quatitySlideShowPromotion ; i++){
-                var a = document.querySelectorAll('.carousel__dot-container .carousel__dot')[i]
-                a.addEventListener('click', function(){
-                    
-                removeSlideshowDot(numSlideshowPomotion)
-                numSlideshowPomotion = i
 
+                var currentDotPosition = document.querySelectorAll('.carousel__dot-container .carousel__dot')[i] 
+
+                currentDotPosition.addEventListener('click', function(){ 
+                removeSlideshowDot(numSlideshowPomotion)
+                numSlideshowPomotion = i 
                 // reset time automation
                 clearInterval(timeAutomaticOfBanners)   
-                timeAutomaticOfBanners =  setInterval( setTimeAutomaticOfBanners, 2000);
-
+                timeAutomaticOfBanners =  setInterval( setTimeAutomaticOfBanners, 2000); 
                 setPositionBannersTopPromotion(i)
                 addSlideshowDot(i)
                     
                 })
             }
-        })
-
-
+        }
         // setTime automation
         
         const setTimeAutomaticOfBanners = () => {
@@ -141,6 +139,8 @@
         var positionOfNumSecond = document.querySelector('.flashsale__clock-container')
         let numSecond = 1
 
+
+
         setInterval(() => {
             if(numSecond < 11){
                 positionOfNumSecond.setAttribute('style',`top: ${-numSecond*2}rem`)
@@ -151,8 +151,8 @@
                 return numSecond = 1;
             }
             
-        }, 700);
-
+        }, 1000);
+  
         //flashsale carousel arrow
         let positionOfFlashsaleShow = 0;
         var flashsaleListContainer = document.querySelector('.main__container-flashsale-item-list')
@@ -263,8 +263,8 @@
                     clearInterval(setTimeShopMallSlideShow)  
 
                     removeShopMallDot(num) 
+                    num = i
                     addShopMallDot(i)   
-                    numOfSlideShopMall = i
 
                      //set Interval sm slideshow
                      setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow ,3000)
