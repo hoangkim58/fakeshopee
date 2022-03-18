@@ -1700,3 +1700,81 @@ footer {
     margin: 0 8.2rem 6.4rem 0; 
     z-index: 100;
 }
+
+/* Mobile */
+@media screen and (max-width: 599px) {  
+    header.header{ 
+        background-image: none; 
+        height: 0px;
+    }
+    body{
+       background-position: 0;
+    }
+    footer{
+        display: none;
+    }
+    .main__container-sm, .carousel__dot-container,
+    .header-brand, .header__navbar-list, .header__search-brand,
+    .header__search-looker-trending, .main__container-home-skinny,
+    .main__container-promotion-container {
+        display: none;
+    }
+
+    /*  */
+    .carousel__arrow-container {
+        max-width: 600px;
+    }
+    .main__container-promotion {
+        margin: 0;
+    }
+    img.main__container-promotion-item-img {
+        min-width: auto;
+    }
+
+    /* Cart */
+    .header__search-cart { 
+        margin: 6px 14px;
+        position: relative;
+    }
+    /* Voucher newbie */
+    .main__container-first-order-voucher-img {
+        background-size: 150% 97%;
+        min-height: 165px;
+        background-position: 5% 0%;
+    }
+
+    .main__container-menu-list {
+        height: 330px;
+        overflow-x: scroll;
+    }
+
+    .main__container-promotion-item-img {
+        max-width: 600px;
+        position: relative;
+        top: 51px;
+    }
+    .mainservice__container-menu-list {
+        flex-wrap: wrap;
+        min-width: 800px;
+        height: 240px;
+        margin: 0;
+        padding-top: 90px;
+        background-color: #35b19f;
+
+    }
+    .mainservice__container-item {
+        min-width: 200px;
+        min-height: 120px;
+        background-color: #35b19f;
+    }
+    .mainservice__container-item-title {
+        max-width: 150px;
+        margin: auto;
+        font-size: 18px;
+        color: white;
+    }
+    /* .main__container-menu-list, */
+    #products-table {
+        display: none;
+    }
+}
