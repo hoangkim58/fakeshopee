@@ -70,21 +70,21 @@
         }
         // setTime automation
         
-        // const setTimeAutomaticOfBanners = () => {
-        //     if (numSlideshowPomotion < quatitySlideShowPromotion-1){     
-        //         numSlideshowPomotion++;
-        //         removeSlideshowDot(numSlideshowPomotion-1)
-        //         addSlideshowDot(numSlideshowPomotion)
-        //         setPositionBannersTopPromotion(numSlideshowPomotion)
+        const setTimeAutomaticOfBanners = () => {
+            if (numSlideshowPomotion < quatitySlideShowPromotion-1){     
+                numSlideshowPomotion++;
+                removeSlideshowDot(numSlideshowPomotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
                 
-        //     }
-        //     else{ 
-        //         numSlideshowPomotion = 0; 
-        //         removeSlideshowDot(quatitySlideShowPromotion-1)
-        //         addSlideshowDot(numSlideshowPomotion)
-        //         setPositionBannersTopPromotion(numSlideshowPomotion)
-        //     }
-        // }
+            }
+            else{ 
+                numSlideshowPomotion = 0; 
+                removeSlideshowDot(quatitySlideShowPromotion-1)
+                addSlideshowDot(numSlideshowPomotion)
+                setPositionBannersTopPromotion(numSlideshowPomotion)
+            }
+        }
     
         let timeAutomaticOfBanners = setInterval( setTimeAutomaticOfBanners, 2000);
 
