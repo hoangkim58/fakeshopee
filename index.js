@@ -141,17 +141,17 @@
 
 
 
-        setInterval(() => {
-            if(numSecond < 11){
-                positionOfNumSecond.setAttribute('style',`top: ${-numSecond*2}rem`)
-                numSecond++
-            } 
-            else{
-                positionOfNumSecond.setAttribute('style',`top: 0rem; transition: none`)  
-                return numSecond = 1;
-            }
+        // setInterval(() => {
+        //     if(numSecond < 11){
+        //         positionOfNumSecond.setAttribute('style',`top: ${-numSecond*2}rem`)
+        //         numSecond++
+        //     } 
+        //     else{
+        //         positionOfNumSecond.setAttribute('style',`top: 0rem; transition: none`)  
+        //         return numSecond = 1;
+        //     }
             
-        }, 1000);
+        // }, 1000);
   
         //flashsale carousel arrow
         let positionOfFlashsaleShow = 0;
@@ -185,7 +185,7 @@
                 flashsaleCarouselArrowPrev.setAttribute('style','visibility: hidden;') 
             }
             if (positionOfFlashsaleShow < quatityframeOfFlashsaleList){
-                console.log(positionOfFlashsaleShow)
+                // console.log(positionOfFlashsaleShow)
                 positionOfFlashsaleShow--
                 flashsaleListContainer.setAttribute('style',`right: ${positionOfFlashsaleShow}00%`)
                 return positionOfFlashsaleShow

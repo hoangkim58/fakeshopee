@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="./index.js"></script>  
+    <script src="./flashsale.js"></script>  
 </head>
 <body>
     <div class="app">
-        <header class="header">
+        <header id="top" class="header">
             <div class="grid">
                 <div class="grid__home-ml-mr">
                     <nav class="header__navbar">
@@ -191,6 +193,11 @@
 
                                </div>
                             </div>
+                        </div>
+                        <!-- Login Mobile -->
+                        <div class="header__search-cart header__search-cart-pseudo header__search-cart--hover">
+                            <i class="fas fa-user-circle header-cart"></i>
+
                         </div>
                     </div>
                 </div>
@@ -655,7 +662,7 @@
                                 </div>
                                 <div class="main__container-flashsale-header-clock">
                                     1:16:1
-                                    <span class="flashsale__clock-container-m">
+                                    <!-- <span class="flashsale__clock-container-m">
                                         <div class="flashsale__clock-item" >0</div>
                                         <div class="flashsale__clock-item" >9</div>
                                         <div class="flashsale__clock-item" >8</div>
@@ -680,7 +687,7 @@
                                         <div class="flashsale__clock-item" >2</div>
                                         <div class="flashsale__clock-item" >1</div>
                                         <div class="flashsale__clock-item" >0</div>
-                                    </span>
+                                    </span> -->
                                 </div>
                             </div>
                             <div class="main__container-categoryForm-header-link">
@@ -986,6 +993,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="main__container-flashsale-item l-2">
+
+                                        
+                                        <div class="main__container-categoryForm-header-link sm-body-item-seemore">
+                                            Xem tất cả
+                                            <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
+                                        </div>  
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1100,7 +1115,7 @@
                                     </div>
                                     <div class="main__container-sm-insidebody-container sm-insidebody-container--width row">
                                         <!-- content  -->
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/85cccf0e0a1f840dba3d2dd15d68fac3_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
@@ -1110,7 +1125,7 @@
                                                 <div class="main__container-sm-body-brand-name">Flash sale 50%</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/1e32235bd93e4b61aef19ba70c253a1e_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
@@ -1120,7 +1135,7 @@
                                                 <div class="main__container-sm-body-brand-name">Deli giảm tới 50%</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/fd1d21276c5374d897985509094167ac_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
@@ -1130,7 +1145,7 @@
                                                 <div class="main__container-sm-body-brand-name">Mua 1 tặng 1</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/91427d639b34dd6ef155e03f2611bf77_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Một ngày sale to</div>
@@ -1140,7 +1155,7 @@
                                                 <div class="main__container-sm-body-brand-name">Ưu đãi đến 40%</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/4188cc7e32222759a4015451c8a5fbd0_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Sale cả tuần nha mọi người</div>
@@ -1150,7 +1165,7 @@
                                                 <div class="main__container-sm-body-brand-name">Mua là có quà</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/dd6605494d4b04220e7102fe2fcebf27_tn');">
                                                 <div class="main__container-sm-body-brand-name">Sale hàng thể thao</div>
@@ -1163,7 +1178,7 @@
                                                 </div> 
                                             </a>
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/2c31bd328ecf662057a732710893d944_tn');">
                                                 <div class="main__container-sm-body-brand-name">Sale phụ kiện thời trang</div>
@@ -1173,7 +1188,7 @@
                                                 <div class="main__container-sm-body-brand-name">Hàng chính hãng giảm mạnh</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/a7b6c03b0e302f247f09777b3ab5bc58_tn');">
                                                 <div class="main__container-sm-body-brand-name">Món quà ý nghĩa</div>
@@ -1186,7 +1201,7 @@
                                                 </div> 
                                             </a>
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/835f32e8abde7745a74fe7cc313403ff_tn');">
                                                 <div class="main__container-sm-body-brand-name">Chốt deal hàng gia dụng</div>
@@ -1196,7 +1211,7 @@
                                                 <div class="main__container-sm-body-brand-name">Đồ dùng trẻ em</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/dbd11f14f9a924f22340981800dd8189_tn');">
                                                 <div class="main__container-sm-body-brand-name">Phụ kiện điện thoại</div>
@@ -1209,7 +1224,7 @@
                                                 </div> 
                                             </a>
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/fd1d21276c5374d897985509094167ac_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
@@ -1219,7 +1234,7 @@
                                                 <div class="main__container-sm-body-brand-name">Mua 1 tặng 1</div>
                                             </div> 
                                         </div>
-                                        <div class="main__container-sm-body-item l-3">
+                                        <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/91427d639b34dd6ef155e03f2611bf77_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Một ngày sale to</div>
@@ -1440,6 +1455,14 @@
                                         Sticker Dán Trang Trí Sổ Dễ Thương
                                     </div>
                                 </div>
+                                <div class="main__container-top-search-item l-2">
+                                    <div class="main__container-top-search-item-img"> 
+                                        <div class="main__container-categoryForm-header-link sm-body-item-seemore">
+                                            Xem tất cả
+                                            <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
+                                        </div>  
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1470,7 +1493,7 @@
                             <!-- show  product table list // today-suggestion  -->
                             <section class="products-today-suggestion-list">
                                 <div class="main__container-products-table-container row">
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1498,7 +1521,7 @@
                                         </div>
                                     </div> 
          
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                          <div class="p-5">
                                              <div class="main__container-products-table-item-cover">
                                                  <div class="main__container-products-table-item-header">
@@ -1526,7 +1549,7 @@
                                          </div>
                                      </div>
          
-                                     <div class="main__container-products-table-item l-2">
+                                     <div class="main__container-products-table-item l-2 m-4 c-6">
                                          <div class="p-5">
                                              <div class="main__container-products-table-item-cover">
                                                  <div class="main__container-products-table-item-header">
@@ -1554,7 +1577,7 @@
                                          </div>
                                      </div> 
           
-                                     <div class="main__container-products-table-item l-2">
+                                     <div class="main__container-products-table-item l-2 m-4 c-6">
                                           <div class="p-5">
                                               <div class="main__container-products-table-item-cover">
                                                   <div class="main__container-products-table-item-header">
@@ -1582,7 +1605,7 @@
                                           </div>
                                       </div>
          
-                                      <div class="main__container-products-table-item l-2">
+                                      <div class="main__container-products-table-item l-2 m-4 c-6">
                                          <div class="p-5">
                                              <div class="main__container-products-table-item-cover">
                                                  <div class="main__container-products-table-item-header">
@@ -1610,7 +1633,7 @@
                                          </div>
                                      </div> 
           
-                                     <div class="main__container-products-table-item l-2">
+                                     <div class="main__container-products-table-item l-2 m-4 c-6">
                                           <div class="p-5">
                                               <div class="main__container-products-table-item-cover">
                                                   <div class="main__container-products-table-item-header">
@@ -1638,7 +1661,7 @@
                                           </div>
                                       </div>
           
-                                      <div class="main__container-products-table-item l-2">
+                                      <div class="main__container-products-table-item l-2 m-4 c-6">
                                           <div class="p-5">
                                               <div class="main__container-products-table-item-cover">
                                                   <div class="main__container-products-table-item-header">
@@ -1666,7 +1689,7 @@
                                           </div>
                                       </div> 
            
-                                      <div class="main__container-products-table-item l-2">
+                                      <div class="main__container-products-table-item l-2 m-4 c-6">
                                            <div class="p-5">
                                                <div class="main__container-products-table-item-cover">
                                                    <div class="main__container-products-table-item-header">
@@ -1694,7 +1717,7 @@
                                            </div>
                                        </div>
 
-                                       <div class="main__container-products-table-item l-2">
+                                       <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1721,7 +1744,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1749,7 +1772,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1776,7 +1799,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1803,7 +1826,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1830,7 +1853,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1857,7 +1880,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1884,7 +1907,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1911,7 +1934,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1938,7 +1961,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1971,7 +1994,7 @@
                             <!-- show  product table list // event  -->
                             <section class="products-event-products-list" style="display: none;">
                                  <div class="main__container-products-table-container row">
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -1998,7 +2021,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2025,7 +2048,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2052,7 +2075,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2079,7 +2102,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2106,7 +2129,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2133,7 +2156,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2160,7 +2183,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2187,7 +2210,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2214,7 +2237,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2241,7 +2264,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2268,7 +2291,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="main__container-products-table-item l-2">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
@@ -2539,7 +2562,7 @@
                         <div class="footer__policy">Chính sách bảo mật</div>
                         <div class="footer__policy">Quy chế hoạt động</div>
                         <div class="footer__policy">Chính sách vận chuyển</div>
-                        <div class="footer__policy">CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</div>
+                        <div class="footer__policy">Quy trình giải quyết tranh chấp</div>
                     </div>
                     <div class="footer__policy-registered-items">
                         <div class="footer__policy-registered footer__policy-registered-1"
@@ -2579,6 +2602,9 @@
                     alt="app__skinny-banner" 
                     class="app__skinny-banner-item">
             </div>
+            <a href="#top" class="app__skinny-gotop">
+                <i class="fas fa-chevron-up gotop"></i>
+            </a>
         </footer> 
     </div>
 </body>
