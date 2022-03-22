@@ -157,6 +157,7 @@
     }
     .main__container-category-cover {
         overflow-x: scroll; 
+        height: 28.1rem;
     }
     .main__container-category-item-img {
         margin: 0;
@@ -334,6 +335,10 @@
     }
 
     /* Product Zoom */
+    .main__container-allproducts-list {
+        height: 342px;
+        background-color: white;
+    }
     .main__container-products-table-main {
         padding: 0;
         margin-top: 1rem;
@@ -362,7 +367,9 @@
         width: 100%;
         margin: 0;
     }
-
+    .products-table-header {
+        width: 50%;
+    }
 
     /* */
     footer {
