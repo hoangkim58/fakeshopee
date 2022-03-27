@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopee FrontEnd</title>
-    <link rel="stylesheet" href="./assets/css/grid.css">      
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script src="./index.js"></script>  
-    <script src="./flashsale.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="./App.js"></script>
+    <script defer src="./index.js"></script>
 </head>
+
 <body>
     <div class="app">
         <header id="top" class="header">
@@ -23,29 +26,25 @@
                     <nav class="header__navbar">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item header__navbar-item--separate">
-                                Kênh người bán 
+                                Kênh người bán
                             </li>
                             <li class="header__navbar-item header__navbar-item--separate">
-                                Trở thành người bán Shopee 
+                                Trở thành người bán Shopee
                             </li>
                             <li class="header__navbar-item header__navbar-item--separate header__navbar-item--show-qr">
                                 Tải ứng dụng
-                                <div class="header-qr"> 
-                                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png" 
-                                    class="header-qr-img"    
-                                    alt="QR code">
+                                <div class="header-qr">
+                                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png"
+                                        class="header-qr-img" alt="QR code">
                                     <div class="header-qr-link">
-                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png" 
-                                            alt="Google play" 
-                                            class="header-qr-app-link">
-                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png" 
-                                            alt="App store" 
-                                            class="header-qr-app-link">
-                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/1ae215920a31f2fc75b00d4ee9ae8551.png" 
-                                            alt="App Gallery" 
-                                            class="header-qr-app-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png"
+                                            alt="Google play" class="header-qr-app-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png"
+                                            alt="App store" class="header-qr-app-link">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/1ae215920a31f2fc75b00d4ee9ae8551.png"
+                                            alt="App Gallery" class="header-qr-app-link">
                                     </div>
-                                </div>   
+                                </div>
                             </li>
                             <span class="header__navbar-item-interface">
                                 Kết nối
@@ -57,7 +56,7 @@
                                 <a href="#" class="header__navbar-item-link">
                                     <i class="fab fa-instagram header__navbar-item-icon"></i>
                                 </a>
-                            </li> 
+                            </li>
                         </ul>
 
                         <ul class="header__navbar-list">
@@ -72,57 +71,15 @@
                                     <header class="notify-header">
                                         Thông báo mới nhận
                                     </header>
-                                    <div class="notify-content notify-content--new">
-                                        <img src="https://cf.shopee.vn/file/cc1d084fccd73620e6317b13c46aa10e_tn" 
-                                            alt="" 
-                                            class="notify-content-icon">
-                                        <div class="notify-content-container">
-                                            <div class="notify-title">
-                                                {Đủ Tháng} Sim 4G Viettel D500 Và D900 Trọn Gói 1 Năm
-                                            </div>
-                                            <div class="notify-description">
-                                                Chuyên cung cấp sim 4G và sim nghe gọi trong và ngoài nước, 
-                                                thiết bị mạng và phụ kiện công nghệ cam kết sản phẩm chính 
-                                                hãng bảo hành tối thiểu 12 tháng trở lên 1 đổi 1.
-                                            </div>
-                                        </div>
+                                    <div class="notify-content-cover">
+                                        <!-- ... -->
                                     </div>
-    
-                                    <div class="notify-content">
-                                        <img src="https://cf.shopee.vn/file/11f74046de41bf7a5618ba85936f5703_tn" 
-                                            alt="" 
-                                            class="notify-content-icon">
-                                        <div class="notify-content-container">
-                                            <div class="notify-title">
-                                                Thời tới rồi! Sắm đồ NỬA GIÁ lúc 12H
-                                            </div>
-                                            <div class="notify-description">
-                                                😘 Bao la mặt hàng giảm 50% 
-                                                ☄️ Săn thêm voucher giảm 50% nữa
-                                                💥 Cứ mua là lời - Ngại gì không mua!
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="notify-content">
-                                        <img src="https://cf.shopee.vn/file/be5db69ffdcfad7d1680e8d9702efbd6_tn" 
-                                            alt="" 
-                                            class="notify-content-icon">
-                                        <div class="notify-content-container">
-                                            <div class="notify-title">
-                                                Hạng thành viên ơi, 6K Xu đang đợi
-                                            </div>
-                                            <div class="notify-description">
-                                                🚛 Mã freeship cho đơn từ 0đ! ⏰ Hết hạn lúc 24-11-2021!
-                                                👉 Mã đã có sẵn trong ví! 😤 Không xài, hết hạn, đừng tiếc đó!
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="notify-footer-container">
                                         Xem tất cả
                                     </div>
                                 </div>
-                            </li> 
+                            </li>
                             <li class="header__navbar-item header__navbar-item-notify--show">
                                 <span class="far-icon-mt">
                                     <a href="#" class="header__navbar-item-link">
@@ -138,49 +95,30 @@
                                 <li class="header__navbar-item">Đăng nhập</li>
                             </a>
                         </ul>
-                        
+
                     </nav>
                     <div class="header__search">
                         <div class="header__search-brand">
-                            <img src="./assets/img/logo-shopee.png"
-                                alt="brand-logo" 
-                                class="header-brand">
+                            <img src="./assets/img/logo-shopee.png" alt="brand-logo" class="header-brand">
                         </div>
                         <div class="header__search-looker-container">
                             <div class="header__search-looker">
-                                <input type="text" 
-                                    class="header__search-looker-input"
-                                    placeholder="P&G - Trúng vé máy bay"
-                                >
+                                <input type="text" class="header__search-looker-input"
+                                    placeholder="P&G - Trúng vé máy bay">
                                 <div class="btn-looker">
                                     <i class="fas fa-search btn-looker-icon"></i>
                                 </div>
                             </div>
                             <div class="header__search-looker-trending">
-                                <div class="header__search-looker-item">
-                                    Dầu gội Pantene ngăn rụng tóc
-                                </div>
-                                <div class="header__search-looker-item">
-                                    Thẻ cào Mobifone
-                                </div>
-                                <div class="header__search-looker-item">
-                                    Viettel
-                                </div>
-                                <div class="header__search-looker-item">
-                                    Laptop Dell
-                                </div>
-                                <div class="header__search-looker-item">
-                                    Nokia 3.1 Plus
+                                <div class="header__search-looker-trending-container">
+                                    <!-- .... -->
                                 </div>
                             </div>
                         </div>
                         <div class="header__search-cart header__search-cart-pseudo header__search-cart--hover">
-                            <!-- <img src="./assets/img/logo-shopee-cart.png"
-                            alt="brand-logo" 
-                            class="header-cart"> -->
                             <i class="fas fa-shopping-cart header-cart"></i>
-                            <div class="header__search-cart-notify"> 
-                               <div class="cart-notify-container">
+                            <div class="header__search-cart-notify">
+                                <div class="cart-notify-container">
                                     <!-- No find anything... -->
                                     <div class="header__search-cart-nofind">
                                     </div>
@@ -191,11 +129,11 @@
                                     <!-- You have ... items -->
 
 
-                               </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Login Mobile -->
-                        <div class="header__search-cart header__search-cart-pseudo header__search-cart--hover">
+                        <div class="header__search-cart header__search-login">
                             <i class="fas fa-user-circle header-cart"></i>
 
                         </div>
@@ -207,7 +145,7 @@
         <div class="main__container">
             <div class="grid">
                 <div class="main__container-promotion">
-                    
+
                     <!-- arrow carousel__arrow promotion  -->
                     <div class="stardust-carousel__arrow-container--show">
                         <div class="stardust-carousel__arrow-container">
@@ -224,41 +162,7 @@
 
                     <!-- promotion-slideshow -->
                     <div class="main__container-promotion-slideshow">
-                        <div class="main__container-promotion-slideshow-container" style="right: 0%;">
-                            <div data-value="0" class="main__container-promotion-item">
-                                <a href="#fff">
-
-                                    <img src="https://cf.shopee.sg/file/ef1f3dfe1379a24a2c73cf905cc34489_xxhdpi" 
-                                        alt="" 
-                                        class="main__container-promotion-item-img"
-                                    > 
-                                </a>
-                            </div>
-                            <div data-value="1" class="main__container-promotion-item">
-                                <img src="https://cf.shopee.vn/file/f71aea1f32ddb3b03b00905edb534c6a_xxhdpi" 
-                                    alt="" 
-                                    class="main__container-promotion-item-img"
-                                > 
-                            </div> 
-                            <div data-value="2" class="main__container-promotion-item">
-                                <img src="https://cf.shopee.vn/file/40c061cbd68105c20b73f2a753834504_xxhdpi" 
-                                    alt="" 
-                                    class="main__container-promotion-item-img"
-                                > 
-                            </div>
-                            <div data-value="3" class="main__container-promotion-item">
-                                <img src="https://cf.shopee.vn/file/49cb3f41fb9933beb29c94848a1ce8a4_xxhdpi" 
-                                    alt="" 
-                                    class="main__container-promotion-item-img"
-                                > 
-                            </div>
-                            <div data-value="4" class="main__container-promotion-item">
-                                <img src="https://cf.shopee.vn/file/5437dbead320a0cee38c4367b5e4331e_xxhdpi" 
-                                    alt="" 
-                                    class="main__container-promotion-item-img"
-                                > 
-                            </div>
-                        </div>
+                        <!-- Content Render JS DOM -->
 
                         <!-- dot-circle carousel__arrow promotion -->
                         <div class="carousel__dot-container">
@@ -270,120 +174,35 @@
                     <!-- right-promotion banner top/down -->
                     <div class="main__container-promotion-container">
                         <div class="main__container-promotion-top-right">
-                            <img src="https://cf.shopee.sg/file/8d6775471b5e8f1e081149d932d69a7a_xhdpi" 
-                                alt=""
+                            <img src="https://cf.shopee.sg/file/8d6775471b5e8f1e081149d932d69a7a_xhdpi" alt=""
                                 class="promotion-top-right-item">
                         </div>
                         <div class="main__container-promotion-bottom-right">
-                            <img src="https://cf.shopee.sg/file/c3f1e4b87e97a0a9409c9d0657800761_xhdpi" 
-                                alt=""
+                            <img src="https://cf.shopee.sg/file/c3f1e4b87e97a0a9409c9d0657800761_xhdpi" alt=""
                                 class="promotion-top-right-item">
-                        </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="main__container-menu-list">
-                    <div class="mainservice__container-menu-list row row-nowrap">
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/techzone.png');">
-                                   
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Tech Zone - Siêu Thị Điện Tử
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/anything-so-cheap.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Gì Cũng Rẻ - Từ 1K
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/refund-coin.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Hoàn Xu 10% - Đơn Từ 0Đ
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/mobile-service.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Nạp Thẻ, Hóa Đơn & E-voucher
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/freeship-xtra.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Freeship Xtra
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/saleoff-50percent.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Hàng Hiệu -50%
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/global-purchases.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Hàng Quốc Tế - Thương Hiệu
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mainservice__container-item l-1-5 m-2 c4">
-                            <div class="mainservice__container-item-cover">
-                                <div class="mainservice__container-item-img" style="background-image: url('./assets/img/member-premunium.png');">
-                                    
-                                </div>
-                                <div class="mainservice__container-item-title">
-                                    Shopee Premium
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- --- -->
                 </div>
 
                 <!-- first-order-voucher -->
                 <div class="main__container-first-order-voucher">
                     <div class="main__container-first-order-voucher-img"
-                        style="background-image: url('./assets/img/first-order-voucher.jpg');"
-                    >
+                        style="background-image: url('./assets/img/first-order-voucher.jpg');">
                     </div>
                 </div>
 
                 <!-- Catalog all kinds of products -->
                 <div class="main__container-allproducts-list">
-                    <div class="main__container-category-list"> 
+                    <div class="main__container-category-list">
                         <div class="main__container-category-title l-12">
                             Danh Mục
                         </div>
-    
+
                         <div class="main__container-category-bar">
-                            <div class="main__container-category-bar--hidden"> 
+                            <div class="main__container-category-bar--hidden">
                                 <!-- button pull left/right -->
                                 <div class="main__container-sm-carousel-btn main__container-category-cover-btn">
                                     <div class="button-circle catalog-carousel__arrow-prev transition-visible--hidden">
@@ -393,258 +212,10 @@
                                         <i class="fas fa-chevron-right carousel__arrow-icon-next"></i>
                                     </div>
                                 </div>
-                                <div class="main__container-category-cover"> 
-                                    <div class="main__container-category-container row"> 
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('assets/img/fashion-male.png');"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">   Thời  Nam
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/mobile-device.png');"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">   Điện  & Phụ Kiện
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/electronicdevice.png')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">  Thiết  Điện Tử
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/laptopdesktop.png')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">    Máy  & Laptop
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/camera.png')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">    Máy  & Máy Quay Phim
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/clock.png')"
-                                                >
-                                                </div>
-                                                <div class="main__container-category-item-name"> Đồng Hồ</div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('./assets/img/footwear.png')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Giày dép</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/7abfbfee3c4844652b4a8245e473d857_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">  Thiết  Điện Gia Dụng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/6cb7e633f8b63757463b676bd19a50e4_tn');"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">    Thể  & Du Lịch
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/3fb459e3449905545701b418e8220334_tn');"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">      Ô  & Xe Máy & Xe Đạp
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('	https://cf.shopee.vn/file/18fd9d878ad946db2f1bf4e33760c86f_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">   Balo  Túi Ví Nam                                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/ce8f8abc726cafff671d0e5311caa684_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name"> Đồ chơi</div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/cdf21b1bf4bfff257efe29054ecea1ec_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">   Chăm  thú cưng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('	https://cf.shopee.vn/file/75ea42f9eca124e9cb3cde744c060e4d_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">   Thời  nữ
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/099edde1ab31df35bc255912bab54a5e_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">     Mẹ  Bé
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('	https://cf.shopee.vn/file/24b194a695ea59d384768b7b471d563f_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">    Nhà  & Đời Sống
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/c765998fda99b2be9eb6e348df29af28_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Sắc đẹp</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/bf87b50b463f646bb7fb8a1a606d9ed2_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Sức khỏe</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/48630b7c76a7b62bc070c9e227097847_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Giày dép nữ</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/fa6ada2555e8e51f369718bbc92ccc52_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Túi ví nữ</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/8e71245b9659ea72c1b4e737be5cf42e_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Phụ Kiện & Trang Sức Nữ</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/c432168ee788f903f1ea024487f2c889_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Bách Hóa Online</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/36013311815c55d303b0e6c62d6a8139_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Nhà Sách Online</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('https://cf.shopee.vn/file/4540f87aa3cbe99db739f9e8dd2cdaf0_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Thời Trang Trẻ Em</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('	https://cf.shopee.vn/file/cd8e0d2e6c14c4904058ae20821d0763_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Giặt Giũ & Chăm Sóc Nhà Cửa</div>
-                                            </div>
-                                        </div> 
-                                        <div class="main__container-category-item l-1-2 c-1-2 ">
-                                            <div class="main__container-category-item-sub">
-                                                <div class="main__container-category-item-img"
-                                                    style="background-image: url('	https://cf.shopee.vn/file/b0f78c3136d2d78d49af71dd1c3f38c1_tn')"
-                                                >
-                                                </div>    
-                                                <div class="main__container-category-item-name">Voucher & Dịch Vụ</div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>  
-                            </div> 
+                                <div class="main__container-category-cover">
+                                <!-- waiting render -->
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -656,9 +227,8 @@
                         <div class="main__container-categoryForm-header">
                             <div class="main__container-categoryForm-container">
                                 <div class="main__container-flashsale-header-item-title"
-                                    style="background-image: url('./assets/img/flashsale.png')"
-                                >
-                                
+                                    style="background-image: url('./assets/img/flashsale.png')">
+
                                 </div>
                                 <div class="main__container-flashsale-header-clock">
                                     1:16:1
@@ -717,7 +287,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/6b9c360260cdda751636a84b3b7f27df_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-                                                
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -739,7 +309,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/2528d2c10dd46045f6fe2ebc94f816da_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -761,7 +331,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/e5459cec0081f0190b5996ac23a9920b_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -783,7 +353,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/2182b0da255c4b4a6df0a691f279e165_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -805,7 +375,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/ff4b7d513b09920e3d7188633bab266b_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -827,7 +397,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/1e8063d61a73834acab89e64a1fd9e1d_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -870,7 +440,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/d8541706b8dc8b6e9abf8a2cebc583ca_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -892,7 +462,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/e5459cec0081f0190b5996ac23a9920b_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -914,7 +484,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/2182b0da255c4b4a6df0a691f279e165_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -936,7 +506,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/ff4b7d513b09920e3d7188633bab266b_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -958,7 +528,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/8a2e1bfa833b0a584ed3b876c873e0f4_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -980,7 +550,7 @@
                                             <div class="main__container-flashsale-item-img"
                                                 style="background-image: url('https://cf.shopee.vn/file/458bc5f132b4f4030cddbd86947307fb_tn'),
                                                                         url('https://cf.shopee.vn/file/da28f622cc809e02e3cb17ea6c8b2b77_tn');">
-            
+
                                             </div>
                                         </div>
                                         <div class="main__container-flashsale-price-container">
@@ -995,11 +565,11 @@
                                     </div>
                                     <div class="main__container-flashsale-item l-2">
 
-                                        
+
                                         <div class="main__container-categoryForm-header-link sm-body-item-seemore">
                                             Xem tất cả
                                             <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1009,7 +579,7 @@
 
                 <!-- Home skinny VN -->
                 <div class="m-t-20">
-                    <div class="main__container-home-skinny" 
+                    <div class="main__container-home-skinny"
                         style="background-image: url('https://cf.shopee.vn/file/81452b53de28a122a02e877955451d3d')">
                         <ul class="main__container-home-skinny-container">
                             <li class="main__container-home-skinny-item l-4"></li>
@@ -1029,22 +599,19 @@
                                 </div>
                                 <div class="main__container-sm-label-edit p-l-15">
                                     <div class="main__container-sm-label-img"
-                                        style="background-image: url('./assets/img/sm-genuine-product.png')"
-                                    >
+                                        style="background-image: url('./assets/img/sm-genuine-product.png')">
                                     </div>
                                     Hàng chính hãng 100%
                                 </div>
                                 <div class="main__container-sm-label-edit">
                                     <div class="main__container-sm-label-img"
-                                        style="background-image: url('./assets/img/sm-refund.png')"
-                                    >
+                                        style="background-image: url('./assets/img/sm-refund.png')">
                                     </div>
                                     7 ngày miễn phí trả hàng
                                 </div>
                                 <div class="main__container-sm-label-edit">
                                     <div class="main__container-sm-label-img"
-                                        style="background-image: url('./assets/img/sm-freeship.png')"
-                                    >
+                                        style="background-image: url('./assets/img/sm-freeship.png')">
                                     </div>
                                     Miễn phí vận chuyển
                                 </div>
@@ -1056,7 +623,7 @@
                         </div>
                         <div class="main__container-sm-body">
                             <div class="main__container-sm-body-slideshow-cover l-3">
-                                <div class="main__container-sm-body-slideshow-container l-4"> 
+                                <div class="main__container-sm-body-slideshow-container l-4">
 
                                     <!-- ShopMall carousel -->
                                     <div class="main__container-sm-carousel--show">
@@ -1073,24 +640,19 @@
                                     <!-- slideshow image -->
                                     <div class="main__container-sm-body-slideshow-overflow">
                                         <div class="main__container-sm-body-slideshow"
-                                            style="background-image: url('./assets/img/sm-banners-1.png');"
-                                        >
+                                            style="background-image: url('./assets/img/sm-banners-1.png');">
                                         </div>
                                         <div class="main__container-sm-body-slideshow"
-                                            style="background-image: url('./assets/img/sm-banners-2.png');"
-                                        >
+                                            style="background-image: url('./assets/img/sm-banners-2.png');">
                                         </div>
                                         <div class="main__container-sm-body-slideshow"
-                                            style="background-image: url('https://cf.shopee.vn/file/a34044eee4c7eddad11af95883c5d72a');"
-                                        >
+                                            style="background-image: url('https://cf.shopee.vn/file/a34044eee4c7eddad11af95883c5d72a');">
                                         </div>
                                         <div class="main__container-sm-body-slideshow"
-                                            style="background-image: url('https://cf.shopee.vn/file/8f5efc22a3fcd77b44474e0a9e83edbe');"
-                                        >
+                                            style="background-image: url('https://cf.shopee.vn/file/8f5efc22a3fcd77b44474e0a9e83edbe');">
                                         </div>
                                         <div class="main__container-sm-body-slideshow"
-                                            style="background-image: url('https://cf.shopee.vn/file/5692c670ac5d0247ab04a1ed30f969b4');"
-                                        >
+                                            style="background-image: url('https://cf.shopee.vn/file/5692c670ac5d0247ab04a1ed30f969b4');">
                                         </div>
                                     </div>
 
@@ -1099,11 +661,11 @@
                                         <!-- @@@@ -->
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="main__container-sm-insidebody-cover">
-                                <div class="main__container-sm-insidebody-outline"> 
+                                <div class="main__container-sm-insidebody-outline">
                                     <!-- button pull left/right -->
                                     <div class="main__container-sm-carousel-btn">
                                         <div class="button-circle sm-carousel__arrow-prev">
@@ -1113,138 +675,153 @@
                                             <i class="fas fa-chevron-right carousel__arrow-icon-next"></i>
                                         </div>
                                     </div>
-                                    <div class="main__container-sm-insidebody-container sm-insidebody-container--width row">
+                                    <div
+                                        class="main__container-sm-insidebody-container sm-insidebody-container--width row">
                                         <!-- content  -->
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/85cccf0e0a1f840dba3d2dd15d68fac3_xhdpi');">
-                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/https:/cf.shopee.vn/file/ea507ee06252bb4c0d90eed99c1db288_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Flash sale 50%</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/1e32235bd93e4b61aef19ba70c253a1e_xhdpi');">
-                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/6aa05c40ee2e58b80d41946f5aea211c_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Deli giảm tới 50%</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/fd1d21276c5374d897985509094167ac_xhdpi');">
-                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/ae84a92ed8e4d399ae927c78a1410fe8_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Mua 1 tặng 1</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/91427d639b34dd6ef155e03f2611bf77_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Một ngày sale to</div>
-                                            </div> 
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/ba76366f2d310c51340d432c921663fa_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Ưu đãi đến 40%</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/4188cc7e32222759a4015451c8a5fbd0_xhdpi');">
-                                                <div class="main__container-sm-body-brand-name">Sale cả tuần nha mọi người</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Sale cả tuần nha mọi
+                                                    người</div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/4e91e4c84aa2e85817142c7adf81f3de_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Mua là có quà</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/dd6605494d4b04220e7102fe2fcebf27_tn');">
                                                 <div class="main__container-sm-body-brand-name">Sale hàng thể thao</div>
-                                            </div> 
+                                            </div>
                                             <a href="###">
 
                                                 <div class="main__container-sm-body-brand"
                                                     style="background-image: url('https://cf.shopee.vn/file/5a198fc11e04401f70ffd2cfbc320a04_tn');">
-                                                    <div class="main__container-sm-body-brand-name">Sale hàng điện tử</div>
-                                                </div> 
+                                                    <div class="main__container-sm-body-brand-name">Sale hàng điện tử
+                                                    </div>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/2c31bd328ecf662057a732710893d944_tn');">
-                                                <div class="main__container-sm-body-brand-name">Sale phụ kiện thời trang</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Sale phụ kiện thời trang
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/2dd923298ba0685a2288af4ae443c51c_tn');">
-                                                <div class="main__container-sm-body-brand-name">Hàng chính hãng giảm mạnh</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Hàng chính hãng giảm
+                                                    mạnh</div>
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/a7b6c03b0e302f247f09777b3ab5bc58_tn');">
                                                 <div class="main__container-sm-body-brand-name">Món quà ý nghĩa</div>
-                                            </div> 
+                                            </div>
                                             <a href="###">
 
                                                 <div class="main__container-sm-body-brand"
                                                     style="background-image: url('	https://cf.shopee.vn/file/fe9035468ee6f5629b00965cea369711_tn');">
-                                                    <div class="main__container-sm-body-brand-name">Hàng thời trang sale to</div>
-                                                </div> 
+                                                    <div class="main__container-sm-body-brand-name">Hàng thời trang sale
+                                                        to</div>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/835f32e8abde7745a74fe7cc313403ff_tn');">
-                                                <div class="main__container-sm-body-brand-name">Chốt deal hàng gia dụng</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Chốt deal hàng gia dụng
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/0bbc954f67b7817717eb687d80a42231_tn');">
                                                 <div class="main__container-sm-body-brand-name">Đồ dùng trẻ em</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('	https://cf.shopee.vn/file/dbd11f14f9a924f22340981800dd8189_tn');">
-                                                <div class="main__container-sm-body-brand-name">Phụ kiện điện thoại</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Phụ kiện điện thoại
+                                                </div>
+                                            </div>
                                             <a href="###">
 
                                                 <div class="main__container-sm-body-brand"
                                                     style="background-image: url('	https://cf.shopee.vn/file/b3a9977741e68967a937f91985bdca5a_tn');">
-                                                    <div class="main__container-sm-body-brand-name">Thời trang nữ giảm sốc</div>
-                                                </div> 
+                                                    <div class="main__container-sm-body-brand-name">Thời trang nữ giảm
+                                                        sốc</div>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/fd1d21276c5374d897985509094167ac_xhdpi');">
-                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..</div>
-                                            </div> 
+                                                <div class="main__container-sm-body-brand-name">Chốt mục tiêu săn..
+                                                </div>
+                                            </div>
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/ae84a92ed8e4d399ae927c78a1410fe8_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Mua 1 tặng 1</div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="main__container-sm-body-item l-3 m-3 c-4">
                                             <div class="main__container-sm-body-brand"
                                                 style="background-image: url('https://cf.shopee.vn/file/91427d639b34dd6ef155e03f2611bf77_xhdpi');">
                                                 <div class="main__container-sm-body-brand-name">Một ngày sale to</div>
-                                            </div> 
-                                            <div class="main__container-sm-body-brand"> 
-                                                <div class="main__container-categoryForm-header-link sm-body-item-seemore">
+                                            </div>
+                                            <div class="main__container-sm-body-brand">
+                                                <div
+                                                    class="main__container-categoryForm-header-link sm-body-item-seemore">
                                                     Xem tất cả
-                                                    <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
+                                                    <i
+                                                        class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1260,12 +837,12 @@
                         <div class="main__container-categoryForm-header">
                             <div class="main__container-categoryForm-container">
                                 <div class="main__container-categoryForm-header-title color-trends-search">
-                                xu hướng tìm kiếm
+                                    xu hướng tìm kiếm
                                 </div>
                             </div>
                             <div class="main__container-categoryForm-header-link">
                                 <i class="fas fa-sync-alt" style="transform: rotate(125deg);"></i>
-                                <span class="p-l-4">Xem thêm</span> 
+                                <span class="p-l-4">Xem thêm</span>
                             </div>
                         </div>
                         <div class="main__container-trends-search-bound">
@@ -1281,8 +858,7 @@
                                         </div>
                                     </div>
                                     <div class="main__container-trends-search-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/f8187cd9f8bd7b3114b44c92d3cc47c3')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/f8187cd9f8bd7b3114b44c92d3cc47c3')">
                                     </div>
                                 </div>
                                 <div class="main__container-trends-search-item l-2-4">
@@ -1295,8 +871,7 @@
                                         </div>
                                     </div>
                                     <div class="main__container-trends-search-img"
-                                        style="background-image: url(https://cf.shopee.vn/file/1efedb4e491b1ee23edce7ef2fbcbae4)"
-                                    >
+                                        style="background-image: url(https://cf.shopee.vn/file/1efedb4e491b1ee23edce7ef2fbcbae4)">
                                     </div>
                                 </div>
                                 <div class="main__container-trends-search-item l-2-4">
@@ -1309,8 +884,7 @@
                                         </div>
                                     </div>
                                     <div class="main__container-trends-search-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/5630d8e80d866ad247ce107afc8fd9ca')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/5630d8e80d866ad247ce107afc8fd9ca')">
                                     </div>
                                 </div>
                                 <div class="main__container-trends-search-item l-2-4">
@@ -1323,8 +897,7 @@
                                         </div>
                                     </div>
                                     <div class="main__container-trends-search-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/9a6cb2687078b46ffe2aa366575ae000')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/9a6cb2687078b46ffe2aa366575ae000')">
                                     </div>
                                 </div>
                                 <div class="main__container-trends-search-item l-2-4">
@@ -1337,8 +910,7 @@
                                         </div>
                                     </div>
                                     <div class="main__container-trends-search-img"
-                                        style="background-image: url('./assets/img/trends-search-bluetooth.jpg')"
-                                    >
+                                        style="background-image: url('./assets/img/trends-search-bluetooth.jpg')">
                                     </div>
                                 </div>
                             </div>
@@ -1356,7 +928,7 @@
                                 </div>
                             </div>
                             <div class="main__container-categoryForm-header-link">
-                                    Xem tất cả
+                                Xem tất cả
                                 <i class="fas fa-chevron-right p-l-4"></i>
                             </div>
                         </div>
@@ -1365,8 +937,7 @@
                             <div class="main__container-top-search-container row">
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/6d1416daa515aaf1a3c1b6c5fc47e07b_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/6d1416daa515aaf1a3c1b6c5fc47e07b_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1378,12 +949,11 @@
                                         Ốp lưng iphone
                                     </div>
                                 </div>
-    
+
                                 <!-- top search item -->
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/56247e721a47ecce34e26b2916c23a54_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/56247e721a47ecce34e26b2916c23a54_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1397,8 +967,7 @@
                                 </div>
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/7b9eb506a4a86c68e82494e7c7d1ffcf_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/7b9eb506a4a86c68e82494e7c7d1ffcf_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1412,8 +981,7 @@
                                 </div>
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/569f5566d9c55f4b3fa34d70e0d5acc3_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/569f5566d9c55f4b3fa34d70e0d5acc3_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1427,8 +995,7 @@
                                 </div>
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/51fc8c9af820a668dab6de71b7dcea2f_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/51fc8c9af820a668dab6de71b7dcea2f_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1442,8 +1009,7 @@
                                 </div>
                                 <div class="main__container-top-search-item l-2">
                                     <div class="main__container-top-search-item-img"
-                                        style="background-image: url('https://cf.shopee.vn/file/341db2c1da29489bc96379059d8f1a29_tn')"
-                                    >
+                                        style="background-image: url('https://cf.shopee.vn/file/341db2c1da29489bc96379059d8f1a29_tn')">
                                         <div class="main__container-top-search-item-label-top">
                                             <!-- Top -->
                                         </div>
@@ -1456,11 +1022,11 @@
                                     </div>
                                 </div>
                                 <div class="main__container-top-search-item l-2">
-                                    <div class="main__container-top-search-item-img"> 
+                                    <div class="main__container-top-search-item-img">
                                         <div class="main__container-categoryForm-header-link sm-body-item-seemore">
                                             Xem tất cả
                                             <i class="fas fa-chevron-right m-l-4 main__container-sm-arrow-right"></i>
-                                        </div>  
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1475,21 +1041,20 @@
                             <ul class="main__container-products-table-header">
                                 <li class="products-table-header today-suggestion">
                                     <div class="header__tab header__tab--active"></div>
-                                     <div class="main__container-products-today-suggestion">
-                                         GỢI Ý HÔM NAY
-                                     </div>
+                                    <div class="main__container-products-today-suggestion">
+                                        GỢI Ý HÔM NAY
+                                    </div>
                                 </li>
                                 <li class="products-table-header today-event">
-                                    <div class="header__tab"></div>   
-                                     <div class="main__container-products-today-event">
-                                         <img src="https://cf.shopee.vn/file/46447723c3e7d075a3aeebf12eaf64a6" 
-                                         alt="" 
-                                         class="main__container-products-today-event-img">
-                                     </div>
+                                    <div class="header__tab"></div>
+                                    <div class="main__container-products-today-event">
+                                        <img src="https://cf.shopee.vn/file/46447723c3e7d075a3aeebf12eaf64a6" alt=""
+                                            class="main__container-products-today-event-img">
+                                    </div>
                                 </li>
                             </ul>
                         </a>
-                        <div class="main__container-products-table-header-container"> 
+                        <div class="main__container-products-table-header-container">
                             <!-- show  product table list // today-suggestion  -->
                             <section class="products-today-suggestion-list">
                                 <div class="main__container-products-table-container row">
@@ -1497,14 +1062,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/7497ae371ce010bf745b98f923a9cb87_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/7497ae371ce010bf745b98f923a9cb87_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Áo khoác bomber nam nữ Choose, khoác nữ nam, Áo sweater hoodie nam nữ from rộng K43  
+                                                            Áo khoác bomber nam nữ Choose, khoác nữ nam, Áo sweater
+                                                            hoodie nam nữ from rộng K43
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1519,216 +1084,215 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
-         
-                                    <div class="main__container-products-table-item l-2 m-4 c-6">
-                                         <div class="p-5">
-                                             <div class="main__container-products-table-item-cover">
-                                                 <div class="main__container-products-table-item-header">
-                                                     <img src="https://cf.shopee.vn/file/858c3cbfca395ae52157344ab2410cc1_tn" 
-                                                         alt="" 
-                                                         class="main__container-products-table-item-header-img">
-                                                 </div>
-                                                 <div class="main__container-products-table-item-info">
-                                                     <div class="main__container-products-table-item-title">
-                                                         <div class="main__container-products-table-item-name">
-                                                             Áo khoác bomber nam nữ Choose, khoác nữ nam, Áo sweater hoodie nam nữ from rộng K43  
-                                                         </div>
-                                                     </div>
-                                                     <div class="main__container-products-table-item-container">
-                                                         <div class="main__container-products-table-item-price">
-                                                             <span class="products-table-item-price-coin">₫</span>
-                                                             <span>99.999</span>
-                                                         </div>
-                                                         <div class="main__container-products-table-item-sold">
-                                                             Đã bán 4.1k
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-         
-                                     <div class="main__container-products-table-item l-2 m-4 c-6">
-                                         <div class="p-5">
-                                             <div class="main__container-products-table-item-cover">
-                                                 <div class="main__container-products-table-item-header">
-                                                     <img src="https://cf.shopee.vn/file/4f1f1dc1064d3002556c6571ea10b768_tn" 
-                                                         alt="" 
-                                                         class="main__container-products-table-item-header-img">
-                                                 </div>
-                                                 <div class="main__container-products-table-item-info">
-                                                     <div class="main__container-products-table-item-title">
-                                                         <div class="main__container-products-table-item-name">
-                                                            Giày thể thao Jordan 1 đen trắng cổ thấp, Giày JD low panda nam nữ siêu hot dễ phối đồ - Hàng chuẩn Full Box Bill
-                                                        </div>
-                                                     </div>
-                                                     <div class="main__container-products-table-item-container">
-                                                         <div class="main__container-products-table-item-price">
-                                                             <span class="products-table-item-price-coin">₫</span>
-                                                             <span>99.999</span>
-                                                         </div>
-                                                         <div class="main__container-products-table-item-sold">
-                                                             Đã bán 4.1k
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div> 
-          
-                                     <div class="main__container-products-table-item l-2 m-4 c-6">
-                                          <div class="p-5">
-                                              <div class="main__container-products-table-item-cover">
-                                                  <div class="main__container-products-table-item-header">
-                                                      <img src="https://cf.shopee.vn/file/394ed88df2bf7211c65b1871147bd7a4_tn" 
-                                                          alt="" 
-                                                          class="main__container-products-table-item-header-img">
-                                                  </div>
-                                                  <div class="main__container-products-table-item-info">
-                                                      <div class="main__container-products-table-item-title">
-                                                          <div class="main__container-products-table-item-name">
-                                                            Áo Sweater Cograue unisex, Áo hoodie Nam Nữ Form Rộng Genk 
-                                                          </div>
-                                                      </div>
-                                                      <div class="main__container-products-table-item-container">
-                                                          <div class="main__container-products-table-item-price">
-                                                              <span class="products-table-item-price-coin">₫</span>
-                                                              <span>99.999</span>
-                                                          </div>
-                                                          <div class="main__container-products-table-item-sold">
-                                                              Đã bán 4.1k
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-         
-                                      <div class="main__container-products-table-item l-2 m-4 c-6">
-                                         <div class="p-5">
-                                             <div class="main__container-products-table-item-cover">
-                                                 <div class="main__container-products-table-item-header">
-                                                     <img src="https://cf.shopee.vn/file/c4e48c19c4c61276363adc3bd3a13f48_tn" 
-                                                         alt="" 
-                                                         class="main__container-products-table-item-header-img">
-                                                 </div>
-                                                 <div class="main__container-products-table-item-info">
-                                                     <div class="main__container-products-table-item-title">
-                                                         <div class="main__container-products-table-item-name">
-                                                            Áo hoodie HT62 Unisex, Áo Sweater form rộng nam nữ hàn quốc Thịnh Thái  
-                                                         </div>
-                                                     </div>
-                                                     <div class="main__container-products-table-item-container">
-                                                         <div class="main__container-products-table-item-price">
-                                                             <span class="products-table-item-price-coin">₫</span>
-                                                             <span>99.999</span>
-                                                         </div>
-                                                         <div class="main__container-products-table-item-sold">
-                                                             Đã bán 4.1k
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div> 
-          
-                                     <div class="main__container-products-table-item l-2 m-4 c-6">
-                                          <div class="p-5">
-                                              <div class="main__container-products-table-item-cover">
-                                                  <div class="main__container-products-table-item-header">
-                                                      <img src="https://cf.shopee.vn/file/9f62d866075a1c071b741587334a2db9_tn" 
-                                                          alt="" 
-                                                          class="main__container-products-table-item-header-img">
-                                                  </div>
-                                                  <div class="main__container-products-table-item-info">
-                                                      <div class="main__container-products-table-item-title">
-                                                          <div class="main__container-products-table-item-name">
-                                                            Miếng dán cường lực iphone 9D, 10D chống va đập tốt cho các máy ip6s, 6s, 7,8 ipx và ip11 và 11promax (2màu Xanh - Vàng)
-                                                          </div>
-                                                      </div>
-                                                      <div class="main__container-products-table-item-container">
-                                                          <div class="main__container-products-table-item-price">
-                                                              <span class="products-table-item-price-coin">₫</span>
-                                                              <span>99.999</span>
-                                                          </div>
-                                                          <div class="main__container-products-table-item-sold">
-                                                              Đã bán 4.1k
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-          
-                                      <div class="main__container-products-table-item l-2 m-4 c-6">
-                                          <div class="p-5">
-                                              <div class="main__container-products-table-item-cover">
-                                                  <div class="main__container-products-table-item-header">
-                                                      <img src="https://cf.shopee.vn/file/e18ceb5513ebb3cc1f9334524503537b_tn" 
-                                                          alt="" 
-                                                          class="main__container-products-table-item-header-img">
-                                                  </div>
-                                                  <div class="main__container-products-table-item-info">
-                                                      <div class="main__container-products-table-item-title">
-                                                          <div class="main__container-products-table-item-name">
-                                                            Áo Sweater nỉ dài tay dáng rộng màu nâu chữ Black Air cực đẹp FF96
-                                                          </div>
-                                                      </div>
-                                                      <div class="main__container-products-table-item-container">
-                                                          <div class="main__container-products-table-item-price">
-                                                              <span class="products-table-item-price-coin">₫</span>
-                                                              <span>99.999</span>
-                                                          </div>
-                                                          <div class="main__container-products-table-item-sold">
-                                                              Đã bán 4.1k
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div> 
-           
-                                      <div class="main__container-products-table-item l-2 m-4 c-6">
-                                           <div class="p-5">
-                                               <div class="main__container-products-table-item-cover">
-                                                   <div class="main__container-products-table-item-header">
-                                                       <img src="https://cf.shopee.vn/file/45c3ec932b043860ada3cc30a8df7b0f_tn" 
-                                                           alt="" 
-                                                           class="main__container-products-table-item-header-img">
-                                                   </div>
-                                                   <div class="main__container-products-table-item-info">
-                                                       <div class="main__container-products-table-item-title">
-                                                           <div class="main__container-products-table-item-name">
-                                                                [Mã SRBACK010912 hoàn 20K xu đơn 50K] Áo croptop basic vải thun tay dài cổ vuông ôm body co giãn tốt
-                                                           </div>
-                                                       </div>
-                                                       <div class="main__container-products-table-item-container">
-                                                           <div class="main__container-products-table-item-price">
-                                                               <span class="products-table-item-price-coin">₫</span>
-                                                               <span>99.999</span>
-                                                           </div>
-                                                           <div class="main__container-products-table-item-sold">
-                                                               Đã bán 4.1k
-                                                           </div>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
+                                    </div>
 
-                                       <div class="main__container-products-table-item l-2 m-4 c-6">
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/d590eeceaa7cb8d1a0022015f7d24b96_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/858c3cbfca395ae52157344ab2410cc1_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Váy body nữ cổ tròn khoét vai quyến rũ mặc tôn dáng/ Váy dài tay mặc thu đông 2 màu trẻ trung cá tính_xuongmaythuhien
+                                                            Áo khoác bomber nam nữ Choose, khoác nữ nam, Áo sweater
+                                                            hoodie nam nữ from rộng K43
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/4f1f1dc1064d3002556c6571ea10b768_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Giày thể thao Jordan 1 đen trắng cổ thấp, Giày JD low panda
+                                                            nam nữ siêu hot dễ phối đồ - Hàng chuẩn Full Box Bill
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/394ed88df2bf7211c65b1871147bd7a4_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Áo Sweater Cograue unisex, Áo hoodie Nam Nữ Form Rộng Genk
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/c4e48c19c4c61276363adc3bd3a13f48_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Áo hoodie HT62 Unisex, Áo Sweater form rộng nam nữ hàn quốc
+                                                            Thịnh Thái
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/9f62d866075a1c071b741587334a2db9_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Miếng dán cường lực iphone 9D, 10D chống va đập tốt cho các
+                                                            máy ip6s, 6s, 7,8 ipx và ip11 và 11promax (2màu Xanh - Vàng)
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/e18ceb5513ebb3cc1f9334524503537b_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Áo Sweater nỉ dài tay dáng rộng màu nâu chữ Black Air cực
+                                                            đẹp FF96
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="https://cf.shopee.vn/file/45c3ec932b043860ada3cc30a8df7b0f_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            [Mã SRBACK010912 hoàn 20K xu đơn 50K] Áo croptop basic vải
+                                                            thun tay dài cổ vuông ôm body co giãn tốt
+                                                        </div>
+                                                    </div>
+                                                    <div class="main__container-products-table-item-container">
+                                                        <div class="main__container-products-table-item-price">
+                                                            <span class="products-table-item-price-coin">₫</span>
+                                                            <span>99.999</span>
+                                                        </div>
+                                                        <div class="main__container-products-table-item-sold">
+                                                            Đã bán 4.1k
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main__container-products-table-item l-2 m-4 c-6">
+                                        <div class="p-5">
+                                            <div class="main__container-products-table-item-cover">
+                                                <div class="main__container-products-table-item-header">
+                                                    <img src="	https://cf.shopee.vn/file/d590eeceaa7cb8d1a0022015f7d24b96_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
+                                                </div>
+                                                <div class="main__container-products-table-item-info">
+                                                    <div class="main__container-products-table-item-title">
+                                                        <div class="main__container-products-table-item-name">
+                                                            Váy body nữ cổ tròn khoét vai quyến rũ mặc tôn dáng/ Váy dài
+                                                            tay mặc thu đông 2 màu trẻ trung cá tính_xuongmaythuhien
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1749,14 +1313,13 @@
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
                                                     <img src="	https://cf.shopee.vn/file/eb3da12c4db8ba9319aa6fde0e5ee69d_tn
-                                                    " 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    " alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Áo khoác bomber nam nữ,Áo sweater hoodie nam nữ from rộng K54
+                                                            Áo khoác bomber nam nữ,Áo sweater hoodie nam nữ from rộng
+                                                            K54
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1776,9 +1339,8 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/1b2bf43de75554fb5c4444deaab2eb29_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/1b2bf43de75554fb5c4444deaab2eb29_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -1803,14 +1365,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/9f36f13fd6c62dfd1597969b12d42ebe_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/9f36f13fd6c62dfd1597969b12d42ebe_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Áo khoác nỉ nam nữ, Áo sweater hoodie nam nữ from rộng unisex nỉ bông nhung tăm có mũ không mũ KHN2
+                                                            Áo khoác nỉ nam nữ, Áo sweater hoodie nam nữ from rộng
+                                                            unisex nỉ bông nhung tăm có mũ không mũ KHN2
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1830,14 +1392,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/5c5cc01276720cc6b8bf260759222653_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/5c5cc01276720cc6b8bf260759222653_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            {Bao lớn 20kg} APro & Fib's Thức ăn cho chó dạng hạt Dành cho mọi giống chó -fib
+                                                            {Bao lớn 20kg} APro & Fib's Thức ăn cho chó dạng hạt Dành
+                                                            cho mọi giống chó -fib
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1857,14 +1419,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/f6ee5c1ad0f80cedd21077ece502cd58_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/f6ee5c1ad0f80cedd21077ece502cd58_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Bộ Đồ Chơi Xếp Hình Chữ Cái Tiếng Anh Bằng Gỗ giáo dục trẻ em giáo dục sớm bảng chữ cái câu đố bé trai bé gái ba tuổi
+                                                            Bộ Đồ Chơi Xếp Hình Chữ Cái Tiếng Anh Bằng Gỗ giáo dục trẻ
+                                                            em giáo dục sớm bảng chữ cái câu đố bé trai bé gái ba tuổi
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1884,14 +1446,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/cdba31f735d772240ca2adf76001780c_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/cdba31f735d772240ca2adf76001780c_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Son kem lì HERORANGE mềm mịn như nhung chống thấm nước chống khô môi lâu trôi MM
+                                                            Son kem lì HERORANGE mềm mịn như nhung chống thấm nước chống
+                                                            khô môi lâu trôi MM
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1911,14 +1473,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/60c589fbdd3484220f971324baa13754_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/60c589fbdd3484220f971324baa13754_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Mũ Len NAM NỮ Ulzzang Beanie Trơn MẪU MỚI 2021 GIÁ RẺ NHIỀU MÀU MN23
+                                                            Mũ Len NAM NỮ Ulzzang Beanie Trơn MẪU MỚI 2021 GIÁ RẺ NHIỀU
+                                                            MÀU MN23
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1938,9 +1500,8 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/7fbaea63ba43957a8af274da3d6f4462_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/7fbaea63ba43957a8af274da3d6f4462_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -1965,14 +1526,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/e26394e62abc77979e3870d3e2126a33_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/e26394e62abc77979e3870d3e2126a33_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Bộ Bàn Phím Gaming có dây Kèm Chuột Máy Tính Con Báo Có LED 7 Màu Ấn Tượng
+                                                            Bộ Bàn Phím Gaming có dây Kèm Chuột Máy Tính Con Báo Có LED
+                                                            7 Màu Ấn Tượng
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -1988,19 +1549,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                 </div> 
+                                </div>
                             </section>
-         
+
                             <!-- show  product table list // event  -->
                             <section class="products-event-products-list" style="display: none;">
-                                 <div class="main__container-products-table-container row">
+                                <div class="main__container-products-table-container row">
                                     <div class="main__container-products-table-item l-2 m-4 c-6">
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/d74e371597d6acd3c30090bb0c0b82dd_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/d74e371597d6acd3c30090bb0c0b82dd_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -2025,14 +1585,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/6573009b2d9176f968052395ebf17baf_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/6573009b2d9176f968052395ebf17baf_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Quần ống loe cạp cao legging dáng dài, Quần legging nữ ôm ống loe dáng dài
+                                                            Quần ống loe cạp cao legging dáng dài, Quần legging nữ ôm
+                                                            ống loe dáng dài
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2052,14 +1612,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/57b92369fa9fa9fbc1c803a748021c38_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/57b92369fa9fa9fbc1c803a748021c38_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Dây cáp sạc Hoco X14 Lightning Cáp Tai nghe ốp - Awifi Case H4-7
+                                                            Dây cáp sạc Hoco X14 Lightning Cáp Tai nghe ốp - Awifi Case
+                                                            H4-7
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2079,9 +1639,8 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/cfd1a7816baf50f77a234dce6f057e27_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/cfd1a7816baf50f77a234dce6f057e27_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -2106,9 +1665,8 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/788fe524fa95071af1302960f6101b42_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/788fe524fa95071af1302960f6101b42_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -2133,14 +1691,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/619268905b79eba7db109631ee8d464f_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/619268905b79eba7db109631ee8d464f_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            (Bán Buôn Sỉ) Nước Hoa Xịt Thơm Toàn Thân ShiMang Body Mist 50ML NH5 Shi mang
+                                                            (Bán Buôn Sỉ) Nước Hoa Xịt Thơm Toàn Thân ShiMang Body Mist
+                                                            50ML NH5 Shi mang
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2160,14 +1718,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/cf3f6f419e508cc8f77d7e5ac90ca994_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/cf3f6f419e508cc8f77d7e5ac90ca994_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Phấn Nước BB Focallure Dưỡng Ẩm Màu Mịn Cho Làn Da Đẹp Tự Nhiên 12g
+                                                            Phấn Nước BB Focallure Dưỡng Ẩm Màu Mịn Cho Làn Da Đẹp Tự
+                                                            Nhiên 12g
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2187,14 +1745,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/e89617137b48e71838ba9926fc094461_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/e89617137b48e71838ba9926fc094461_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Tất cổ cao nam nữ, tất nữ nam nhún chất liệu cotton mềm thoáng mát dễ phối đồ- Cherry Shop
+                                                            Tất cổ cao nam nữ, tất nữ nam nhún chất liệu cotton mềm
+                                                            thoáng mát dễ phối đồ- Cherry Shop
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2214,14 +1772,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/64a1056f93407a6f0c3f6d8224073cfd_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/64a1056f93407a6f0c3f6d8224073cfd_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            [Mã FAMALLT5 giảm 15% đơn 150K] Bộ Thể Thao Nam Chất Nỉ 4 Màu Trẻ Trung Năng Động Thời Trang Cao Cấp VICERO
+                                                            [Mã FAMALLT5 giảm 15% đơn 150K] Bộ Thể Thao Nam Chất Nỉ 4
+                                                            Màu Trẻ Trung Năng Động Thời Trang Cao Cấp VICERO
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2241,14 +1799,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="https://cf.shopee.vn/file/ab11b2ee1a8e5f1dddc787787b23b99d_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="https://cf.shopee.vn/file/ab11b2ee1a8e5f1dddc787787b23b99d_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Ví nam chất đẹp hàng hiệu thời trang cao cấp Bóp da PU nhiều ngăn đẳng cấp nam tính nhập khẩu chính hãng GC-cK9365893
+                                                            Ví nam chất đẹp hàng hiệu thời trang cao cấp Bóp da PU nhiều
+                                                            ngăn đẳng cấp nam tính nhập khẩu chính hãng GC-cK9365893
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2268,14 +1826,14 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/f797f659c30fbd4d2f637c571fec3f64_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/f797f659c30fbd4d2f637c571fec3f64_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
                                                         <div class="main__container-products-table-item-name">
-                                                            Áo polo nữ GUMAC chính hãng - áo thun polo có cổ đẹp nhiều màu đủ size và thiết kế trơn cơ bản ATB109
+                                                            Áo polo nữ GUMAC chính hãng - áo thun polo có cổ đẹp nhiều
+                                                            màu đủ size và thiết kế trơn cơ bản ATB109
                                                         </div>
                                                     </div>
                                                     <div class="main__container-products-table-item-container">
@@ -2295,9 +1853,8 @@
                                         <div class="p-5">
                                             <div class="main__container-products-table-item-cover">
                                                 <div class="main__container-products-table-item-header">
-                                                    <img src="	https://cf.shopee.vn/file/b9a1cc35364c988cab2c167f3adfc49c_tn" 
-                                                        alt="" 
-                                                        class="main__container-products-table-item-header-img">
+                                                    <img src="	https://cf.shopee.vn/file/b9a1cc35364c988cab2c167f3adfc49c_tn"
+                                                        alt="" class="main__container-products-table-item-header-img">
                                                 </div>
                                                 <div class="main__container-products-table-item-info">
                                                     <div class="main__container-products-table-item-title">
@@ -2318,7 +1875,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                 </div>
+                                </div>
                             </section>
                             <div class="main__container-see-more">
                                 <div class="btn-see-more">Xem thêm</div>
@@ -2330,7 +1887,7 @@
             </div>
         </div>
         <!-- @ footer  -->
-        <footer>  
+        <footer>
             <div class="footer__about-background">
                 <div class="grid ">
                     <div class="footer__about">
@@ -2371,129 +1928,97 @@
                                 <div>thanh toán</div>
                                 <div class="footer__about-payment">
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 983.3333333333334%;
-                                                    background-position: 84.6938775510204% 6.289308176100629%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 983.3333333333334%;
+                                                    background-position: 84.6938775510204% 6.289308176100629%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 610.3448275862069%;
-                                                background-position: 49.416909620991255% 41.891891891891895%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 49.416909620991255% 41.891891891891895%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 769.5652173913044%;
-                                                background-position: 38.48396501457726% 38.311688311688314%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 769.5652173913044%;
+                                                background-position: 38.48396501457726% 38.311688311688314%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1482% 804.5454545454545%;
-                                                background-position: 1.447178002894356% 6.451612903225806%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1482% 804.5454545454545%;
+                                                background-position: 1.447178002894356% 6.451612903225806%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1482% 610.3448275862069%;
-                                                background-position: 59.91316931982634% 63.513513513513516%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1482% 610.3448275862069%;
+                                                background-position: 59.91316931982634% 63.513513513513516%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 610.3448275862069%;
-                                                background-position: 19.97084548104956% 66.21621621621621%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 19.97084548104956% 66.21621621621621%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-m"
-                                            style="background-size: 741% 931.578947368421%;
-                                                background-position: 71.9188767550702% 6.329113924050633%;"
-                                        >
+                                        <div class="footer__about-item-m" style="background-size: 741% 931.578947368421%;
+                                                background-position: 71.9188767550702% 6.329113924050633%;">
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="footer__about-custumer-care-title">
                                 <div> đơn vị vận chuyển </div>
                                 <div class="footer__about-shipping-unit">
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-m"
-                                            style="background-size: 667.5675675675676% 983.3333333333334%;
-                                                background-position: 65.71428571428571% 35.22012578616352%;"
-                                        >
+                                        <div class="footer__about-item-m" style="background-size: 667.5675675675676% 983.3333333333334%;
+                                                background-position: 65.71428571428571% 35.22012578616352%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-m"
-                                            style="background-size: 1347.2727272727273% 983.3333333333334%;
-                                                background-position: 19.97084548104956% 37.735849056603776%;"
-                                        >
+                                        <div class="footer__about-item-m" style="background-size: 1347.2727272727273% 983.3333333333334%;
+                                                background-position: 19.97084548104956% 37.735849056603776%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 610.3448275862069%;
-                                                background-position: 9.037900874635568% 40.54054054054054%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 610.3448275862069%;
+                                                background-position: 9.037900874635568% 40.54054054054054%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 524.90625% 274.28125%;
-                                                background-position: 89.907015% 70%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 524.90625% 274.28125%;
+                                                background-position: 89.907015% 70%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 655.5555555555555%;
-                                                background-position: 1.4577259475218658% 72.66666666666667%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 655.5555555555555%;
+                                                background-position: 1.4577259475218658% 72.66666666666667%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1347.2727272727273% 1106.25%;
-                                                background-position: 95.6268221574344% 6.211180124223603%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1347.2727272727273% 1106.25%;
+                                                background-position: 95.6268221574344% 6.211180124223603%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 552.9850746268656% 610.3448275862069%;
-                                                background-position: 29.9835255354201% 6.756756756756757%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 552.9850746268656% 610.3448275862069%;
+                                                background-position: 29.9835255354201% 6.756756756756757%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1235% 680.7692307692307%;
-                                                background-position: 55.947136563876654% 6.622516556291391%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1235% 680.7692307692307%;
+                                                background-position: 55.947136563876654% 6.622516556291391%;">
                                         </div>
                                     </div>
                                     <div class="footer__about-container">
-                                        <div class="footer__about-item-s"
-                                            style="background-size: 1029.1666666666667% 590%;
-                                                background-position: 13.452914798206278% 6.802721088435374%;"
-                                        >
+                                        <div class="footer__about-item-s" style="background-size: 1029.1666666666667% 590%;
+                                                background-position: 13.452914798206278% 6.802721088435374%;">
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
 
                         <!-- About social media -->
                         <div class="footer__about-custumer-care-container l-2-4">
-                            <div class="footer__about-custumer-care-title">theo dõi chúng tôi trên</div> 
+                            <div class="footer__about-custumer-care-title">theo dõi chúng tôi trên</div>
                             <div class="footer__about-custumer-care-item">
                                 <i class="footer__about-social-media fab fa-facebook"></i>
                                 <span class="">Facebook</span>
@@ -2510,11 +2035,10 @@
 
                         <!-- dowload App from different background -->
                         <div class="footer__about-custumer-care-container l-2-4">
-                            <div class="footer__about-custumer-care-title">tải ứng dụng shopee ngay thôi</div> 
+                            <div class="footer__about-custumer-care-title">tải ứng dụng shopee ngay thôi</div>
                             <div class="footer__about-dowload-now">
                                 <div class="footer__about-dowload-qr"
-                                    style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png');"
-                                >
+                                    style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png');">
                                 </div>
                                 <div class="footer__about-dowload-apps">
                                     <div class="footer__about-dowload-app"
@@ -2538,7 +2062,7 @@
                         </div>
                         <div class="footer__about-nation-container">
                             <span>Quốc gia & Khu vực:</span>
-                            <div class="footer__about-nation">Singapore</div> 
+                            <div class="footer__about-nation">Singapore</div>
                             <div class="footer__about-nation">indonesia </div>
                             <div class="footer__about-nation">đài loan </div>
                             <div class="footer__about-nation"> thái lan</div>
@@ -2566,16 +2090,13 @@
                     </div>
                     <div class="footer__policy-registered-items">
                         <div class="footer__policy-registered footer__policy-registered-1"
-                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');"
-                        >            
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
                         </div>
                         <div class="footer__policy-registered footer__policy-registered-1"
-                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');"
-                        >
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
                         </div>
                         <div class="footer__policy-registered footer__policy-registered-2"
-                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');"
-                        >
+                            style="background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/4bdefde103e8aa245cd17511adde9f89.png');">
                         </div>
                     </div>
                     <div class="footer__company">
@@ -2583,10 +2104,12 @@
                             Công ty TNHH Shopee
                         </div>
                         <div class="footer__company-edit-font m-t-8">
-                            Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
+                            Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận
+                            Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn
                         </div>
                         <div class="footer__company-edit-font m-t-8">
-                            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -  Điện thoại liên hệ: 024 73081221 (ext 4678)
+                            Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext
+                            4678)
                         </div>
                         <div class="footer__company-edit-font m-t-8">
                             Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
@@ -2596,17 +2119,16 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="app__skinny-banner">
-                <img src="https://cf.shopee.vn/file/f630b99bef39b0226e962ba7d6750e68" 
-                    alt="app__skinny-banner" 
+                <img src="https://cf.shopee.vn/file/f630b99bef39b0226e962ba7d6750e68" alt="app__skinny-banner"
                     class="app__skinny-banner-item">
             </div>
             <a href="#top" class="app__skinny-gotop">
                 <i class="fas fa-chevron-up gotop"></i>
             </a>
-        </footer> 
+        </footer>
     </div>
 </body>
-</html>
 
+</html>

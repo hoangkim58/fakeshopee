@@ -223,8 +223,13 @@
 }
 
 .notify-content {
-    display: flex;
-    padding: 1.2rem;
+    /* display: flex; */
+    /* padding:  1.2rem; */
+}
+
+.notify-content-large {
+    padding:  1.2rem;
+    display: flex; 
 }
 
 .notify-content-container {
@@ -348,20 +353,32 @@
 .header__search-looker-trending {
     position:absolute;
     top: 90%;
-    display: flex;
     color: var(--white-color);
     font-size: 13px;
+    height: 24px;
+    overflow: hidden;
     margin: 4px -4px;
+}
+.header__search-looker-trending-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .header__search-looker-item {
     cursor: pointer;
     padding: 4px 4px;
+    height: 24px;
 }
 
 .header__search-cart {
     margin: 16px 26px;
     position: relative;
+}
+
+
+.header__search-login {
+    display: none;
 }
 
 .header__search-cart--hover .header__search-cart-notify {
@@ -460,6 +477,7 @@
     max-width: 796px;
     overflow: hidden;
     cursor: pointer;
+    
 }
 
 .main__container-promotion-slideshow-container {
@@ -589,13 +607,20 @@
     margin-top: 1rem;
     margin-left: 0px;
     height: 10.8rem;
-    background-color: #f5dc7a;
+    background-color: #ffffff;
     max-width: 1200px;
+    justify-content: space-around;
+}
+
+.mainservice__container-link-item {
+    text-decoration: none;
+    max-width: 10rem;
 }
 
 .mainservice__container-item {
     background-color: #ffffff; 
     cursor: pointer;
+    max-width: 10rem;
 }
 
 .mainservice__container-item-cover {
@@ -628,8 +653,9 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: #000;
 }
 
 .main__container-first-order-voucher {
@@ -1703,4 +1729,24 @@ footer {
     margin: 0 8.2rem 6.4rem 0; 
     z-index: 100;
 } 
+.app__skinny-gotop {
+    text-decoration: none;
+    position: fixed;
+    right: 1.2rem; 
+    bottom: 1.2rem; 
+}
 
+.gotop {
+    font-size: 33px;
+    color: orangered;
+    width: 6rem;
+    height: 6rem;
+    /* padding: 6px; */
+    background-color: white;
+    /* text-align: center; */
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 100%;
+}
