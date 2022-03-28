@@ -29,3 +29,11 @@ html {
     display: flex;
     flex-wrap: wrap;
 }
+
+.d-none {
+    display: none;
+}
+
+.text-decor--nonne {
+    text-decoration: none;
+}

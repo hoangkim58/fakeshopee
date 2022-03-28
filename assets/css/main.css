@@ -755,9 +755,19 @@
     max-width: 119px;
     cursor: pointer;
     padding: auto;
+    background-color: #fff;
+    margin: 0.5px 0.5px;
+} 
+
+.main__container-category-link {
+    background-color: #ffffff;
 }
 
-.main__container-category-item:hover  
+a.main__container-category-item + a.main__container-category-item {
+    margin: 0.5px;
+} 
+
+a.main__container-category-item:hover  
 {    
     z-index: 1;
     box-shadow: 0 0 1rem rgba( 0, 0, 0, .1);
@@ -775,6 +785,7 @@
 
 .main__container-category-item-name {
     height: 4rem;
+    min-width: 11.9rem;
     margin-top: 0.6rem;
     font-size: 1.4rem;
     color: rgba( 0, 0, 0, .8);
@@ -1385,9 +1396,41 @@
     display: flex;
     align-self: flex-end;
 }
+ 
+@keyframes productBar {
+    0%   {width: 0%; opacity: 0.2;} 
+    10%   {width: 10%;} 
+    20%   {width: 20%;} 
+    30%   {width: 30%;} 
+    40%   {width: 40%;} 
+    50%   {width: 50%;} 
+    60%   {width: 60%; opacity: 0.6;} 
+    70%   {width: 70%;} 
+    80%   {width: 80%;} 
+    90%   {width: 90%; opacity: 1;} 
+    100%   {width: 100%;} 
+}
+.next {
+    animation: slideCircle ease-in 0.3s;
+}
+@keyframes slideCircle {
+    0%   {right: 0%; opacity: 0.2;} 
+    10%   {right: 10%;} 
+    20%   {right: 20%;} 
+    30%   {right: 30%;} 
+    40%   {right: 40%;} 
+    50%   {right: 50%;} 
+    60%   {right: 60%; opacity: 0.6;} 
+    70%   {right: 70%;} 
+    80%   {right: 80%;} 
+    90%   {right: 90%; opacity: 1;} 
+    100%   {right: 100%;} 
+}
 
 .header__tab--active{
     background-color: #ee4d2d; 
+    animation: productBar ease-in 0.4s; 
+
 }
 
 /* show  product table list // today-suggestion */
@@ -1404,7 +1447,7 @@
 
 .main__container-products-table-item {
     height: 29.8rem;
-    padding-bottom: 1rem; 
+    padding-bottom: 1rem;   
     margin: 0;
 }
 
@@ -1414,6 +1457,10 @@
     border-radius: 2px;
     background-color: var(--white-color);
     box-shadow: 0 0 0.4rem rgba( 0, 0, 0, 0.2);
+}
+
+.main__container-products-table-item:hover .like-label {
+    top: -276px;
 }
 
 .main__container-products-table-item
@@ -1491,6 +1538,29 @@
 .main__container-products-table-item-sold {
     font-size: 1.2rem;
     color: #0000008a;
+}
+
+.like-label {
+    display: none;
+    position: relative;
+    top: -275px;
+    left: -5px;
+    background-color: #f6432d;
+    color: white;
+    font-size: 1.2rem;
+    padding: 3px 5.2px;
+    width: max-content;
+}
+
+.like-label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: -0.3875rem;
+    border-top: 0.3875rem solid;
+    border-left: 0.3875rem solid transparent;
+    filter: brightness(41.3%);
 }
 
 .main__container-see-more {
@@ -1723,7 +1793,7 @@ footer {
  
 .app__skinny-banner {
     position: fixed; 
-    bottom: 0;
+    bottom: 1.8rem;
     right: 0;
     font-size: 20px;  
     margin: 0 8.2rem 6.4rem 0; 
@@ -1732,8 +1802,11 @@ footer {
 .app__skinny-gotop {
     text-decoration: none;
     position: fixed;
-    right: 1.2rem; 
+    right: 9.2rem; 
     bottom: 1.2rem; 
+    border-radius: 100%;
+    box-shadow: 1px 1px 6px 1px rgb(255 99 71 / 20%);
+    z-index: 100;
 }
 
 .gotop {
