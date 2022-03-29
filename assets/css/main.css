@@ -92,7 +92,7 @@
 .header__navbar-item {
     position: relative;
     margin: 0 8px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .header__navbar-item-link,
@@ -296,7 +296,7 @@
 .header__search-brand {
     width: 25.4rem;
     margin-right: 0.8rem;
-    cursor: pointer;
+    cursor: default;
 }
 
 .header-brand {
@@ -346,7 +346,7 @@
     margin: 2px 3px;
     border-radius: 2px;
     padding: 9px 22px;
-    cursor: pointer;
+    cursor: default;
 }
 
 
@@ -366,7 +366,7 @@
 }
 
 .header__search-looker-item {
-    cursor: pointer;
+    cursor: default;
     padding: 4px 4px;
     height: 24px;
 }
@@ -476,7 +476,7 @@
     background-color: #f5dc7a;
     max-width: 796px;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
     
 }
 
@@ -547,7 +547,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     font-size: 2.2rem; 
     color: #ffffff;
-    cursor: pointer;
+    cursor: default;
     z-index: 5;
 }
 
@@ -587,7 +587,7 @@
     height: 115px;
     border-radius: 2px;
     width:100%;
-    cursor: pointer;
+    cursor: default;
 }
 
 .promotion-top-right-item {
@@ -600,7 +600,7 @@
     background-color: #d2d2d2;
     border-radius: 2px;
     height: 115px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .mainservice__container-menu-list {
@@ -619,7 +619,7 @@
 
 .mainservice__container-item {
     background-color: #ffffff; 
-    cursor: pointer;
+    cursor: default;
     max-width: 10rem;
 }
 
@@ -661,7 +661,7 @@
 .main__container-first-order-voucher {
     margin-top: 2rem;
     min-width: 100%;
-    cursor: pointer;
+    cursor: default;
 }
 .main__container-first-order-voucher-img {
     height: 11rem;
@@ -686,7 +686,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-category-bar { 
@@ -753,7 +753,7 @@
 
 .main__container-category-item {
     max-width: 119px;
-    cursor: pointer;
+    cursor: default;
     padding: auto;
     background-color: #fff;
     margin: 0.5px 0.5px;
@@ -865,7 +865,7 @@ a.main__container-category-item:hover
     color: #ee4d2d;
     display: flex; 
     align-items: center;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-flashsale-item-cover {
@@ -893,10 +893,11 @@ a.main__container-category-item:hover
 
 .main__container-flashsale-item {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 21.7rem;
+    width: 20rem;
     min-width: 17.1rem;
-    cursor: pointer;
+    margin: auto;
+    cursor: default;
 }
 
 .main__container-flashsale-label-discount {
@@ -1016,7 +1017,7 @@ a.main__container-category-item:hover
     display: flex;
 }
 .main__container-home-skinny-item {
-    cursor: pointer;
+    cursor: default;
 }
 
  /* @ Shop Mall */
@@ -1035,7 +1036,7 @@ a.main__container-category-item:hover
     padding-right: 15px;
     position: relative;
     color: #d0011b; 
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-sm-label:after {
@@ -1097,7 +1098,7 @@ a.main__container-category-item:hover
     background-size: cover;
     min-width: 39rem;
     height: 46.2rem;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-sm-body-slideshow-container {
@@ -1182,7 +1183,7 @@ a.main__container-category-item:hover
     height: 23.6rem;
     padding: 10px;   
     position: relative;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-sm-body-brand-name {
@@ -1230,7 +1231,7 @@ a.main__container-category-item:hover
     align-items: center; 
     justify-content: center;
     z-index: 5;
-    cursor: pointer;
+    cursor: default;
 }  
 
 .main__container-sm-insidebody-cover:hover
@@ -1249,7 +1250,7 @@ a.main__container-category-item:hover
     padding-right: 1rem;
     display: flex;
     border-right: 1px solid #f2f2f2; 
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-trends-search-item:last-child {
@@ -1295,7 +1296,7 @@ a.main__container-category-item:hover
 .main__container-top-search-item {
     padding: 2rem 1rem;
     position: relative;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-top-search-item-img {
@@ -1374,7 +1375,7 @@ a.main__container-category-item:hover
     height: 6rem;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: default;
 }
 
 .main__container-products-today-suggestion {
@@ -1476,7 +1477,7 @@ a.main__container-category-item:hover
     position: relative;
     top: -1px;
     border: 1px solid #ee4d2d;  
-    cursor: pointer; 
+    cursor: default; 
 }
 
 .main__container-products-table-item:hover
@@ -1694,7 +1695,7 @@ footer {
     margin-bottom: 1.2rem;
     color: rgba(0,0,0,.54);
     list-style: none;
-    cursor: pointer;
+    cursor: default;
 }
 
 .footer__about-social-media { 
@@ -1731,7 +1732,7 @@ footer {
     padding: 0 0.5rem;
     border-right: 1px solid #dedede;
     text-transform: capitalize;
-    cursor: pointer;
+    cursor: default;
 }
 
 .footer__about-nation:last-child {
@@ -1745,7 +1746,7 @@ footer {
     color: rgba(0,0,0,.54);
     display: flex;
     justify-content: center;
-    cursor: pointer;
+    cursor: default;
 }
 
 .footer__policy {
@@ -1768,7 +1769,7 @@ footer {
 
 .footer__policy-registered {
     margin: 0 2rem;
-    cursor: pointer;
+    cursor: default;
 }
 
 .footer__policy-registered-1 {
