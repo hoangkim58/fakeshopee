@@ -409,7 +409,7 @@ function handleDOM() {
             clickShopMallArrowStatus(clickShopMallInsidePrev, 'visible')
         }
 
-
+        
     })
 }
 

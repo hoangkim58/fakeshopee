@@ -30,6 +30,10 @@ html {
     flex-wrap: wrap;
 }
 
+.d-flex {
+    display: flex;
+}
+
 .d-none {
     display: none;
 }

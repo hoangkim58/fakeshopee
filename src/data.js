@@ -1028,8 +1028,13 @@ const dataProductlists = [
     },
     
 ] 
+const dataMessages = [
+    {
+        shopName: 'Alibaba'
+    },
+]
 export {
     dataNotifyContents, dataHSLTrendings,
     dataPromotionSlideshowContainers, dataMainServices,
-    dataCategorys, dataProductlists, 
+    dataCategorys, dataProductlists, dataMessages,
 }

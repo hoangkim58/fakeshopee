@@ -203,7 +203,7 @@ export default function App() {
     function handleFilterProduction() {
         var quatitySold = document.querySelectorAll('.main__container-products-table-item .main__container-products-table-item-sold')
         var setLikeLabel = document.querySelectorAll('.main__container-products-table-item .like-label')
-       
+
         //handle like-label at product list
         for (let i = 0; i < dataProductlists.length; i++) {
 
@@ -227,8 +227,8 @@ export default function App() {
         //filter shopmal - insert S-Mall product label
         const dataFilteredE = filterdDataEvent(dataProductlists, 'April')
         const dataFiltered = filterdDataEvent(dataProductlists, '')
-        const frameProduction =  '.products-today-suggestion-list'
-        const frameProductionEvent =  '.products-event-products-list'
+        const frameProduction = '.products-today-suggestion-list'
+        const frameProductionEvent = '.products-event-products-list'
 
         handleSMallLabel(dataFiltered, frameProduction)
         handleSMallLabel(dataFilteredE, frameProductionEvent)
@@ -241,23 +241,24 @@ export default function App() {
 
     function handleFlashSaleLabel(data, classNameSection) {
         var setStyleProductPrice = `color: #0000008a; text-decoration-line: line-through;
-        position: absolute; bottom: 33px; font-size: 1.2rem;`
+            position: absolute; bottom: 33px; font-size: 1.2rem;`
         var setFSaleLabel = document.querySelectorAll(`${classNameSection} .flashsale-label-discount--scale-70`)
         var setDiscountFSale = document.querySelectorAll(`${classNameSection} span .price-product`)
         var setDiscountPriceFSale = document.querySelectorAll(`${classNameSection} span .price-discount`)
-        data.filter((item,index) => {
-            if(item.category === 'FlashSale'){
+
+        data.filter((item) => {
+            if (item.category === 'FlashSale') {
                 let getIDFSaleLabel = document.getElementById(`${item.id}`).getAttribute('data-id')
 
-                console.log([item.id, getIDFSaleLabel, data])
+                // console.log([item.id, getIDFSaleLabel, data])
 
                 setFSaleLabel[getIDFSaleLabel].setAttribute('style', 'visibility: visible;')
                 setFSaleLabel[getIDFSaleLabel].innerHTML = `${item.discount}% <span style="color: #ffff;">giảm</span>`
                 setDiscountFSale[getIDFSaleLabel].setAttribute('style', `${setStyleProductPrice}`)
                 setDiscountPriceFSale[getIDFSaleLabel].innerHTML = handleDiscountPrice(item.price, item.discount)
-    
+
             }
-        })  
+        })
     }
 
     function handleSMallLabel(data, classNameSection) {
