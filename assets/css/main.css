@@ -917,6 +917,13 @@ a.main__container-category-item:hover
     align-items: center;
 }
 
+.flashsale-label-discount--scale-70 {
+    transform: scale(0.7,0.7);
+    right: -8.8px;
+    top: -7.8px;
+    visibility: hidden;
+}
+
 .main__container-flashsale-label-discount::before {
     content: "";
     position: absolute;
@@ -1452,6 +1459,7 @@ a.main__container-category-item:hover
 }
 
 .main__container-products-table-item-cover {
+    position: relative;
     margin: -1px;
     border: 1px solid transparent;
     border-radius: 2px;
@@ -1490,6 +1498,7 @@ a.main__container-category-item:hover
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .main__container-products-table-item-header {
@@ -1537,7 +1546,7 @@ a.main__container-category-item:hover
 
 .main__container-products-table-item-sold {
     font-size: 1.2rem;
-    color: #0000008a;
+    color: #0000008a; 
 }
 
 .like-label {

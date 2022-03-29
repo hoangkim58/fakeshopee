@@ -139,17 +139,18 @@ export default function App() {
 
     //Render product suggestion -  ***today topping items 
     renderProductSuggestion('.products-today-suggestion-list', filterNormal)
+    renderProductSuggestion('.products-today-suggestion-list', '')
 
     //Render product event -  ***Event items 
     renderProductSuggestion('.products-event-products-list', filterEvent)
 
     //INSERT background event - promotion - endow
     const url = 'https://cf.shopee.vn/file/2b2b94b25c063030ee03606e35dc06ef'
-    backgroundImgEvent(dataProductlists, filterEvent, url) 
+    backgroundImgEvent(dataProductlists, filterEvent, url)
 
     // handle label for every product
     handleFilterProduction()
-    
+
     function renderProductSuggestion(typeProductClassName, filterEvents) {
         const productSuggestion = document.querySelector(typeProductClassName)
 
@@ -162,6 +163,10 @@ export default function App() {
         <div class="main__container-products-table-item l-2 m-4 c-6">
             <div class="p-5">
                 <div id="${item.id}" class="main__container-products-table-item-cover">
+                    <div class="main__container-flashsale-label-discount flashsale-label-discount--scale-70">
+                        0%
+                        <span style="color: #ffff;">giảm</span>
+                        </div>
                     <div class="main__container-products-table-item-header" 
                         style="background-image: url(${item.image}); 
                         background-size: contain"
@@ -175,8 +180,11 @@ export default function App() {
                         </div>
                         <div class="main__container-products-table-item-container">
                             <div class="main__container-products-table-item-price">
-                                <span class="products-table-item-price-coin">₫</span>
-                                <span>${item.price}</span>
+                                <span>
+                                    <span class="products-table-item-price-coin">₫</span>
+                                    <span class="price-product">${renderPriceVND(item.price)}</span> 
+                                    <span class="price-discount"></span>
+                                </span>
                             </div>
                             <div class="main__container-products-table-item-sold">Đã bán ${item.sold} </div>
                         </div>
@@ -190,11 +198,13 @@ export default function App() {
         productSuggestion.appendChild(productSuggestionContainer)
 
     }
-
+    
     function handleFilterProduction() {
         var quatitySold = document.querySelectorAll('.main__container-products-table-item .main__container-products-table-item-sold')
         var setLikeLabel = document.querySelectorAll('.main__container-products-table-item .like-label')
-
+        var setFSaleLabel = document.querySelectorAll('.flashsale-label-discount--scale-70')
+        var setDiscountFSale = document.querySelectorAll('span .price-product')
+        var setDiscountPriceFSale = document.querySelectorAll('span .price-discount')
         // console.log(quatitySold)
         for (let i = 0; i < dataProductlists.length; i++) {
             // console.log(quatitySold[i].innerHTML.slice(6,-1))
@@ -214,15 +224,30 @@ export default function App() {
             }
         }
 
-        //filter shopmal  
+        //filter shopmal - insert S-Mall product label
         var shopMallItem = dataProductlists.filter(item => (item.type === 'SMall'))
         shopMallItem.map(item => ([
             setLikeLabel[item.id - 1].innerHTML = 'Mall',
             setLikeLabel[item.id - 1].setAttribute('style', 'background-color: #d0011b; display: block;'),
         ]
         ))
+
+        // handle flash-sale - insert label flash sale Product List
+        var flashSaleItem = dataProductlists.filter(item => (item.category === 'FlashSale'))
+        var setStyleProductPrice = `color: #0000008a; text-decoration-line: line-through;
+        position: absolute; bottom: 33px; font-size: 1.2rem;`
+        flashSaleItem.map(item => {
+            
+            setFSaleLabel[item.id - 1].setAttribute('style', 'visibility: visible;')
+            setFSaleLabel[item.id - 1].innerHTML = `${item.discount}% <span style="color: #ffff;">giảm</span>`
+            setDiscountFSale[item.id - 1].setAttribute('style', `${setStyleProductPrice}`)
+            setDiscountPriceFSale[item.id - 1].innerHTML = handleDiscountPrice(item.price, item.discount)
+
+        })
+
     }
 
+    // Flash sale ITEM LIST AREA ******************************
 
     ///////////////////////                    FOOTER 
 
@@ -230,16 +255,16 @@ export default function App() {
     // Use for Product Lists
     // filter data according to specified condition --
     function filterdDataEvent(data, conditions) {
-        return data.filter(item => (item.event === `${conditions}`)) 
+        return data.filter(item => (item.event === `${conditions}`))
     }
 
     /// find Data with multiple keywords
     function filterdDataShip(data, ...rest) {
         let Data = []
-        for(let i = 0; i < rest.length; i++) {
-            Data = Data.concat(data.filter(item => (item.ship === `${rest[i]}` )))
+        for (let i = 0; i < rest.length; i++) {
+            Data = Data.concat(data.filter(item => (item.ship === `${rest[i]}`)))
         }
-        return  Data
+        return Data
     }
 
     // renderContent of Farent tag
@@ -247,19 +272,18 @@ export default function App() {
         tagFarent.innerHTML = strContent.reduce((total, cur) => total + cur)
     }
 
-   
+
     // Data - Event name - specified url
     function backgroundImgEvent(data, filterEvent, url) {
-        if(filterEvent === 'April'){
+        if (filterEvent === 'April') {
 
             var productsItem = document.querySelectorAll('.main__container-products-table-item-header')
-    
+
             const dataEventLocal = filterdDataEvent(data, filterEvent)
-            const dataEventGlobal = filterdDataShip(data, 'free', 'hx', 'discount') 
-    
+            const dataEventGlobal = filterdDataShip(data, 'free', 'hx', 'discount')
+
             dataEventLocal.map(item => (setBackgroundEvents(productsItem[item.id - 1], url)))
             dataEventGlobal.map(item => (setBackgroundEvents(productsItem[item.id - 1], url)))
-
         }
     }
     function setBackgroundEvents(a, backgroundEvent) {
@@ -269,6 +293,15 @@ export default function App() {
         return a.style.backgroundImage = resultBackground
     }
 
+    // render price VND 
+    function renderPriceVND(price) {
+        return price = (price/1000).toFixed(3)
+    }
+    // Calculate promotion/endow product 
+    function handleDiscountPrice(price, discount) {
+        price = price * (1 - discount / 100)
+        return renderPriceVND(price)
+    }
 
     // let array = []
     // for(let i = 0; i< 20 ; i++) {
