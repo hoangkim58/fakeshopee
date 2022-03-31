@@ -41,3 +41,6 @@ html {
 .text-decor--none {
     text-decoration: none;
 }
+.d-table {
+    display: table ;
+}

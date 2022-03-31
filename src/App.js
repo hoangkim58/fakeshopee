@@ -1,7 +1,7 @@
 import {
     dataNotifyContents, dataHSLTrendings, dataTrendSearch,
     dataPromotionSlideshowContainers, dataMainServices,
-    dataCategorys, dataProductlists, dataTopSearch,
+    dataCategorys, dataProductlists, dataTopSearch, dataMessages,
 } from './data.js'
 
 export default function App() {
@@ -104,8 +104,6 @@ export default function App() {
     // Category ----------------------- 
     //main__container-allproducts-list
 
-
-
     renderCategoryServices()
     function renderCategoryServices() {
         const categoryServices = document.querySelector('.main__container-category-cover')
@@ -131,18 +129,14 @@ export default function App() {
         categoryServices.appendChild(categoryServicesContainer)
     }
 
-
     // PRODUCT ITEM LIST AREA ******************************
     //render product
     let filterEvent = 'April'
-    let filterNormal = ''
-
+    let filterNormal = '' 
     //Render product suggestion -  ***today topping items 
-    renderProductList('products-today-suggestion-list', filterNormal)
-
+    renderProductList('products-today-suggestion-list', filterNormal) 
     //Render product event -  ***Event items 
-    renderProductList('products-event-products-list', filterEvent)
-
+    renderProductList('products-event-products-list', filterEvent) 
     //INSERT background event - promotion - endow
     const url = 'https://cf.shopee.vn/file/2b2b94b25c063030ee03606e35dc06ef'
     handleBGImgEvent(dataProductlists, filterNormal, url, 'products-today-suggestion-list')
@@ -230,11 +224,14 @@ export default function App() {
                 setLikeLabel.eq(i).html('Official')
                 setLikeLabel.eq(i).css('background-color', ' #9332bb')
             }
-            console.log(i, classNameSection)
+            // console.log(i, classNameSection)
         }
 
 
     }
+
+    //********* ********* ********* ********* ********* ********* ********* *********
+    // handle show label for product item 
     //filter shopmal - insert S-Mall product label
     const dataFilteredEvent = filterdDataSeriesOfEvent(dataProductlists, 'April')
     const frameProduction = 'products-today-suggestion-list'
@@ -256,7 +253,7 @@ export default function App() {
         var setDiscountFSale = $(`.${classNameSection} span .price-product`)
         var setDiscountPriceFSale = $(`.${classNameSection} span .price-discount`)
         const dataFilteredFSale = filterdDataSeriesOfEvent(data, 'FlashSale')
-        console.log(data)
+        // console.log(data)
 
         // console.log(dataFilteredFSale, classNameSection)  
         dataFilteredFSale.map((item, index) => {
@@ -409,7 +406,49 @@ export default function App() {
 
 
     ///////////////////////                    FOOTER 
+    renderChatBox()
+    function renderChatBox() {
+        const chatBoxCover = document.querySelector('.message__box-search-content')
+        const chatBoxContainer = document.createElement('div')
+        chatBoxContainer.className = 'message__box-chat-container'
 
+        const strOfChatBox = dataMessages.map(item => (
+            `    <div id ='${item.shopName}-${item.id}' class="message__box-search-item">
+                    <div class="pin-icon--active">
+                        <i class="fas fa-thumbtack"></i>
+                    </div>
+                    <img src="${item.image}" class="contact-avatar"></img>
+                    <span class="contact-content ">
+                        <div class="contact-name d-flex"> 
+                            <span > ${item.shopName}</span>
+                            <span class="contact-message--status"></span>
+                        </div>
+                        <div class="contact-chat-content">
+                            ${item.content}
+                        </div>
+                    </span>
+                    <span id ="${item.shopName}-${item.id}" class="contact-chat-menu"><i class="fas fa-ellipsis-h"></i></span>
+                </div>
+                <div id ='${item.shopName}-${item.id}' >
+                <div class="contact-chat-menu--show">
+                    <span class="contact-chat-menu-pin contact-chat-menu-icon">
+                        <i class="fas fa-thumbtack menu-chat-icon"></i>
+                        <p class="contact-chat-content">Ghim trò chuyện</p>
+                    </span>
+                    <span class="contact-chat-menu-mark contact-chat-menu-icon">
+                        <i class="fas fa-comment-alt menu-chat-icon"></i>
+                        <p class="contact-chat-content">Đánh dấu chưa đọc</p>
+                    </span>
+                    <span class="contact-chat-menu-trash contact-chat-menu-icon">
+                        <i class="fas fa-trash-alt menu-chat-icon"></i>
+                        <p class="contact-chat-content">Xóa trò chuyện</p>
+                    </span>
+                </div>
+            </div>
+        `))
+        renderContent(chatBoxContainer, strOfChatBox)
+        chatBoxCover.appendChild(chatBoxContainer)
+    }
     // *********************************************************************************************** 
     // Use for Product Lists
     // filter data according to specified condition --
@@ -499,5 +538,5 @@ export default function App() {
     // }
     // console.log(array.split(','))
     // var x= ['14', '9', '14', '10', '0', '7', '0', '5', '10', '10', '6', '5', '11', '2', '0', '10', '5', '6', '4', '4', '']
-
+  
 }

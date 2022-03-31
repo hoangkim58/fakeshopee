@@ -363,7 +363,7 @@
                                         class="main__container-sm-insidebody-container sm-insidebody-container--width sm-item-list row ">
                                         <!-- 
                                             content....
-                                        --> 
+                                        -->
                                     </div>
                                 </div>
                             </div>
@@ -436,7 +436,7 @@
                         </a>
                         <div class="main__container-products-table-header-container">
                             <!-- show  product table list // today-suggestion  -->
-                            <section class="products-today-suggestion-list"> 
+                            <section class="products-today-suggestion-list">
                                 <!-- Render  JS -->
                             </section>
 
@@ -694,35 +694,85 @@
             <a href="#top" class="app__skinny-gotop">
                 <i class="fas fa-chevron-up gotop"></i>
             </a>
+            
             <div class="app__skinny-chat d-flex">
-                <span>
-                    <i class="fas fa-comments chat-box-icon"></i>
-                </span>
-                <span class="chat-box-text">Chat</span>
-                <span class="waiting-message d-none"></span>
-            </div>
-            <div class="message__box-area app__skinny-chat">
-                <div class="message__box-header">
-                    <span class="chat-box-text">Chat</span>
+                <div class="chat-box--status">
                     <span>
-                        <span>s</span>
-                        <span>s</span>
+                        <i class="fas fa-comments chat-box-icon"></i>
                     </span>
+                    <span class="chat-box-text">Chat</span>
+                    <span class="waiting-message"></span>
                 </div>
-                <div class="message__box-search d-lex">
-                    <div>
-                        <i class="fas fa-caret-left"></i>
-                        <i class="fas fa-caret-down"></i>
-
-                    </div>
-                    <div>
-                        <span>Tất cả</span>
-                        <span>
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
+            </div>
+            <div class="message__box-container--status">
+                <div class="message__box-area">
+                    <div class="message__box-container" >
+    
+                        <div class="message__box-header">
+                            <span class="chat-box-text">Chat</span>
+                            <span>
+                                <span class="chat-box-icon btn-minimize">
+                                    <i class="fas fa-caret-left"></i>
+                                </span>
+                                <span class="chat-box-icon btn-close">
+                                    <i class="fas fa-caret-down"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="message__box-search-container">
+        
+                            <div class="message__box-search" style="min-width: 22rem;">
+                                <div class="message__box-search-header d-flex">
+                                    <div style="width: 76%;">
+                                        <i class="fas fa-search chat-box__looker-icon" ></i>
+                                        <input class="message__box-search-input" placeholder="Tìm theo tên khách hàng"/>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 13px">Tất cả</span>
+                                        <span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="message__box-search-content-frame">
+                                    <div class="message__box-search-content" style="display: block !important;">
+                                        <!-- <div class="message__box-search-container">
+                                            ...Render JS...
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message__box-search chat-content--show" style="text-align: center;">
+                                <div class="chat-content-container--default">
+                                    <img class="message__box-img-default" src="https://deo.shopeemobile.com/shopee/shopee-seller-live-vn/chateasy/6abdc0872a25853b36d17e7498335326.png" alt="">
+                                    <p class="chat-content-default">Xin chào !</p>
+                                </div>
+                                <div class="chat-content-container--active">
+                                    <div class="offfical-content-container">
+                                        <div class="offfical-content-header">
+                                            uyen
+                                        </div>
+                                        <div class="offfical-content-message-boundary">
+                                            <div>sdzgadgdasadgadgad</div>
+                                            <div>sdzgadgdasadgadgad</div>
+                                            <div>sdzgadgdasadgadgad</div>
+                                            <div>sdzgadgdasadgadgad</div>
+                                            <div>sdzgadgdasadgadgad</div>
+                                        </div>
+                                        <div class="offfical-content-response">
+                                            <span>
+                                                <input type="text" class="enter-message">
+                                            </span>
+                                            <span class="send-message">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="message__box-content"></div>
                     </div>
                 </div>
-                <div class="message__box-content"></div>
             </div>
         </footer>
     </div>
