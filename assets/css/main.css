@@ -920,9 +920,12 @@ a.main__container-category-item:hover
 
 .flashsale-label-discount--scale-70 {
     transform: scale(0.7,0.7);
-    right: -8.8px;
+    right: -7.8px;
     top: -7.8px;
-    visibility: hidden;
+    display: none;
+    margin: auto;
+    padding-top: 6px;
+    line-height: 21px;
 }
 
 .main__container-flashsale-label-discount::before {
@@ -1149,20 +1152,19 @@ a.main__container-category-item:hover
 
 .main__container-sm-insidebody-cover {
     position: relative;
-    width: 100%;
+    max-width: 80rem;
     height: 472px;
 }
 
 .main__container-sm-insidebody-outline {
     overflow: hidden;
+    height: 100%;
 }
 
 .main__container-sm-insidebody-container {
     position: relative;
     right: 0%;
     margin: 0px;
-    width: 300%;
-    height: 47.2rem;
     transition: ease-in 0.4s;
 }
 
@@ -1183,6 +1185,8 @@ a.main__container-category-item:hover
     height: 23.6rem;
     padding: 10px;   
     position: relative;
+    background-size: 80%;
+    background-position: center 2.5rem;
     cursor: default;
 }
 
@@ -1543,6 +1547,14 @@ a.main__container-category-item:hover
 
 .products-table-item-price-coin {
     font-size: 1rem; 
+}
+
+.price-product--active {
+    color: #0000008a;
+    text-decoration-line: line-through; 
+    position: absolute;
+    bottom: 33px;
+    font-size: 1.2rem;
 }
 
 .main__container-products-table-item-sold {

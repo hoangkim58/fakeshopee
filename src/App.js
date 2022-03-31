@@ -1,7 +1,7 @@
 import {
-    dataNotifyContents, dataHSLTrendings,
+    dataNotifyContents, dataHSLTrendings, dataTrendSearch,
     dataPromotionSlideshowContainers, dataMainServices,
-    dataCategorys, dataProductlists
+    dataCategorys, dataProductlists, dataTopSearch,
 } from './data.js'
 
 export default function App() {
@@ -133,7 +133,7 @@ export default function App() {
 
 
     // PRODUCT ITEM LIST AREA ******************************
-
+    //render product
     let filterEvent = 'April'
     let filterNormal = ''
 
@@ -145,11 +145,11 @@ export default function App() {
 
     //INSERT background event - promotion - endow
     const url = 'https://cf.shopee.vn/file/2b2b94b25c063030ee03606e35dc06ef'
-    backgroundImgEvent(dataProductlists, filterEvent, url)
+    handleBGImgEvent(dataProductlists, filterNormal, url, 'products-today-suggestion-list')
+    handleBGImgEvent(dataProductlists, filterEvent, url, 'products-event-products-list')
 
     // handle label for every product
-    handleFilterProduction()
-
+ 
     function renderProductList(typeProductClassName, filterEvents) {
         const productSuggestion = document.querySelector(`.${typeProductClassName}`)
 
@@ -157,12 +157,13 @@ export default function App() {
         productSuggestionContainer.className = 'main__container-products-table-container row'
         // productSuggestionContainer.id = `${typeProductClassName}`
         // return filtered data - suitable for event
-        var dataFiltered = filterdDataEvent(dataProductlists, filterEvents)
+        var dataFiltered = filterdDataSeriesOfEvent(dataProductlists, filterEvents)
+
         const strOfproductSuggestionItem = dataFiltered.map((item, index) => (
             `
-                <div id="${item.id}" class="main__container-products-table-item l-2 m-4 c-6" data-id=${index}>
+                <div id="event-current${filterEvents}${item.id}" class="main__container-products-table-item  l-2 m-4 c-6" data-id=${index}>
                     <div class="p-5">
-                        <div class="main__container-products-table-item-cover">
+                        <div class="main__container-products-table-item-cover ">
                             <div class="main__container-flashsale-label-discount flashsale-label-discount--scale-70">
                                 0%
                                 <span style="color: #ffff;">giảm</span>
@@ -200,76 +201,86 @@ export default function App() {
 
     }
 
-    function handleFilterProduction() {
-        var quatitySold = document.querySelectorAll('.main__container-products-table-item .main__container-products-table-item-sold')
-        var setLikeLabel = document.querySelectorAll('.main__container-products-table-item .like-label')
+    function handleFilterProduction(data, classNameSection) {
+        var quatitySold = $(`.${classNameSection} .main__container-products-table-item-sold`)
+        var setLikeLabel = $(`.${classNameSection} .main__container-products-table-item .like-label`)
 
-        //handle like-label at product list
-        for (let i = 0; i < dataProductlists.length; i++) {
+        //handle like-label at product list 
+        for (let i = 0; i < data.length - 1; i++) {
+            // console.log(quatitySold[i].innerHTML)
+            var priceStr = quatitySold[i].innerHTML.slice(6, -1)
+            var priceInteger = Number.parseInt(priceStr)
 
-            if (quatitySold[i].innerHTML.slice(6, -1) >= 5000) {
-                // console.log(i)
-                setLikeLabel[i].innerHTML = 'Yêu thích'
-                setLikeLabel[i].style.display = 'block'
-            }
-            if (quatitySold[i].innerHTML.slice(6, -1) >= 12000) {
-                // console.log(i)
-                setLikeLabel[i].innerHTML = 'Viral'
-            }
             //render 1k:1000
-            if (quatitySold[i].innerHTML.slice(6, -1) >= 1000) {
-                let newUnit = Number.parseInt(quatitySold[i].innerHTML.slice(6, -1)) / 1000
-                quatitySold[i].innerHTML = 'Đã bán ' + Math.floor(newUnit) + 'k'
-            }
+            if (priceInteger >= 1000) {
+                let newUnit = Number.parseInt(quatitySold[i].innerHTML.slice(6, -1))
+                quatitySold[i].innerHTML = 'Đã bán ' + renderSoldProduct(newUnit);
 
+            }
+            if (priceInteger >= 2000) {
+
+                setLikeLabel.eq(i).html('Yêu thích')
+                setLikeLabel.eq(i).show()
+            }
+            if (priceInteger >= 5000) {
+                setLikeLabel.eq(i).html('Yêu thích +')
+            }
+            if (priceInteger >= 12000) setLikeLabel.eq(i).html('Viral')
+            if (priceInteger >= 50000) {
+                setLikeLabel.eq(i).html('Official')
+                setLikeLabel.eq(i).css('background-color', ' #9332bb')
+            }
+            console.log(i, classNameSection)
         }
 
-        //filter shopmal - insert S-Mall product label
-        const dataFilteredE = filterdDataEvent(dataProductlists, 'April')
-        const dataFiltered = filterdDataEvent(dataProductlists, '')
-        const frameProduction = '.products-today-suggestion-list'
-        const frameProductionEvent = '.products-event-products-list'
-
-        handleSMallLabel(dataFiltered, frameProduction)
-        handleSMallLabel(dataFilteredE, frameProductionEvent)
-
-        // handle flash-sale - insert label flash sale Product List
-        handleFlashSaleLabel(dataFiltered, frameProduction)
-        handleFlashSaleLabel(dataFilteredE, frameProductionEvent)
 
     }
+    //filter shopmal - insert S-Mall product label
+    const dataFilteredEvent = filterdDataSeriesOfEvent(dataProductlists, 'April')
+    const frameProduction = 'products-today-suggestion-list'
+    const frameProductionEvent = 'products-event-products-list'
+  
+    handleShowLabelItems(dataProductlists, frameProduction, filterNormal)
+    handleShowLabelItems(dataFilteredEvent, frameProductionEvent, filterEvent)
+    function handleShowLabelItems(data, classNameSection, filter) {
+        // console.log('ok')
+        
+    handleFilterProduction(data, classNameSection)
+        handleFlashSaleLabel(data, classNameSection, filter)
+        handleSMallLabel(data, classNameSection, filter)
+    } 
 
-    function handleFlashSaleLabel(data, classNameSection) {
-        var setStyleProductPrice = `color: #0000008a; text-decoration-line: line-through;
-            position: absolute; bottom: 33px; font-size: 1.2rem;`
-        var setFSaleLabel = document.querySelectorAll(`${classNameSection} .flashsale-label-discount--scale-70`)
-        var setDiscountFSale = document.querySelectorAll(`${classNameSection} span .price-product`)
-        var setDiscountPriceFSale = document.querySelectorAll(`${classNameSection} span .price-discount`)
+    // fix jquery
+    function handleFlashSaleLabel(data, classNameSection, filterEvents) {
+        var setFSaleLabel = $(`.${classNameSection} .flashsale-label-discount--scale-70`)
+        var setDiscountFSale = $(`.${classNameSection} span .price-product`)
+        var setDiscountPriceFSale = $(`.${classNameSection} span .price-discount`)
+        const dataFilteredFSale = filterdDataSeriesOfEvent(data, 'FlashSale')
+        console.log(data)
 
-        data.filter((item) => {
-            if (item.category === 'FlashSale') {
-                let getIDFSaleLabel = document.getElementById(`${item.id}`).getAttribute('data-id')
-
-                // console.log([item.id, getIDFSaleLabel, data])
-
-                setFSaleLabel[getIDFSaleLabel].setAttribute('style', 'visibility: visible;')
-                setFSaleLabel[getIDFSaleLabel].innerHTML = `${item.discount}% <span style="color: #ffff;">giảm</span>`
-                setDiscountFSale[getIDFSaleLabel].setAttribute('style', `${setStyleProductPrice}`)
-                setDiscountPriceFSale[getIDFSaleLabel].innerHTML = handleDiscountPrice(item.price, item.discount)
-
-            }
+        // console.log(dataFilteredFSale, classNameSection)  
+        dataFilteredFSale.map((item, index) => {
+            let getIDFSaleLabel = $(`.main__container-products-table-container #event-current${filterEvents}${item.id}`).attr('data-id')
+            // console.log(getIDFSaleLabel, item.id, classNameSection)
+            setFSaleLabel.eq(getIDFSaleLabel).show()
+            setFSaleLabel.eq(getIDFSaleLabel).html(`${item.discount}% <span style="color: #ffff;">giảm</span>`)
+            setDiscountFSale.eq(getIDFSaleLabel).addClass('price-product--active')
+            setDiscountPriceFSale.eq(getIDFSaleLabel).html(handleDiscountPrice(item.price, item.discount))
         })
+
     }
 
-    function handleSMallLabel(data, classNameSection) {
+    function handleSMallLabel(data, classNameSection, filterEvents) {
 
-        var setLikeLabel = document.querySelectorAll(`${classNameSection} .main__container-products-table-item .like-label`)
-        data.filter(item => {
-            if (item.type === 'SMall') {
-                let getIDLikeTag = document.getElementById(`${item.id}`).getAttribute('data-id')
-                // console.log([item.id, getIDLikeTag, data])
-                setLikeLabel[getIDLikeTag].innerHTML = 'Mall',
-                    setLikeLabel[getIDLikeTag].setAttribute('style', 'background-color: #d0011b; display: block;')
+        var setLikeLabel = $(`.${classNameSection} .main__container-products-table-item .like-label`)
+        // console.log(setLikeLabel)
+        data.filter((item, index) => {
+            if (item.category === 'SMall') {
+                let getIDLikeTag = $(`.main__container-products-table-container #event-current${filterEvents}${item.id}`).attr('data-id')
+                // console.log([ getIDLikeTag, item.id], index)
+                setLikeLabel.eq(getIDLikeTag).show()
+                setLikeLabel.eq(getIDLikeTag).html('Mall')
+                setLikeLabel.eq(getIDLikeTag).css({ 'background-color': '#d0011b', 'display': ' block;' })
             }
         })
     }
@@ -282,7 +293,7 @@ export default function App() {
 
         const flashSaleContainer = document.createElement('div')
         flashSaleContainer.className = 'main__container-flashsale-item-list row'
-        const dataFilteredFSale = filterDataFlashSale(dataProductlists, 'FlashSale')
+        const dataFilteredFSale = filterdDataSeriesOfEvent(dataProductlists, 'FlashSale')
 
         const strOfCategoryServiceItem = dataFilteredFSale.map(item => (
             `
@@ -313,18 +324,113 @@ export default function App() {
         renderContent(flashSaleContainer, strOfCategoryServiceItem)
         flashSaleCover.appendChild(flashSaleContainer)
     }
+    // Shop Mall ITEM LIST AREA ******************************
+    renderShollMallItem()
+    function renderShollMallItem() {
+        const shollMallCover = document.querySelector('.main__container-sm-insidebody-outline')
+
+        const shollMallContainer = document.createElement('div')
+        shollMallContainer.className = 'main__container-sm-insidebody-container sm-insidebody-container--width sm-item row'
+        const dataFilteredSMall = filterDataCategory(dataProductlists, 'SMall')
+        const strOfCategoryServiceItem = dataFilteredSMall.map(item => (
+            `
+            <div class="main__container-sm-body-item l-3 m-3 c-4">
+                <div class="main__container-sm-body-brand"
+                    style="background-image: url('${item.image}');">
+                    <div class="main__container-sm-body-brand-name">
+                        ${item.description}
+                    </div>
+                </div> 
+            </div>
+        `))
+        renderContent(shollMallContainer, strOfCategoryServiceItem)
+        shollMallCover.appendChild(shollMallContainer)
+    }
+    handleRenderShollMallItem()
+    function handleRenderShollMallItem() {
+        const dataSMallLenght = filterDataCategory(dataProductlists, 'SMall').length
+        const width = Math.ceil((dataSMallLenght / 2)) * 200
+        $('.main__container-sm-insidebody-cover .sm-item').css({ 'width': `${width}`, 'right': `0%` })
+    }
+
+
+    //Render top searched product
+    renderTrendSearchItem()
+    function renderTrendSearchItem() {
+        const topSearchCover = document.querySelector('.main__container-trends-search-bound')
+        const topSearchContainer = document.createElement('div')
+        topSearchContainer.className = 'main__container-trends-search-container row'
+
+        const strOfTopSearchItem = dataTrendSearch.map(item => (
+            `
+            <div class="main__container-trends-search-item l-2-4">
+                <div class="main__container-trends-search-title">
+                    <div class="main__container-trends-search-title-label">
+                        ${item.description}
+                    </div>
+                    <div class="main__container-trends-search-title-sold">
+                        ${renderSoldProduct(item.sold)}+ sản phẩm
+                    </div>
+                </div>
+                <div class="main__container-trends-search-img"
+                    style="background-image: url('${item.image}')">
+                </div>
+            </div>
+        `))
+        renderContent(topSearchContainer, strOfTopSearchItem)
+        topSearchCover.appendChild(topSearchContainer)
+    }
+    //Render top searched product
+    renderTopSearchItem()
+    function renderTopSearchItem() {
+        const topSearchCover = document.querySelector('.main__container-top-search-bound')
+        const topSearchContainer = document.createElement('div')
+        topSearchContainer.className = 'main__container-top-search-container row'
+
+        const strOfTopSearchItem = dataTopSearch.map(item => (
+            `<div class="main__container-top-search-item l-2">
+                <div class="main__container-top-search-item-img"
+                    style="background-image: url('${item.image}')">
+                    <div class="main__container-top-search-item-label-top">
+                        <!-- Top -->
+                    </div>
+                    <div class="main__container-top-search-item-sold">
+                    ${renderSoldProduct(item.sold)}+ /tháng
+                    </div>
+                </div>
+                <div class="main__container-top-search-item-name">
+                    ${item.description}
+                </div>
+            </div>
+        `))
+        renderContent(topSearchContainer, strOfTopSearchItem)
+        topSearchCover.appendChild(topSearchContainer)
+    }
+
 
     ///////////////////////                    FOOTER 
 
     // *********************************************************************************************** 
     // Use for Product Lists
     // filter data according to specified condition --
-    function filterdDataEvent(data, conditions) {
-        return data.filter(item => (item.event === `${conditions}`))
+
+    function filterdDataSeriesOfEvent(data, conditions) {
+
+        return data.filter(item => {
+            const eventAttr = item.event.split(' ')
+            for (let i = 0; i < eventAttr.length; i++) {
+                if (eventAttr[i] === conditions) {
+                    return item
+                }
+            }
+        })
     }
-    function filterDataFlashSale(data, conditions) {
+
+
+    function filterDataCategory(data, conditions) {
         return data.filter(item => (item.category === `${conditions}`))
     }
+
     /// find Data with multiple keywords
     function filterdDataShip(data, ...rest) {
         let Data = []
@@ -339,30 +445,47 @@ export default function App() {
         tagFarent.innerHTML = strContent.reduce((total, cur) => total + cur)
     }
 
-
     // Data - Event name - specified url
-    function backgroundImgEvent(data, filterEvent, url) {
+    function handleBGImgEvent(data, filterEvent, url, classNameSection) {
         if (filterEvent === 'April') {
 
-            var productsItem = document.querySelectorAll('.main__container-products-table-item-header')
+            var productsItem = $(`${classNameSection} .main__container-products-table-container .main__container-products-table-item-header`)
 
-            const dataEventLocal = filterdDataEvent(data, filterEvent)
+            const dataEventLocal = filterdDataSeriesOfEvent(data, filterEvent)
             const dataEventGlobal = filterdDataShip(data, 'free', 'hx', 'discount')
 
-            dataEventLocal.map(item => (setBackgroundEvents(productsItem[item.id - 1], url)))
-            dataEventGlobal.map(item => (setBackgroundEvents(productsItem[item.id - 1], url)))
+            dataEventLocal.map(item => (setBackgroundEvents(productsItem.eq(item.id - 1), url)))
+            dataEventGlobal.map(item => (setBackgroundEvents(productsItem.eq(item.id - 1), url)))
         }
     }
-    function setBackgroundEvents(a, backgroundEvent) {
-        const bgimg = a.style.backgroundImage
+    function setBackgroundEvents(setProductItem, backgroundEvent) {
+        const imgBackground = setProductItem.css('background-image')
         const urlEvent = `url('${backgroundEvent}')`
-        const resultBackground = urlEvent.concat(',', bgimg)
-        return a.style.backgroundImage = resultBackground
+        const resultBackground = urlEvent.concat(',', imgBackground)
+        return setProductItem.css("background-image", `${resultBackground}`);
     }
 
+    // render quatity of sold product
+    // console.log(renderSoldProduct(11235))
+    function renderSoldProduct(sold) {
+        if (sold >= 1000) {
+            const renderSold = (sold / 1000).toFixed(1)
+            return sold = `${renderSold}k`
+        }
+        else return `${sold}`
+    }
     // render price VND 
     function renderPriceVND(price) {
-        return price = (price / 1000).toFixed(3)
+        if (price >= 1000000) {
+            const milionUnit = Math.floor(price / 1000000)
+            const hundredUnit = Math.floor(price - milionUnit * 1000000)
+            const rest = (hundredUnit / 1000).toFixed(3)
+            return price = `${milionUnit}.${rest}`
+        }
+        if (price < 1000000 && price >= 1000) {
+
+            return price = (price / 1000).toFixed(3)
+        }
     }
     // Calculate promotion/endow product 
     function handleDiscountPrice(price, discount) {

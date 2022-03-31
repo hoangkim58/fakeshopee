@@ -1,5 +1,5 @@
 
-function handleDOM() { 
+function handleDOM() {
     document.addEventListener('DOMContentLoaded', function () {
 
         var isisClickSlideshowPromotionPrev = document.querySelector(".slideshow-carousel__arrow-prev")
@@ -369,47 +369,54 @@ function handleDOM() {
         addShopMallDot(0)
 
         // Shop Mall inside items arrow 
-        var shopMallInSideContainer = document.querySelector('.main__container-sm-insidebody-container')
-        var clickShopMallInsidePrev = document.querySelector('.sm-carousel__arrow-prev')
-        var clickShopMallInsideNext = document.querySelector('.sm-carousel__arrow-next')
-        var quatityOfColumnItems = document.querySelectorAll('.main__container-sm-body-item').length
-        var quatityOfFrameItems = Math.ceil(quatityOfColumnItems / 4)
+        var shopMallInSideContainer = $('.sm-item')
+        var clickShopMallInsidePrev = $('.sm-carousel__arrow-prev')
+        var clickShopMallInsideNext = $('.sm-carousel__arrow-next')
+        var quatityOfColumnItems = shopMallInSideContainer.css('width').slice(0, -2)
+        var quatityOfFrame = Number.parseInt(quatityOfColumnItems)
+        var quatityOfFrameItems = Math.ceil(quatityOfFrame / 800)
         let quatityOfFrameItem = 0;
 
-        var clickShopMallArrowStatus = (DefineArrow, Status) => {
-            DefineArrow.setAttribute('style', `visibility: ${Status};`)
+        var clickShopMallArrowStatus = (DefineArrow, status) => {
+            DefineArrow.css(`visibility`, `${status}`)
         }
+        // 
         clickShopMallArrowStatus(clickShopMallInsidePrev, 'hidden')
 
-        clickShopMallInsidePrev.addEventListener('click', isClickShopMallInsidePrev)
+        clickShopMallInsidePrev.click(isClickShopMallInsidePrev)
         function isClickShopMallInsidePrev() {
             if (quatityOfFrameItem < quatityOfFrameItems) {
                 quatityOfFrameItem--
-                shopMallInSideContainer.setAttribute('style', `right: ${quatityOfFrameItem * 100}%;`)
+                shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`)
                 clickShopMallArrowStatus(clickShopMallInsideNext, 'visible')
                 console.log(quatityOfFrameItem)
 
                 if (quatityOfFrameItem === 0) {
                     clickShopMallArrowStatus(clickShopMallInsidePrev, 'hidden')
                 }
+                console.log(quatityOfFrameItem)
             }
         }
 
-        clickShopMallInsideNext.addEventListener('click', isClickShopMallInsideNext)
+        clickShopMallInsideNext.click(isClickShopMallInsideNext)
         function isClickShopMallInsideNext() {
             if (quatityOfFrameItem < quatityOfFrameItems - 1) {
+                
                 quatityOfFrameItem++
-                shopMallInSideContainer.setAttribute('style', `right: ${quatityOfFrameItem * 100}%;`)
-                console.log(quatityOfFrameItem)
+                shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`)
+                // console.log(quatityOfFrameItem)
                 if (quatityOfFrameItem === quatityOfFrameItems - 1) {
-                    shopMallInSideContainer.setAttribute('style', `right: ${quatityOfFrameItem * 100}%;`)
+
+                    shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`) 
                     clickShopMallArrowStatus(clickShopMallInsideNext, 'hidden')
+                    console.log(quatityOfFrameItem)
                 }
+                console.log(quatityOfFrameItem)
             }
             clickShopMallArrowStatus(clickShopMallInsidePrev, 'visible')
         }
 
-        
+
     })
 }
 
