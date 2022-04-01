@@ -1,6 +1,6 @@
 import {
     dataNotifyContents, dataHSLTrendings, dataTrendSearch,
-    dataPromotionSlideshowContainers, dataMainServices,
+    dataPromotionSlideshowContainers, dataMainServices, dataShopMallBanners,
     dataCategorys, dataProductlists, dataTopSearch, dataMessages,
 } from './data.js'
 
@@ -321,6 +321,21 @@ export default function App() {
         renderContent(flashSaleContainer, strOfCategoryServiceItem)
         flashSaleCover.appendChild(flashSaleContainer)
     }
+    // Shop Mall Banners LIST AREA ****************************** 
+    renderShopMallSlideshow()
+    function renderShopMallSlideshow() {
+        const shopMallContainer = document.querySelector('.main__container-sm-body-slideshow-container')
+
+        const shopMallItems = document.createElement('div')
+        shopMallItems.className = 'main__container-sm-body-slideshow-overflow' 
+        const strOfPSItem = dataShopMallBanners.map(item =>
+            `<div class="main__container-sm-body-slideshow"
+                style="background-image: url(${item.image})">
+            </div>`
+        )
+        renderContent(shopMallItems, strOfPSItem)
+        shopMallContainer.appendChild(shopMallItems)
+    }
     // Shop Mall ITEM LIST AREA ******************************
     renderShollMallItem()
     function renderShollMallItem() {
@@ -413,20 +428,22 @@ export default function App() {
         chatBoxContainer.className = 'message__box-chat-container'
 
         const strOfChatBox = dataMessages.map(item => (
-            `    <div id ='${item.shopName}-${item.id}' class="message__box-search-item">
+            `    <div id ='${item.shopName}-${item.id}' class="chat-box-content--active message__box-search-item">
                     <div class="pin-icon--active">
                         <i class="fas fa-thumbtack"></i>
                     </div>
-                    <img src="${item.image}" class="contact-avatar"></img>
-                    <span class="contact-content ">
-                        <div class="contact-name d-flex"> 
-                            <span > ${item.shopName}</span>
-                            <span class="contact-message--status"></span>
-                        </div>
-                        <div class="contact-chat-content">
-                            ${item.content}
-                        </div>
-                    </span>
+                    <div class="message__box-search-item">
+                        <img src="${item.image}" class="contact-avatar"></img>
+                        <span class="contact-content ">
+                            <div class="contact-name d-flex"> 
+                                <span > ${item.shopName}</span>
+                                <span class="contact-message--status "></span>
+                            </div>
+                            <div class="contact-chat-content">
+                                ${item.content}
+                            </div>
+                        </span>
+                    </div>
                     <span id ="${item.shopName}-${item.id}" class="contact-chat-menu"><i class="fas fa-ellipsis-h"></i></span>
                 </div>
                 <div id ='${item.shopName}-${item.id}' >

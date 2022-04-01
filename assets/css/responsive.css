@@ -1,6 +1,9 @@
 
 /* Mobile */
 @media screen and (max-width: 599px) {  
+    ::-webkit-scrollbar-track {
+        margin: 150px;
+    } 
     html, body {
         /* overflow-x: hidden; */
         width: 100%;
@@ -402,4 +405,24 @@
         
     }
     
+    /* chat box */
+    .message__box-search-container {
+        display: inline-block;
+    }
+    .contact-content, .contact-chat-menu {
+        display: none;
+    }
+    .message__box-search-item {
+        display: none;
+        max-width: 35px;
+    }
+    .message__box-search-content-frame {
+        /* display: none; */
+    }
+    .message__box-search {
+        height: auto;
+    }
+    .commercial-container {
+        background-size: 60%;
+    }
 }

@@ -1231,32 +1231,74 @@ const dataMessages = [
         shopName: 'UUen123',
         url: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
         image: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
-        content: 'Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!',
+        content: ['Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!'],
     },
     {
         id: '2',
         shopName: 'halomishop',
         url: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
         image: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
-        content: `Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.`,
+        content: [`Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.`,
+            'Rất hài lòng' ,
+            'ok, thanks' ,
+            'I will come back, next time',
+        ],
     },
     {
         id: '3',
         shopName: 'Alibaba',
         url: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
         image: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
-        content: 'Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.',
+        content: ['Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.'],
     },
     {
         id: '4',
         shopName: 'Alibaba',
         url: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
         image: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
-        content: 'hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend',
+        content: ['hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend'],
+    },
+]
+const dataShopMallBanners = [
+    {
+        id: 1,
+        image: '	https://cf.shopee.vn/file/35e9fd647ec09c13d11625a10462df4f',
+        url: '	https://cf.shopee.vn/file/35e9fd647ec09c13d11625a10462df4f',
+
+    },
+    {
+        id: 2,
+        image: '	https://cf.shopee.vn/file/bcb754f77fa6be911ae0fe4d8035064a',
+        url: '	https://cf.shopee.vn/file/bcb754f77fa6be911ae0fe4d8035064a',
+
+    },
+    {
+        id: 3,
+        image: '	https://cf.shopee.vn/file/3864bbd27e3d471b366c07fda672d830',
+        url: '	https://cf.shopee.vn/file/3864bbd27e3d471b366c07fda672d830',
+
+    },
+    {
+        id: 4,
+        image: '	https://cf.shopee.vn/file/e53192c3eb741b097e25a7ec0c52a0b3',
+        url: '	https://cf.shopee.vn/file/e53192c3eb741b097e25a7ec0c52a0b3',
+
+    },
+    {
+        id: 5,
+        image: 'https://cf.shopee.vn/file/24d8cb0e815782924f0dbc7b2838e384',
+        url: 'https://cf.shopee.vn/file/24d8cb0e815782924f0dbc7b2838e384',
+
+    },
+    {
+        id: 6,
+        image: 'https://cf.shopee.vn/file/df391c4597eb710be5c078ecb3a9e398',
+        url: 'https://cf.shopee.vn/file/df391c4597eb710be5c078ecb3a9e398',
+
     },
 ]
 export {
-    dataNotifyContents, dataHSLTrendings, dataTopSearch,
+    dataNotifyContents, dataHSLTrendings, dataTopSearch, dataShopMallBanners,
     dataPromotionSlideshowContainers, dataMainServices,
     dataCategorys, dataProductlists, dataMessages, dataTrendSearch,
 }
