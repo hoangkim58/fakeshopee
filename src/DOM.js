@@ -289,9 +289,9 @@ export default function handleDOM() {
                     //clear Interval sm slideshow
                     clearInterval(setTimeShopMallSlideShow)
 
-                    // removeShopMallDot(num)
+                    removeShopMallDot(num)
                     num = i
-                    // addShopMallDot(i)
+                    addShopMallDot(i)
 
                     //set Interval sm slideshow
                     setTimeShopMallSlideShow = setInterval(timeShopMallSlideShow, 3000)
@@ -306,15 +306,15 @@ export default function handleDOM() {
             clickDotCarouselAccess(numOfSlideShopMall)
 
             if (numOfSlideShopMall < quatitySlideShowShopMall - 1) {
-                // removeShopMallDot(numOfSlideShopMall)
+                removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall++
                 inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
-                // addShopMallDot(numOfSlideShopMall)
+                addShopMallDot(numOfSlideShopMall)
             }
             else {
                 numOfSlideShopMall = 0
-                // removeShopMallDot(quatitySlideShowShopMall - 1)
-                // addShopMallDot(0)
+                removeShopMallDot(quatitySlideShowShopMall - 1)
+                addShopMallDot(0)
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)
             }
         }
@@ -327,15 +327,15 @@ export default function handleDOM() {
 
             if (numOfSlideShopMall === 0) {
 
-                // removeShopMallDot(0)
-                // addShopMallDot(quatitySlideShowShopMall - 1)
+                removeShopMallDot(0)
+                addShopMallDot(quatitySlideShowShopMall - 1)
                 numOfSlideShopMall = quatitySlideShowShopMall - 1
                 inSlideShowShopMall.setAttribute('style', `left: ${-(quatitySlideShowShopMall - 1)}00%`)
             }
             else if (numOfSlideShopMall < quatitySlideShowShopMall) {
-                // removeShopMallDot(numOfSlideShopMall)
+                removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall--
-                // addShopMallDot(numOfSlideShopMall)
+                addShopMallDot(numOfSlideShopMall)
                 inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
             }
         }
@@ -347,26 +347,26 @@ export default function handleDOM() {
 
             document.querySelector('.main__container-sm-body-slideshow-container').clearInte
             if (numOfSlideShopMall < quatitySlideShowShopMall - 1) {
-                // removeShopMallDot(numOfSlideShopMall)
+                removeShopMallDot(numOfSlideShopMall)
                 numOfSlideShopMall++
-                // addShopMallDot(numOfSlideShopMall)
+                addShopMallDot(numOfSlideShopMall)
                 inSlideShowShopMall.setAttribute('style', `left: ${-numOfSlideShopMall}00%`)
             }
             else {
                 inSlideShowShopMall.setAttribute('style', `left: 0%`)
-                // removeShopMallDot(quatitySlideShowShopMall - 1)
-                // addShopMallDot(0)
+                removeShopMallDot(quatitySlideShowShopMall - 1)
+                addShopMallDot(0)
                 return numOfSlideShopMall = 0
             }
         }
 
-        // var addShopMallDot = (s) => {
-        //     document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.add('carousel__dot--active')
-        // }
-        // var removeShopMallDot = (s) => {
-        //     document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.remove('carousel__dot--active')
-        // }
-        // addShopMallDot(0)
+        var addShopMallDot = (s) => {
+            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.add('carousel__dot--active')
+        }
+        var removeShopMallDot = (s) => {
+            document.querySelectorAll('.sm-carousel__dot-container div')[s].classList.remove('carousel__dot--active')
+        }
+        addShopMallDot(0)
 
         // Shop Mall inside items arrow 
         var shopMallInSideContainer = $('.sm-item')

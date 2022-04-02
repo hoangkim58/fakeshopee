@@ -316,6 +316,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '35', // init percent
+        order: '53',
+        available: '200',
     },
 
 
@@ -332,6 +334,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '127',
+        available: '200',
 
     },
     {
@@ -347,6 +351,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '55',
+        order: '80',
+        available: '200',
 
     },
     {
@@ -362,6 +368,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '0',
+        available: '200',
 
     },
     {
@@ -377,6 +385,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '158',
+        available: '200',
 
     },
     {
@@ -392,6 +402,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '10',
+        order: '182',
+        available: '200',
 
     },
     {
@@ -403,10 +415,14 @@ const dataProductlists = [
         price: '276000',
         description: '',
         category: 'SMall',
-        ship: 'discount',
+        order: '123',
+        available: '200',
+        ship: '',
         searchKey: '',
         event: 'FlashSale ',
         discount: '99',
+        order: '172',
+        available: '200',
 
     },
     {
@@ -418,10 +434,14 @@ const dataProductlists = [
         price: '187000',
         description: '',
         category: '',
-        ship: 'discount',
+        order: '132',
+        available: '200',
+        ship: '',
         searchKey: '',
         event: 'FlashSale ',
         discount: '13',
+        order: '129',
+        available: '200',
 
     },
     {
@@ -437,6 +457,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '29',
+        available: '200',
 
     },
     {
@@ -452,6 +474,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '10',
+        order: '166',
+        available: '200',
 
     },
     {
@@ -467,6 +491,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '78',
+        available: '200',
 
     },
     {
@@ -482,6 +508,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '97',
+        available: '200',
 
     },
     {
@@ -497,6 +525,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '94',
+        available: '200',
 
     },
     {
@@ -512,6 +542,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '92',
+        available: '200',
 
     },
     {
@@ -527,6 +559,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '150',
+        available: '200',
 
     },
     {
@@ -542,6 +576,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '33',
+        order: '50',
+        available: '200',
 
     },
     {
@@ -557,6 +593,8 @@ const dataProductlists = [
         searchKey: '',
         event: ' ',
         discount: '',
+        order: '81',
+        available: '200',
 
     },
     {
@@ -568,10 +606,14 @@ const dataProductlists = [
         price: '209000',
         description: '',
         category: '',
-        ship: 'discount',
+        order: '122',
+        available: '200',
+        ship: '',
         searchKey: '',
         event: 'FlashSale ',
         discount: '3',
+        order: '57',
+        available: '200',
 
     },
     {
@@ -587,6 +629,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '10',
+        order: '108',
+        available: '200',
     },
 
     //product-category April 4 *********************************************************************************
@@ -603,6 +647,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '38',
+        order: '178',
+        available: '200',
 
     },
     {
@@ -618,6 +664,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '2',
+        order: '20',
+        available: '200',
 
     },
     {
@@ -633,6 +681,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '151',
+        available: '200',
 
     },
     {
@@ -648,6 +698,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '22',
+        order: '41',
+        available: '200',
 
     },
     {
@@ -663,6 +715,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '5',
+        order: '25',
+        available: '200',
 
     },
     {
@@ -678,6 +732,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '15',
+        order: '157',
+        available: '200',
 
     },
     {
@@ -693,6 +749,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '180',
+        available: '200',
 
     },
     {
@@ -708,6 +766,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '181',
+        available: '200',
 
     },
     {
@@ -723,6 +783,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '22',
+        order: '148',
+        available: '200',
 
     },
     {
@@ -738,6 +800,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '55',
+        available: '200',
 
     },
     {
@@ -753,6 +817,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '160',
+        available: '200',
 
     },
     {
@@ -768,6 +834,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '58',
+        available: '200',
 
     },
     {
@@ -783,6 +851,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '49',
+        available: '200',
 
     },
     {
@@ -798,6 +868,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April FlashSale ',
         discount: '11',
+        order: '194',
+        available: '200',
 
     },
     {
@@ -813,6 +885,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '177',
+        available: '200',
 
     },
     {
@@ -828,6 +902,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '35',
+        available: '200',
 
     },
     {
@@ -843,6 +919,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '',
+        order: '101',
+        available: '200',
 
     },
     {
@@ -858,6 +936,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'April ',
         discount: '1',
+        order: '98',
+        available: '200',
 
     },
     //product-category Flashsale *********************************************************************************
@@ -874,6 +954,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '11',
+        order: '113',
+        available: '200',
 
     },
     {
@@ -889,6 +971,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '15',
+        order: '0',
+        available: '200',
 
     },
     {
@@ -904,6 +988,8 @@ const dataProductlists = [
         searchKey: 'cosmetics',
         event: 'FlashSale ',
         discount: '17',
+        order: '152',
+        available: '200',
 
     },
     {
@@ -919,6 +1005,8 @@ const dataProductlists = [
         searchKey: 'female fashion beautiful',
         event: 'f',
         discount: '95',
+        order: '185',
+        available: '200',
 
     },
     {
@@ -934,6 +1022,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '33',
+        order: '120',
+        available: '200',
 
     },
     {
@@ -949,6 +1039,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '45',
+        order: '176',
+        available: '200',
 
     },
     {
@@ -964,6 +1056,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '60',
+        order: '146',
+        available: '200',
 
     },
     {
@@ -979,6 +1073,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '28',
+        order: '174',
+        available: '200',
 
     },
     {
@@ -994,6 +1090,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '33',
+        order: '117',
+        available: '200',
 
     },
     {
@@ -1009,6 +1107,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '11',
+        order: '35',
+        available: '200',
 
     },
     {
@@ -1024,6 +1124,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '27',
+        order: '13',
+        available: '200',
 
     },
     {
@@ -1039,6 +1141,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '15',
+        order: '89',
+        available: '200',
 
     },
     {
@@ -1054,6 +1158,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '17',
+        order: '23',
+        available: '200',
 
     },
     {
@@ -1069,6 +1175,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '2',
+        order: '192',
+        available: '200',
 
     },
     {
@@ -1084,6 +1192,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '40',
+        order: '27',
+        available: '200',
 
     },
     {
@@ -1099,6 +1209,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '20',
+        order: '97',
+        available: '200',
 
     },
     {
@@ -1114,6 +1226,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '40',
+        order: '17',
+        available: '200',
 
     },
     {
@@ -1129,6 +1243,8 @@ const dataProductlists = [
         searchKey: '',
         event: 'FlashSale ',
         discount: '34',
+        order: '94',
+        available: '200',
 
     },
 ]
@@ -1231,32 +1347,41 @@ const dataMessages = [
         shopName: 'UUen123',
         url: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
         image: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
-        content: ['Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!'],
+        status: true,
+        message: ['Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!'],
+        newMessage: ['Đã có sản phẩm mới'],
     },
     {
         id: '2',
         shopName: 'halomishop',
         url: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
         image: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
-        content: [`Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.`,
-            'Rất hài lòng' ,
-            'ok, thanks' ,
+        status: true,
+        message: [`Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.`,
+            'Rất hài lòng',
+            'ok, thanks',
             'I will come back, next time',
         ],
+        newMessage: ['Voucher 5k cho bạn',
+            'Giảm 20% khi mua compo 5 sản phẩm...'],
     },
     {
         id: '3',
         shopName: 'Alibaba',
         url: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
         image: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
-        content: ['Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.'],
+        status: false,
+        message: ['Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.'],
+        newMessage: [],
     },
     {
         id: '4',
         shopName: 'Alibaba',
         url: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
         image: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
-        content: ['hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend'],
+        status: false,
+        message: ['hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend'],
+        newMessage: [],
     },
 ]
 const dataShopMallBanners = [

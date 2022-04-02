@@ -97,6 +97,7 @@
                             <a href="src/views/login.html" class="no-text_decoration">
                                 <li class="header__navbar-item">Đăng nhập</li>
                             </a>
+                            
                         </ul>
 
                     </nav>
@@ -322,10 +323,10 @@
                                     </div>
 
                                     <!-- slideshow image -->
-                                    <div class="main__container-sm-body-slideshow-overflow">
-                                        <!-- @@@@ -->
-                                       
-                                    </div>
+                                    <!-- <div class="main__container-sm-body-slideshow-overflow">
+                                        
+                                    </div> -->
+                                    <!-- @@@@ -->
 
                                     <!--Shop Mall dot-slideshow -->
                                     <div class="sm-carousel__dot-container carousel__dot-container">
@@ -683,20 +684,24 @@
             </a>
             
             <div class="app__skinny-chat d-flex">
-                <div class="chat-box--status">
+                <div class="chat-box--status d-flex">
                     <span>
                         <i class="fas fa-comments chat-box-icon"></i>
                     </span>
-                    <span class="chat-box-text">Chat</span>
+                    <span class="chat-box-text">
+                        Chat 
+                    </span>
                     <span class="waiting-message"></span>
                 </div>
             </div>
             <div class="message__box-container--status" style="display: none;">
                 <div class="message__box-area" d>
                     <div class="message__box-container" >
-    
                         <div class="message__box-header">
-                            <span class="chat-box-text">Chat</span>
+                            <span class="chat-box-text" >
+                                <span class="">Chat</span>
+                                <span class="notify-new-message"></span>
+                            </span>
                             <span>
                                 <span class="chat-box-icon btn-minimize">
                                     <i class="fas fa-caret-left"></i>
@@ -714,15 +719,19 @@
                                         <i class="fas fa-search chat-box__looker-icon" ></i>
                                         <input class="message__box-search-input" placeholder="Tìm theo tên người dùng"/>
                                     </div>
-                                    <div>
-                                        <span style="font-size: 13px">Tất cả</span>
+                                    <div class= "" style="position: relative;" id="f-container">
+                                        <span class="message__box-btn-all" >Tất cả</span>
                                         <span>
                                             <i class="fas fa-chevron-down"></i>
                                         </span>
                                     </div>
-                                    <span class="out-search align-items--center" style="display: none;">
-                                        <img src="" alt="" class="contact-avatar"/>
-                                        <p class="contact-name"></p>
+                                    <div class="message__box-search-filter-container">
+                                        <div id="f-all" class="message__box-search-filter-item">Tất cả</div>
+                                        <div id="f-read" class="message__box-search-filter-item">Chưa đọc</div>
+                                        <div id="f-pin" class="message__box-search-filter-item">Đã ghim</div>
+                                    </div>
+                                    <span class="out-search " style="display: none;">
+                                        <!-- content render -->
                                     </span>
                                     
                                 </div>

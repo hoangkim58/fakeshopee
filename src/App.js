@@ -132,18 +132,18 @@ export default function App() {
     // PRODUCT ITEM LIST AREA ******************************
     //render product
     let filterEvent = 'April'
-    let filterNormal = '' 
+    let filterNormal = ''
     //Render product suggestion -  ***today topping items 
-    renderProductList('products-today-suggestion-list', filterNormal) 
+    renderProductList('products-today-suggestion-list', filterNormal)
     //Render product event -  ***Event items 
-    renderProductList('products-event-products-list', filterEvent) 
+    renderProductList('products-event-products-list', filterEvent)
     //INSERT background event - promotion - endow
     const url = 'https://cf.shopee.vn/file/2b2b94b25c063030ee03606e35dc06ef'
     handleBGImgEvent(dataProductlists, filterNormal, url, 'products-today-suggestion-list')
     handleBGImgEvent(dataProductlists, filterEvent, url, 'products-event-products-list')
 
     // handle label for every product
- 
+
     function renderProductList(typeProductClassName, filterEvents) {
         const productSuggestion = document.querySelector(`.${typeProductClassName}`)
 
@@ -236,16 +236,16 @@ export default function App() {
     const dataFilteredEvent = filterdDataSeriesOfEvent(dataProductlists, 'April')
     const frameProduction = 'products-today-suggestion-list'
     const frameProductionEvent = 'products-event-products-list'
-  
+
     handleShowLabelItems(dataProductlists, frameProduction, filterNormal)
     handleShowLabelItems(dataFilteredEvent, frameProductionEvent, filterEvent)
     function handleShowLabelItems(data, classNameSection, filter) {
         // console.log('ok')
-        
-    handleFilterProduction(data, classNameSection)
+
+        handleFilterProduction(data, classNameSection)
         handleFlashSaleLabel(data, classNameSection, filter)
         handleSMallLabel(data, classNameSection, filter)
-    } 
+    }
 
     // fix jquery
     function handleFlashSaleLabel(data, classNameSection, filterEvents) {
@@ -312,7 +312,11 @@ export default function App() {
                             ${handleDiscountPrice(item.price, item.discount)}
                         </div>
                         <div class="main__container-flashsale-sold-product">
-                            <div class="main__container-flashsale-sold-percent">Đã bán 69</div>
+                            <div class="main__container-flashsale-sold-percent"
+                                style="background-size: ${calcPercent(item.order, item.available)}% ;"
+                            >
+                                Đã bán ${item.order}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -327,7 +331,7 @@ export default function App() {
         const shopMallContainer = document.querySelector('.main__container-sm-body-slideshow-container')
 
         const shopMallItems = document.createElement('div')
-        shopMallItems.className = 'main__container-sm-body-slideshow-overflow' 
+        shopMallItems.className = 'main__container-sm-body-slideshow-overflow'
         const strOfPSItem = dataShopMallBanners.map(item =>
             `<div class="main__container-sm-body-slideshow"
                 style="background-image: url(${item.image})">
@@ -429,18 +433,18 @@ export default function App() {
 
         const strOfChatBox = dataMessages.map(item => (
             `    <div id ='${item.shopName}-${item.id}' class="chat-box-content--active message__box-search-item">
-                    <div class="pin-icon--active">
-                        <i class="fas fa-thumbtack"></i>
-                    </div>
                     <div class="message__box-search-item">
+                        <div class="pin-icon-container">
+                            <i class="fas fa-thumbtack pin-icon"></i>
+                        </div>
                         <img src="${item.image}" class="contact-avatar"></img>
                         <span class="contact-content ">
                             <div class="contact-name d-flex"> 
                                 <span > ${item.shopName}</span>
-                                <span class="contact-message--status "></span>
+                                <span class="contact-message--status ${isNewMessage(item.status)} ">${item.newMessage.length}</span>
                             </div>
                             <div class="contact-chat-content">
-                                ${item.content}
+                                ${renderLastestMessage(item.message, item.newMessage)}  
                             </div>
                         </span>
                     </div>
@@ -453,8 +457,8 @@ export default function App() {
                         <p class="contact-chat-content">Ghim trò chuyện</p>
                     </span>
                     <span class="contact-chat-menu-mark contact-chat-menu-icon">
-                        <i class="fas fa-comment-alt menu-chat-icon"></i>
-                        <p class="contact-chat-content">Đánh dấu chưa đọc</p>
+                        <i class=" ${handleMarkClassOldMessage(item.status)} fa-comment-alt menu-chat-icon"></i>
+                        <p class="contact-chat-content"> ${handleMarkContentOldMessage(item.status)}</p>
                     </span>
                     <span class="contact-chat-menu-trash contact-chat-menu-icon">
                         <i class="fas fa-trash-alt menu-chat-icon"></i>
@@ -482,6 +486,10 @@ export default function App() {
         })
     }
 
+    function renderLastestMessage(message, newMessage) {
+        const newMessageArray = message.concat(newMessage)
+        return newMessageArray[newMessageArray.length - 1]
+    }
 
     function filterDataCategory(data, conditions) {
         return data.filter(item => (item.category === `${conditions}`))
@@ -548,12 +556,34 @@ export default function App() {
         price = price * (1 - discount / 100)
         return renderPriceVND(price)
     }
-
+    function calcPercent(a, b) {
+        return Math.floor((a / b) * 100)
+    }
+    function isNewMessage(a) {
+        if (a) {
+            return 'contact-message--active'
+        }
+        else return ''
+    }
+    function handleMarkClassOldMessage(conditions) {
+        if (conditions) {
+            return 'far'
+        } else {
+            return 'fas'
+        }
+    }
+    function handleMarkContentOldMessage(conditions) {
+        if (conditions) {
+            return 'Đánh dấu đã đọc'
+        } else {
+            return 'Đánh dấu chưa đọc'
+        }
+    }
+    // random, data 
     // let array = []
-    // for(let i = 0; i< 20 ; i++) {
-    //     array += Math.floor(Math.random()*15)  +','
+    // for(let i = 0; i< 58 ; i++) {
+    //     array += Math.floor(Math.random()*200)  +','
     // }
     // console.log(array.split(','))
-    // var x= ['14', '9', '14', '10', '0', '7', '0', '5', '10', '10', '6', '5', '11', '2', '0', '10', '5', '6', '4', '4', '']
-  
-}
+    // var x= []
+} 
