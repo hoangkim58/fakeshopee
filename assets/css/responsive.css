@@ -609,8 +609,11 @@
     .contact-avatar {
         width: 5rem;
         height: 5rem;
+        margin: unset;
     }
-
+    .message__box-chat-container {
+        height: unset;
+    }
     .message__box-btn-all {
         font-size: 2rem;
     }

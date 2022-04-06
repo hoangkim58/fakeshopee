@@ -1348,22 +1348,76 @@ const dataMessages = [
         url: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
         image: 'https://cf.shopee.vn/file/082f799eac8a386d93c02885595b5818_tn',
         status: true,
-        message: ['Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!'],
-        newMessage: ['Đã có sản phẩm mới'],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Xin chào, cảm ơn bạn đã follow shop! Shop giới thiệu với bạn một vài deal, chỉ có hiệu lực trong thời gian nhất định. Số lượng có hạn nhanh tay bạn nhé!',
+            },
+        ],
+        input: [
+            {
+                type: 'export',
+                time: '11:31:21',
+                content: 'ok shop!!!',
+
+            },
+        ],
+        newMessage: [
+            {
+                type: 'import',
+                time: '12:01:21',
+                content: 'Đã có sản phẩm mới',
+            },
+        ],
     },
+
     {
         id: '2',
         shopName: 'halomishop',
         url: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
         image: '	https://cf.shopee.vn/file/28edfec967a5a65daf23caef892a5aee_tn',
         status: true,
-        message: [`Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.`,
+        message: [``,
             'Rất hài lòng',
             'ok, thanks',
             'I will come back, next time',
         ],
-        newMessage: ['Voucher 5k cho bạn',
-            'Giảm 20% khi mua compo 5 sản phẩm...'],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Cảm ơn chị đã ủng hộ shop em ạ, Nếu chị có vấn đề gì sản phẩm cứ ib để e hỗ trợ c c nha. Nếu chị hài lòng hy vọng được c bớt chút thời gian đánh giá 5* giúp em ạ. Chúc c và gia đình có một cuối tuần vui vẻ.',
+            },
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'ok, thanks',
+            },
+        ],
+        input: [
+            {
+                type: 'export',
+                time: '11:21:12',
+                content: 'Rất hài lòng',
+            },
+            {
+                type: 'export',
+                time: '11:21:12',
+                content: 'I will come back, next time',
+            },
+        ],
+        newMessage: [
+            {
+                type: 'import',
+                time: '12:01:21',
+                content: 'Voucher 5k cho bạn',
+            }, {
+                type: 'import',
+                time: '12:01:21',
+                content: 'Giảm 20% khi mua compo 5 sản phẩm...',
+            },
+        ],
     },
     {
         id: '3',
@@ -1371,7 +1425,14 @@ const dataMessages = [
         url: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
         image: '	https://cf.shopee.vn/file/cc3b2b62cf3e6c2cc21729d35ddc4450_tn',
         status: false,
-        message: ['Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.'],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Cảm ơn bạn đã thăm quan mua sắm tại CK STORE. Shop thấy bạn có sản phẩm trong giỏ hàng chưa lên đơn. Nhanh tay mua hàng để được sử dụng sản phẩm  trong thời gian sớm nhất nhé.',
+            },
+        ],
+        input: [],
         newMessage: [],
     },
     {
@@ -1380,9 +1441,71 @@ const dataMessages = [
         url: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
         image: 'https://cf.shopee.vn/file/0f53b37e75a9ead82b40d30953915ea6_tn',
         status: false,
-        message: ['hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend'],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'hoangkimww không kịp tưới cây. Bạn giúp hoangkimww một tay nha! https://games.shopee.vn/farm/friend.html?fid=626652569&backmyfarm=1&schannel=chat&to=friend',
+            },
+        ],
+        input: [],
         newMessage: [],
     },
+    {
+        id: '5',
+        shopName: 'samsung_official_store',
+        url: 'https://cf.shopee.vn/file/c8bacc8f5a915dc7ca3cd29d569d097c_tn',
+        image: 'https://cf.shopee.vn/file/c8bacc8f5a915dc7ca3cd29d569d097c_tn',
+        status: false,
+        input: [],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Chào anh/chị,',
+            },
+        ],
+        newMessage: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Anh chi can giup gi?',
+            },
+        ],
+    },
+    {
+        id: '6',
+        shopName: 'celimax.vn',
+        url: 'https://cf.shopee.vn/file/4fa2c476965c3f104a7c040faabb8dd0_tn',
+        image: 'https://cf.shopee.vn/file/4fa2c476965c3f104a7c040faabb8dd0_tn',
+        status: false,
+        input: [],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'Mua hàng chính hãng nên yên tâm. Nhưng chỉ lo bảo hành thôi. Chính sách không được yên tâm lắm. Rẻ hơn điện máy 3-400k,',
+            },
+        ],
+        newMessage: [],
+    },
+    {
+        id: '7',
+        shopName: 'robot_official_store',
+        url: 'https://cf.shopee.vn/file/08f1e912a8006562bdc44d10bce7ffe3_tn',
+        image: 'https://cf.shopee.vn/file/08f1e912a8006562bdc44d10bce7ffe3_tn',
+        status: false,
+        input: [],
+        message: [
+            {
+                type: 'import',
+                time: '11:21:12',
+                content: 'ROBOT xin chào! Cảm ơn bạn đã tin tưởng lựa chọn sản phẩm của ROBOT và hy vọng tiếp tục được bạn ủng hộ trong tương lai. Nếu có bất kì thắc mắc hoặc sự cố trong quá trình sử dụng sản phẩm, vui lòng liên hệ với shop qua hộp thoại chat box hoặc hotline 028 2243 0077 trong giờ hành chính để được shop hỗ trợ nhanh nhất nha ❤',
+            },
+        ],
+        newMessage: [],
+    },
+
 ]
 const dataShopMallBanners = [
     {

@@ -29,10 +29,13 @@ export default function handleChat() {
     }
 
     // handle toggle minimize/maximize chatbox-content
-    btnMinimizeTag.click(messageBoxMinimize)
+    btnMinimizeTag.click(modifyMessageBox)
     function messageBoxMinimize() {
         const isIconLeft = btnMinimize.hasClass('fa-caret-left')
-        if (isIconLeft) {
+        modifyMessageBox(isIconLeft)
+    }
+    function modifyMessageBox(checkStatus) {
+        if (checkStatus) {
             chatContent.hide()
             btnMinimize.removeClass('fa-caret-left').addClass('fa-caret-right')
         }
@@ -40,7 +43,6 @@ export default function handleChat() {
             chatContent.show()
             btnMinimize.removeClass('fa-caret-right').addClass('fa-caret-left')
         }
-
     }
 
     const menuChat = $('.contact-chat-menu')
@@ -125,14 +127,20 @@ export default function handleChat() {
         }
         renderNewMessageNotify()
     }
+
     //display someone's message 
     const isShowChatBoxContent = $('.message__box-chat-container .chat-box-content--active .message__box-search-item')
     const menuChatOption = $(`.message__box-chat-container .contact-chat-menu--show`)
     isShowChatBoxContent.click(handleDisplayMessage)
     function handleDisplayMessage() {
-        menuChatOption.hide()
         const idChatBoxContent = $(this).parent().attr('id')
+        const messageItem = $(`.message__box-chat-container .chat-box-content--active`)
         const isNewMessage = $(`#${idChatBoxContent} .contact-content .contact-message--status`).hasClass('contact-message--active')
+        //remove message status 
+        $(`.message__box-chat-container .chat-box-content--active `).removeClass('click--active')
+        //
+        $(this).parent().addClass('click--active')
+        menuChatOption.hide()
         if (isNewMessage) handleMarkElement(idChatBoxContent)
 
         dataMessages.filter(item => {
@@ -140,30 +148,48 @@ export default function handleChat() {
                 renderDisplayMessages(item)
             }
         })
-        // console.log(dataMessage)
+        //check content box show or hide() and render content box
+        modifyMessageBox()
+
         hideChatContentDefault()
+
     }
 
     function renderDisplayMessages(item) {
         const setId = $('.chat-content--show .chat-content-container--active').attr('id', `${item.shopName}-${item.id}`)
         const setImg = $('.chat-content--show .chat-content-container--active img').attr('src', `${item.image}`)
         const setName = $('.chat-content--show .chat-content-container--active .offfical-content-name').html(`${item.shopName}`)
-        const contentContainer = $('.chat-content--show .chat-content-container--active .offfical-content-message-boundary')
-        const newData = item.message.concat(item.newMessage)
+        const contentContainer = $('.chat-content--show .chat-content-container--active .offfical-content-message-overflow')
+        contentContainer.attr('id', `${item.shopName}-${item.id}`)
 
-        const str = newData.map(item =>
-            `
-            <div class="offfical-content-message-container">
-                <div class="offfical-content-message contact-chat-content">
-                    ${item}
-                </div>  
-                <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
-                    <i class="fas fa-ellipsis-h"></i></span>
-            </div> 
-            `
-        )
+        const newData = item.message.concat(item.input, item.newMessage)
+        const str = newData.map(item => {
+            if (item.type == 'import') {
+
+                return `
+                <div class="offfical-content-message-container">
+                    <div class="offfical-content-message contact-chat-content">
+                        ${item.content}
+                    </div>  
+                    <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
+                        <i class="fas fa-ellipsis-h"></i></span>
+                </div> 
+            `}
+            else {
+                return `
+                <div class="offfical-content-message-container" style="justify-content: flex-end; ">
+                    <div class="offfical-content-message contact-chat-content" style = 'background-color: #61afdf; color: white;' >
+                        ${item.content}
+                    </div>  
+                    <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
+                        <i class="fas fa-ellipsis-h"></i></span>
+                </div>
+                `
+            }
+        })
         contentContainer.html('')
         contentContainer.append(str)
+        return newData
     }
 
 
@@ -195,18 +221,18 @@ export default function handleChat() {
 
     // ***** text area 
     var outSearach = $('.out-search')
-    
+
     function redirectUserChat() {
         var outSearach = $('.out-search-item')
-        outSearach.click(function(){
-            const idUser = $(this).attr('id') 
+        outSearach.click(function () {
+            const idUser = $(this).attr('id')
             dataMessages.filter(item => {
                 if (`${item.shopName}-${item.id}` == `${idUser}`) {
                     hideChatContentDefault()
                     renderDisplayMessages(item)
                 }
-            }) 
-        }) 
+            })
+        })
     }
 
     //handle search name user -- chat box
@@ -234,7 +260,7 @@ export default function handleChat() {
                 const findUsers = $('.message__box-search-header .out-search')
                 findUsers.html('')
                 outSearach.show()
-                const strRenderUsers =  checkInput.map(item => `
+                const strRenderUsers = checkInput.map(item => `
                     <span id='${item.shopName}-${item.id}' 
                         class="out-search-item align-items--center" 
                     >
@@ -271,6 +297,7 @@ export default function handleChat() {
     }
 
     //chat header -- new message
+    renderNewMessageNotify()
     function renderNewMessageNotify() {
         const quatityNewMessage = $('.contact-message--active').length
         const notifyNewMessage = $('.notify-new-message')
@@ -286,5 +313,46 @@ export default function handleChat() {
 
         }
     }
-    renderNewMessageNotify()
+    // send message 
+    handleClickMessage()
+    function handleClickMessage() {
+        let inputValue = '';
+        const enterMessageFrame = $('.enter-message')
+
+        enterMessageFrame.change(function (e) {
+            inputValue = e.target.value
+            const container = $('.offfical-content-message-boundary')
+            const xxx = $('.offfical-content-message-boundary .offfical-content-message-overflow')
+            const idChatBoxContent = xxx.attr('id')
+            dataMessages.filter(item => {
+                if (`${item.shopName}-${item.id}` === `${idChatBoxContent}`) {
+                    if (item.input) {
+                        item.input.push({content: inputValue, type: 'export', time: '11:11:11'})
+                    }
+                    else {
+                        item.input = [inputValue]
+                    }
+                }
+            })
+            console.log(dataMessages)
+
+            $('.btn-send').one('click', function () {
+
+                // console.log(u)
+                if (inputValue) { 
+
+                    // render message
+                    dataMessages.filter(item => {
+                        if (`${item.shopName}-${item.id}` === `${idChatBoxContent}`) {
+                            renderDisplayMessages(item)
+                        }
+                    })
+                }
+                e.target.value = ''
+                enterMessageFrame.focus()
+            })
+            return dataMessages
+        })
+
+    }
 }

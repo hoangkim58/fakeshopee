@@ -433,7 +433,7 @@ export default function App() {
 
         const strOfChatBox = dataMessages.map(item => (
             `    <div id ='${item.shopName}-${item.id}' class="chat-box-content--active message__box-search-item">
-                    <div class="message__box-search-item">
+                    <div class="message__box-search-item message__box-list-container">
                         <div class="pin-icon-container">
                             <i class="fas fa-thumbtack pin-icon"></i>
                         </div>
@@ -444,13 +444,13 @@ export default function App() {
                                 <span class="contact-message--status ${isNewMessage(item.status)} ">${item.newMessage.length}</span>
                             </div>
                             <div class="contact-chat-content">
-                                ${renderLastestMessage(item.message, item.newMessage)}  
+                                ${renderLastestMessage(item.message, item.input, item.newMessage)}  
                             </div>
                         </span>
                     </div>
                     <span id ="${item.shopName}-${item.id}" class="contact-chat-menu"><i class="fas fa-ellipsis-h"></i></span>
                 </div>
-                <div id ='${item.shopName}-${item.id}' >
+                <div id ='${item.shopName}-${item.id}' style='position: absolute;'>
                 <div class="contact-chat-menu--show">
                     <span class="contact-chat-menu-pin contact-chat-menu-icon">
                         <i class="fas fa-thumbtack menu-chat-icon"></i>
@@ -486,9 +486,9 @@ export default function App() {
         })
     }
 
-    function renderLastestMessage(message, newMessage) {
-        const newMessageArray = message.concat(newMessage)
-        return newMessageArray[newMessageArray.length - 1]
+    function renderLastestMessage(message,input, newMessage) {
+        const newMessageArray = message.concat(input, newMessage)
+        return newMessageArray[newMessageArray.length - 1].content
     }
 
     function filterDataCategory(data, conditions) {
@@ -586,4 +586,5 @@ export default function App() {
     // }
     // console.log(array.split(','))
     // var x= []
+    
 } 
