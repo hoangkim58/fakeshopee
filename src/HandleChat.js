@@ -163,11 +163,12 @@ export default function handleChat() {
         contentContainer.attr('id', `${item.shopName}-${item.id}`)
 
         const newData = item.message.concat(item.input, item.newMessage)
-        const str = newData.map(item => {
+        const arrangeData = sortByTime(newData)
+        const str = arrangeData.map(item => {
             if (item.type == 'import') {
 
                 return `
-                <div class="offfical-content-message-container">
+                <div class="offfical-content-message-container" title =${item.time}>
                     <div class="offfical-content-message contact-chat-content">
                         ${item.content}
                     </div>  
@@ -192,7 +193,17 @@ export default function handleChat() {
         return newData
     }
 
-
+    function sortByTime(data) {
+        const arr = data.sort(function (a, b) {
+            var keyA = new Date(a.time),
+                keyB = new Date(b.time);
+            // Compare the 2 dates
+            if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+            return 0;
+        }) 
+        return arr
+    } 
     function displayNewMessage(message) {
 
         if (message >= 1) {
@@ -318,7 +329,13 @@ export default function handleChat() {
     function handleClickMessage() {
         let inputValue = '';
         const enterMessageFrame = $('.enter-message')
+        // const year = new Date().getFullYear()
+        // const month = new Date().getMonth() + 1
+        // const date = new Date().getDate()
+        // const timeAt = year +':'+ month +':' + date
 
+        const timeAt = new Date()
+        console.log(timeAt)
         enterMessageFrame.change(function (e) {
             inputValue = e.target.value
             const container = $('.offfical-content-message-boundary')
@@ -327,7 +344,7 @@ export default function handleChat() {
             dataMessages.filter(item => {
                 if (`${item.shopName}-${item.id}` === `${idChatBoxContent}`) {
                     if (item.input) {
-                        item.input.push({content: inputValue, type: 'export', time: '11:11:11'})
+                        item.input.push({content: inputValue, type: 'export', time: timeAt})
                     }
                     else {
                         item.input = [inputValue]

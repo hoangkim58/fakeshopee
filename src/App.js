@@ -486,7 +486,7 @@ export default function App() {
         })
     }
 
-    function renderLastestMessage(message,input, newMessage) {
+    function renderLastestMessage(message, input, newMessage) {
         const newMessageArray = message.concat(input, newMessage)
         return newMessageArray[newMessageArray.length - 1].content
     }
@@ -586,5 +586,20 @@ export default function App() {
     // }
     // console.log(array.split(','))
     // var x= []
+    var test = [
+        {
+            time: "2022:11:10",
+            content: 'asdasd'
+        },
+        {
+            time: "2022:11:01",
+            content: 'helo'
+        },
+        {
+            time: "2021:11:01",
+            content: 'helo'
+        },
+    ]
+
     
 } 
