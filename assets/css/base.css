@@ -58,6 +58,10 @@ div {
     align-items: center;
 }
 
+.color--active {
+    color: #f74730;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }

@@ -450,7 +450,7 @@ export default function App() {
                     </div>
                     <span id ="${item.shopName}-${item.id}" class="contact-chat-menu"><i class="fas fa-ellipsis-h"></i></span>
                 </div>
-                <div id ='${item.shopName}-${item.id}' style='position: absolute;'>
+                <div class="contact-mark-option" id ='${item.shopName}-${item.id}' style='position: absolute;'>
                 <div class="contact-chat-menu--show">
                     <span class="contact-chat-menu-pin contact-chat-menu-icon">
                         <i class="fas fa-thumbtack menu-chat-icon"></i>
@@ -579,6 +579,44 @@ export default function App() {
             return 'Đánh dấu chưa đọc'
         }
     }
+
+    // handle Commercial
+    const hideCommercial = () => {
+        $('.app__skinny-commercial').hide()
+
+    }
+
+    const handleCommercial = () => {
+        $('.commercial-container').click(() => {
+            hideCommercial()
+        })
+        $('.commercial-item').on('click', function (e) {
+            e.stopPropagation();
+        });
+        $('.btn__close-commercial').click(() => {
+            hideCommercial()
+        })
+    }
+    handleCommercial()
+
+    //
+    const handleShow = () => {
+
+        $('.message__box-chat-container').click((e) => {
+            // console.log(e)
+        })
+        // $('.message__box-search-item').scroll((e) => {
+        //     e.stopPropagation();
+        // })
+    }
+    handleShow()
+    
+    $('.offfical-content-message-overflow').scrollTop( 0, 300 );
+    $('.offfical-content-message-overflow').click((e) => {
+        const t = $('.offfical-content-message-overflow').height()
+    })
+
+  
     // random, data 
     // let array = []
     // for(let i = 0; i< 58 ; i++) {
@@ -586,20 +624,6 @@ export default function App() {
     // }
     // console.log(array.split(','))
     // var x= []
-    var test = [
-        {
-            time: "2022:11:10",
-            content: 'asdasd'
-        },
-        {
-            time: "2022:11:01",
-            content: 'helo'
-        },
-        {
-            time: "2021:11:01",
-            content: 'helo'
-        },
-    ]
 
-    
+
 } 

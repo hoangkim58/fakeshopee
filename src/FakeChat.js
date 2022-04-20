@@ -1,7 +1,7 @@
 
 import { dataMessages } from './data.js'
 
-export default function handleChat() {
+export default function handleFakeChat() {
     const chatBtn = $('.app__skinny-chat')
     const chatBoxContainer = $('.message__box-container--status')
     const chatBox = $('.message__box-area ')
@@ -29,7 +29,7 @@ export default function handleChat() {
     }
 
     // handle toggle minimize/maximize chatbox-content
-    btnMinimizeTag.click(modifyMessageBox)
+    btnMinimizeTag.click(messageBoxMinimize)
     function messageBoxMinimize() {
         const isIconLeft = btnMinimize.hasClass('fa-caret-left')
         modifyMessageBox(isIconLeft)
@@ -51,14 +51,13 @@ export default function handleChat() {
         const idMenuChat = $(this).attr('id')
         const menuChatOption = $(`.message__box-chat-container #${idMenuChat} .contact-chat-menu--show`)
         const menuChatOptionRest = $(`.message__box-chat-container .contact-chat-menu--show`)
+        
+        $('.message__box-chat-container .contact-mark-option').show()   
         menuChatOptionRest.hide()
         menuChatOption.show()
-
+        $(this).addClass('color--active')
         const chatBoxContainer = $(`.message__box-search-content #${idMenuChat} `)
 
-        menuChatOption.mouseleave(function () {
-            menuChatOption.hide()
-        })
 
         // pin element
         $(`#${idMenuChat} .contact-chat-menu-pin`).unbind().click(function () {
@@ -140,7 +139,7 @@ export default function handleChat() {
         $(`.message__box-chat-container .chat-box-content--active `).removeClass('click--active')
         //
         $(this).parent().addClass('click--active')
-        menuChatOption.hide()
+        
         if (isNewMessage) handleMarkElement(idChatBoxContent)
 
         dataMessages.filter(item => {
@@ -168,8 +167,8 @@ export default function handleChat() {
             if (item.type == 'import') {
 
                 return `
-                <div class="offfical-content-message-container" title =${item.time}>
-                    <div class="offfical-content-message contact-chat-content">
+                <div class="offfical-content-message-container" >
+                    <div class="offfical-content-message contact-chat-content" title =${item.time}  >
                         ${item.content}
                     </div>  
                     <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
@@ -178,8 +177,11 @@ export default function handleChat() {
             `}
             else {
                 return `
-                <div class="offfical-content-message-container" style="justify-content: flex-end; ">
-                    <div class="offfical-content-message contact-chat-content" style = 'background-color: #61afdf; color: white;' >
+                <div class="offfical-content-message-container"  style="justify-content: flex-end; ">
+                    <div class="offfical-content-message contact-chat-content" 
+                        title =${item.time} 
+                        style = 'background-color: #61afdf; color: white;' 
+                    >
                         ${item.content}
                     </div>  
                     <span id ="" class="" style="margin-top: 8px; padding: 0 8px; color: #999; padding-left: 8px;">
@@ -201,9 +203,9 @@ export default function handleChat() {
             if (keyA < keyB) return -1;
             if (keyA > keyB) return 1;
             return 0;
-        }) 
+        })
         return arr
-    } 
+    }
     function displayNewMessage(message) {
 
         if (message >= 1) {
@@ -247,10 +249,14 @@ export default function handleChat() {
     }
 
     //handle search name user -- chat box
-    $('.message__box-search-input').click((e) => {
+    $('.message__box-search-input').on('click', (e) => {
         outSearach.hide()
         e.target.value = ''
 
+    })
+    $('.out-search').on('click', () => {
+        outSearach.hide()
+        console.log('ok')
     })
     $('.message__box-search-input').keyup(function (e) {
         const input = e.target.value.toLowerCase()
@@ -285,9 +291,25 @@ export default function handleChat() {
             }
         }
     })
-    //filter message according to attr
+    //filter message by attr
     const filterContainer = $('.message__box-search-filter-container')
-    $('#f-container').click(() => filterContainer.toggle())
+    $('#f-container').click(() => {
+        filterContainer.show()
+
+        
+    })
+    
+    $('#f-container').click((e) => {
+        e.stopPropagation()
+    }) 
+    $('.contact-chat-menu').click((e) => {
+        e.stopPropagation()
+    })
+    $(window).click(() => { 
+        filterContainer.hide()
+        $('.message__box-chat-container .contact-mark-option').hide()   
+    })
+
 
     $('.message__box-search-filter-container .message__box-search-filter-item').click(handleFilterListMessage)
     function handleFilterListMessage() {
@@ -329,12 +351,12 @@ export default function handleChat() {
     function handleClickMessage() {
         let inputValue = '';
         const enterMessageFrame = $('.enter-message')
-        // const year = new Date().getFullYear()
-        // const month = new Date().getMonth() + 1
-        // const date = new Date().getDate()
-        // const timeAt = year +':'+ month +':' + date
+        const year = new Date().getFullYear()
+        const month = new Date().getMonth() + 1
+        const date = new Date().getDate()
+        const timeAt = year + ':' + month + ':' + date
 
-        const timeAt = new Date()
+        // const timeAt = new Date()
         console.log(timeAt)
         enterMessageFrame.change(function (e) {
             inputValue = e.target.value
@@ -344,7 +366,7 @@ export default function handleChat() {
             dataMessages.filter(item => {
                 if (`${item.shopName}-${item.id}` === `${idChatBoxContent}`) {
                     if (item.input) {
-                        item.input.push({content: inputValue, type: 'export', time: timeAt})
+                        item.input.push({ content: inputValue, type: 'export', time: timeAt })
                     }
                     else {
                         item.input = [inputValue]
@@ -353,10 +375,9 @@ export default function handleChat() {
             })
             console.log(dataMessages)
 
-            $('.btn-send').one('click', function () {
+            const handleSubmit = (inputValue) => {
 
-                // console.log(u)
-                if (inputValue) { 
+                if (inputValue) {
 
                     // render message
                     dataMessages.filter(item => {
@@ -367,8 +388,21 @@ export default function handleChat() {
                 }
                 e.target.value = ''
                 enterMessageFrame.focus()
+
+                return dataMessages
+            }
+
+            // submit by enter key
+            $('.enter-message').on('keypress', (e) => {
+
+                if (e.keyCode === 13) {
+
+                    handleSubmit(inputValue)
+                }
             })
-            return dataMessages
+
+            // click btn-send submit
+            $('.btn-send').one('click', () => { handleSubmit(inputValue) })
         })
 
     }
