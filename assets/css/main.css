@@ -1,7 +1,25 @@
+::-webkit-scrollbar {
+    width: unset;
+    height: unset;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
 .app {
     background-color: #f5f5f5;
 }
 
+.a-precent-default {
+    text-decoration: none;
+    color: #fff;
+}
+
+.border-none {
+    border: none !important;
+}
 .no-text_decoration {
     text-decoration: none;
 }
@@ -137,7 +155,7 @@
 }
 
 .header__navbar-item--separate::after {
-    display: block;
+    display: none;
     position: absolute;
     content: "";
     width: 1px;
@@ -481,6 +499,8 @@
     position: relative;
     background-color: #f5dc7a;
     max-width: 796px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     cursor: default;
 
@@ -490,6 +510,8 @@
     display: flex;
     position: relative;
     right: 0;
+    width: 700%;
+    height: 100%;
     transition: ease-in 0.3s;
 }
 
@@ -512,12 +534,19 @@
     display: block;
 }
 
-.main__container-promotion-item {}
+.main__container-promotion-item {
+    height: 100%;
+    width: 100%;
+}
 
 .main__container-promotion-item-img {
     max-height: 236px;
     border-radius: 2px;
-    min-width: 796px;
+    max-width: 796px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* carousel__arrow slideshow */
@@ -1891,6 +1920,7 @@ footer {
     right: 9.2rem;
     bottom: 1.2rem;
     border-radius: 100%;
+    background-color: #fff;
     box-shadow: 1px 1px 6px 1px rgb(255 99 71 / 20%);
     z-index: 100;
 }
@@ -1965,8 +1995,15 @@ footer {
     top: -6px;
     color: white;
     font-size: 12px;
+    line-height: 15px;
     text-align: center;
-    display: none;
+}
+
+.message__box-area ::-webkit-scrollbar {
+
+    width: 5px;
+    height: 5px;
+
 }
 
 .message__box-area {
@@ -2019,6 +2056,13 @@ footer {
 .message__box-search+.message__box-search {
     border-left: 1px solid #dedede;
     margin-left: 0;
+}
+
+#f-container {
+    position: relative;
+    height: 100%;
+    align-items: center;
+    display: flex;
 }
 
 .message__box-content {}
@@ -2333,7 +2377,8 @@ input[class="message__box-search-input"] {
 }
 
 .out-search {
-    width: 17rem;
+    min-width: 17rem;
+    padding: 0 6px;
     position: absolute;
     background-color: #e0e0e0;
     top: 29px;

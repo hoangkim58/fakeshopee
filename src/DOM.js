@@ -33,6 +33,10 @@ export default function handleDOM() {
             if (i === 0) add.classList.add('carousel__dot--active')
         }
 
+        const promotionSlideshowContainer = document.querySelector('.main__container-promotion-slideshow-container')
+        
+        promotionSlideshowContainer.style.width = `${quatitySlideShowPromotion}00%`
+
         //active dot carousel slideshow promotion
         var slideshowDot = document.querySelectorAll('.slideshow-carousel__dot')
         let numSlideshowPomotion = 0;
@@ -46,7 +50,7 @@ export default function handleDOM() {
         }
 
         var setPositionBannersTopPromotion = (num) => {
-            clickSlideshowPromotionPosition.setAttribute("style", `right: ${num}00%;`)
+            clickSlideshowPromotionPosition.setAttribute("style", `right: ${num}00%; `)
         }
 
         //  wanna be change Banners Page, press on DotPosition  
@@ -401,13 +405,13 @@ export default function handleDOM() {
         clickShopMallInsideNext.click(isClickShopMallInsideNext)
         function isClickShopMallInsideNext() {
             if (quatityOfFrameItem < quatityOfFrameItems - 1) {
-                
+
                 quatityOfFrameItem++
                 shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`)
                 // console.log(quatityOfFrameItem)
                 if (quatityOfFrameItem === quatityOfFrameItems - 1) {
 
-                    shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`) 
+                    shopMallInSideContainer.css('right', `${quatityOfFrameItem * 100}%`)
                     clickShopMallArrowStatus(clickShopMallInsideNext, 'hidden')
                     console.log(quatityOfFrameItem)
                 }

@@ -60,10 +60,14 @@ export default function App() {
         PSItem.style = 'right: 0px'
         const strOfPSItem = dataPromotionSlideshowContainers.map(item =>
             `<div data-value="${item.id}" class="main__container-promotion-item title="${item.title}">
-            <a href="${item.url}">
+            <a href="${item.url}" target="_blank">
 
-                <img src="${item.image}" alt=""
-                    class="main__container-promotion-item-img">
+               
+                <div 
+                   class="main__container-promotion-item-img"
+                    style="background-image: url(${item.image});;"
+                >
+                </div>
             </a>
         </div>
     `)
@@ -82,20 +86,22 @@ export default function App() {
         mainServiceItemContainer.className = 'mainservice__container-menu-list row row-nowrap'
 
         const strOfMainServiceItem = dataMainServices.map(item =>
-            `<a href='${item.url}' class='mainservice__container-link-item'>
-        <div  class='mainservice__container-item l-1-5 m-2 c4'>
-        </div>
-        <div class="mainservice__container-item-cover" title='${item.title}'>
-            <div class="mainservice__container-item-img"
-                style="background-image: url('${item.image}');">
+            `<a 
+                href='${item.url}' 
+                target="_blank"
+                class='mainservice__container-link-item'
+            > 
+                <div class="mainservice__container-item-cover" title='${item.title}'>
+                    <div class="mainservice__container-item-img"
+                        style="background-image: url('${item.image}');">
 
-            </div>
-            <div class="mainservice__container-item-title">
-               ${item.title}
-            </div>
-        </div>
-        </a>
-    `)
+                    </div>
+                    <div class="mainservice__container-item-title">
+                    ${item.title}
+                    </div>
+                </div>
+            </a>
+        `)
 
         renderContent(mainServiceItemContainer, strOfMainServiceItem)
         mainservicContainer.appendChild(mainServiceItemContainer)
@@ -112,7 +118,11 @@ export default function App() {
         categoryServicesContainer.className = 'main__container-category-container row'
         const strOfCategoryServiceItem = dataCategorys.map(item => (
             `
-        <a href='${item.url}' class='main__container-category-item text-decor--none'>
+        <a 
+            target="_blank"
+            href='${item.url}' 
+            class='main__container-category-item text-decor--none'
+        >
         <div class="main__container-category-item l-1-2 c-1-2" title="${item.id}">
             <div class="main__container-category-item-sub">
                 <div class="main__container-category-item-img"
@@ -294,7 +304,12 @@ export default function App() {
 
         const strOfCategoryServiceItem = dataFilteredFSale.map(item => (
             `
-            <a href="#" class="text-decor--none" style="width: 100%; height:100%">
+            <a 
+                href="${item.image}" 
+                target="_blank"
+                class="text-decor--none" 
+                style="width: 100%; height:100%"
+            >
                 <div class="main__container-flashsale-item l-2">
                     <div class="main__container-flashsale-label-discount">
                         ${item.discount}%
@@ -572,6 +587,7 @@ export default function App() {
             return 'fas'
         }
     }
+
     function handleMarkContentOldMessage(conditions) {
         if (conditions) {
             return 'Đánh dấu đã đọc'
@@ -599,24 +615,6 @@ export default function App() {
     }
     handleCommercial()
 
-    //
-    const handleShow = () => {
-
-        $('.message__box-chat-container').click((e) => {
-            // console.log(e)
-        })
-        // $('.message__box-search-item').scroll((e) => {
-        //     e.stopPropagation();
-        // })
-    }
-    handleShow()
-    
-    $('.offfical-content-message-overflow').scrollTop( 0, 300 );
-    $('.offfical-content-message-overflow').click((e) => {
-        const t = $('.offfical-content-message-overflow').height()
-    })
-
-  
     // random, data 
     // let array = []
     // for(let i = 0; i< 58 ; i++) {

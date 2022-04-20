@@ -51,8 +51,8 @@ export default function handleFakeChat() {
         const idMenuChat = $(this).attr('id')
         const menuChatOption = $(`.message__box-chat-container #${idMenuChat} .contact-chat-menu--show`)
         const menuChatOptionRest = $(`.message__box-chat-container .contact-chat-menu--show`)
-        
-        $('.message__box-chat-container .contact-mark-option').show()   
+
+        $('.message__box-chat-container .contact-mark-option').show()
         menuChatOptionRest.hide()
         menuChatOption.show()
         $(this).addClass('color--active')
@@ -139,7 +139,7 @@ export default function handleFakeChat() {
         $(`.message__box-chat-container .chat-box-content--active `).removeClass('click--active')
         //
         $(this).parent().addClass('click--active')
-        
+
         if (isNewMessage) handleMarkElement(idChatBoxContent)
 
         dataMessages.filter(item => {
@@ -148,10 +148,10 @@ export default function handleFakeChat() {
             }
         })
         //check content box show or hide() and render content box
+
         modifyMessageBox()
-
         hideChatContentDefault()
-
+        showLastestContent()
     }
 
     function renderDisplayMessages(item) {
@@ -296,18 +296,20 @@ export default function handleFakeChat() {
     $('#f-container').click(() => {
         filterContainer.show()
 
-        
+
     })
-    
+
     $('#f-container').click((e) => {
         e.stopPropagation()
-    }) 
+    })
     $('.contact-chat-menu').click((e) => {
         e.stopPropagation()
     })
-    $(window).click(() => { 
+    $(window).click(() => {
+
         filterContainer.hide()
-        $('.message__box-chat-container .contact-mark-option').hide()   
+        $('.out-search').hide()
+        $('.message__box-chat-container .contact-mark-option').hide()
     })
 
 
@@ -388,15 +390,14 @@ export default function handleFakeChat() {
                 }
                 e.target.value = ''
                 enterMessageFrame.focus()
+                showLastestContent()
 
                 return dataMessages
             }
 
             // submit by enter key
-            $('.enter-message').on('keypress', (e) => {
-
+            $('.enter-message').on('keyup', (e) => {
                 if (e.keyCode === 13) {
-
                     handleSubmit(inputValue)
                 }
             })
@@ -406,4 +407,19 @@ export default function handleFakeChat() {
         })
 
     }
+
+    function showLastestContent() {
+
+        const contentHeight = $('.offfical-content-message-overflow').height()
+        $('.offfical-content-message-boundary').scrollTop(contentHeight)
+    }
+
+    // //media querry 
+    // var jmediaquery = window.matchMedia("(max-width: 700px)")
+    // if (jmediaquery.matches) { 
+
+    // }
+    // else {
+    //     // window width is less than 480px
+    // }
 }

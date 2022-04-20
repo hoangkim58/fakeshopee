@@ -16,22 +16,24 @@
         <label for="password">password</label>
         <input type="text" id="password" name="password"><br>
         <div class="verify-identifier"></div>
-        <label for="password">Nhap code:</label> 
+        <label for="password">Nhap code:</label>
         <input type="text" id="verify" name="verify-code">
         <button type="submit">submit</button>
+
+      
     </div>
     <script>
-        const code = Math.floor(Math.random()*10000)
+        const code = Math.floor(Math.random() * 10000)
         $('.verify-identifier').html(` Ma xac nhan: ${code}`)
         $('button').click(() => {
-             const name = $('#name').val()
-             const password = $('#password').val()
-             const verify = $('#verify').val()
-             const verifyName = name == 'Admin'
-             const verifyPassword = name == 'Admin'
-             const verifycode = verify == code
-             console.log([name, password, verify, verifycode])
-             verifyName && verifyPassword && verifycode ? window.location.replace('http://hoangkim58.github.io/shopeefrontend/') : alert('Check again!!!')
+            const name = $('#name').val()
+            const password = $('#password').val()
+            const verify = $('#verify').val()
+            const verifyName = name == 'Admin'
+            const verifyPassword = name == 'Admin'
+            const verifycode = verify == code
+            console.log([name, password, verify, verifycode])
+            verifyName && verifyPassword && verifycode ? window.location.replace('http://hoangkim58.github.io/shopeefrontend/') : alert('Check again!!!')
         })
     </script>
 </body>

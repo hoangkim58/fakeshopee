@@ -145,6 +145,7 @@
         margin: auto;
     }
 
+    .main__container-promotion:hover .stardust-carousel__arrow-container--show, 
     .main__container-sm-carousel-btn,
     .header-brand,
     .header__navbar-list,
@@ -180,7 +181,11 @@
     }
 
     img.main__container-promotion-item-img {
+        width: unset;
         min-width: auto;
+        height: 124px;
+        position: relative;
+        top: 50px;
     }
 
     /* Cart */
@@ -197,7 +202,7 @@
     .header__search-login {}
 
     .main__container-promotion-slideshow-container {
-        width: 500%;
+        /* width: 500%;main__container-promotion-item-img */
     }
 
     .main__container-promotion-slideshow {
@@ -223,15 +228,12 @@
         height: 25rem;
         overflow-x: scroll;
         margin-top: -5px;
-        background-color: #35b19f;
     }
 
     .main__container-promotion-item-img {
-
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 51px;
+        min-width: 100%;
+        background-size: contain;
+        background-position: bottom;
     }
 
     .mainservice__container-menu-list {
@@ -624,9 +626,11 @@
 
     }
 
-    .btn-minimize,
+
     .contact-content,
-    .contact-chat-menu {
+    .contact-chat-menu {}
+
+    .btn-minimize {
         display: none;
     }
 
@@ -641,7 +645,12 @@
         /* display: none; */
     }
 
+    .message__box-area {
+        width: unset;
+    }
+
     .message__box-search {
+        width: unset;
         height: auto;
     }
 
@@ -680,7 +689,7 @@
 
     .offfical-content-message-boundary {
         max-width: 38.8rem;
-        /* height: 100%; */
+        height: 31.8rem;
     }
 
     .message__box-search-filter-container {
@@ -696,7 +705,7 @@
 
     .message__box-chat-container {
         display: flex;
-        padding-bottom: 8px;
+        padding: 8px 6px;
         max-width: 38.8rem;
         overflow-x: scroll;
     }
@@ -729,7 +738,6 @@
     .contact-avatar {
         width: 5rem;
         height: 5rem;
-        margin: unset;
     }
 
     .message__box-chat-container {

@@ -5,6 +5,6 @@ import handleFakeChat from './src/FakeChat.js'
 
 App()
 Author()
-handleDOM()
+handleDOM() 
 handleFakeChat()
 
